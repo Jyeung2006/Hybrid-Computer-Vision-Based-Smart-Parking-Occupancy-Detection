@@ -1,0 +1,111 @@
+{
+  "recipe_version": 2,
+  "source_id": "overhead-demo-camera-1",
+  "source": "Harsh Bafna / CVZone educational parking footage",
+  "source_resolution": [
+    1100,
+    720
+  ],
+  "analysis_resolution": [
+    1100,
+    720
+  ],
+  "setup": [
+    "overhead-1",
+    0
+  ],
+  "reviewed_on": "2026-09-18",
+  "review_note": "Two departure bays: five occupied/five vacant examples each, all separate from the empty reference at 12s. The third candidate W02 lacks sufficiently stable empty samples and remains inventory-only. This overhead recording drifts; existing alignment failures stay unavailable. Demonstration calibration from one clip, not independent accuracy.",
+  "slots": [
+    {
+      "id": "W01",
+      "polygon": [
+        [
+          158,
+          574
+        ],
+        [
+          271,
+          574
+        ],
+        [
+          271,
+          623
+        ],
+        [
+          158,
+          623
+        ]
+      ],
+      "reference": [
+        "overhead-1",
+        12
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": [
+          0.125,
+          0.375,
+          0.625,
+          0.875,
+          1.125
+        ]
+      }
+    },
+    {
+      "id": "E01",
+      "polygon": [
+        [
+          750,
+          331
+        ],
+        [
+          859,
+          331
+        ],
+        [
+          859,
+          379
+        ],
+        [
+          750,
+          379
+        ]
+      ],
+      "reference": [
+        "overhead-1",
+        12
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+[console_scripts]
+parking-probe = parking_probe.cli:main

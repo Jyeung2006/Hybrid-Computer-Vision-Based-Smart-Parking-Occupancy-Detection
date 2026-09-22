@@ -1,0 +1,6 @@
+numpy<3,>=2
+opencv-python<5,>=4.10
+requests<3,>=2.32
+
+[dev]
+pytest<10,>=8

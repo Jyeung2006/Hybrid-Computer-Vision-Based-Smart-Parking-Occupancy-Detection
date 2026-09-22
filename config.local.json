@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "source_id": "indoor-camera-01",
+  "source": {
+    "type": "snapshot",
+    "url_env": "PARKING_CAMERA_URL",
+    "headers_env": "PARKING_CAMERA_HEADERS",
+    "username_env": "PARKING_CAMERA_USERNAME",
+    "password_env": "PARKING_CAMERA_PASSWORD",
+    "capture_time_header": null,
+    "connect_timeout_seconds": 5,
+    "read_timeout_seconds": 10,
+    "attempts": 3,
+    "max_image_bytes": 15728640
+  },
+  "interval_seconds": 3,
+  "stale_after_seconds": 15,
+  "setup_image": null,
+  "alignment": {"min_inliers": 12, "max_displacement_pixels": 8},
+  "slots": []
+}
+

@@ -1,0 +1,218 @@
+{
+  "recipe_version": 1,
+  "source": "CHAD camera 2",
+  "source_id": "chad-camera-2",
+  "source_resolution": [
+    1920,
+    1080
+  ],
+  "analysis_resolution": [
+    1280,
+    720
+  ],
+  "setup": [
+    "chad-camera-2",
+    0
+  ],
+  "reviewed_on": "2026-09-19",
+  "review_note": "Manually reviewed visible parking polygons, excluding hatched access zones. P009 is the shared storefront SUV bay; P010/P011 are adjacent storefront bays seen by Camera 4. Oblique far-row identities for Cameras 2/3 remain view-local; do not combine their counts as unique physical site capacity. No verified synchronized capture offset. Vacant-only samples support supplemental empty matching, not two-state reference/MOG2 calibration.",
+  "slots": [
+    {
+      "id": "N09",
+      "bay_id": "CHAD-P009",
+      "area": "chad-near",
+      "polygon": [
+        [
+          175,
+          111
+        ],
+        [
+          334,
+          101
+        ],
+        [
+          363,
+          159
+        ],
+        [
+          172,
+          174
+        ]
+      ],
+      "mapping_status": "shared_physical_id",
+      "reference": null,
+      "vacant": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F01",
+      "bay_id": "CHAD-C2-F01",
+      "area": "chad-c2-row",
+      "polygon": [
+        [
+          0,
+          219
+        ],
+        [
+          175,
+          222
+        ],
+        [
+          287,
+          331
+        ],
+        [
+          0,
+          425
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": null,
+      "vacant": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F02",
+      "bay_id": "CHAD-C2-F02",
+      "area": "chad-c2-row",
+      "polygon": [
+        [
+          362,
+          308
+        ],
+        [
+          535,
+          328
+        ],
+        [
+          239,
+          478
+        ],
+        [
+          25,
+          439
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": [
+        "chad-camera-2",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-camera-2",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F03",
+      "bay_id": "CHAD-C2-F03",
+      "area": "chad-c2-row",
+      "polygon": [
+        [
+          557,
+          339
+        ],
+        [
+          749,
+          360
+        ],
+        [
+          572,
+          536
+        ],
+        [
+          264,
+          489
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": [
+        "chad-camera-2",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-camera-2",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F04",
+      "bay_id": "CHAD-C2-F04",
+      "area": "chad-c2-row",
+      "polygon": [
+        [
+          780,
+          371
+        ],
+        [
+          1007,
+          405
+        ],
+        [
+          971,
+          512
+        ],
+        [
+          601,
+          538
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": [
+        "chad-camera-2",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-camera-2",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-camera-2",
+        "seconds": []
+      },
+      "calibration_pending": true
+    }
+  ]
+}

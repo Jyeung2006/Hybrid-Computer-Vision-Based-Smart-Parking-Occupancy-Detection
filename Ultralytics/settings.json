@@ -1,0 +1,21 @@
+{
+  "settings_version": "0.0.6",
+  "datasets_dir": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\datasets",
+  "weights_dir": "weights",
+  "runs_dir": "runs",
+  "uuid": "5618a3590fc02420ca4e132a6ffa5c6cbc7b06b81f7ea907dac298e47b325b29",
+  "sync": true,
+  "api_key": "",
+  "openai_api_key": "",
+  "clearml": true,
+  "comet": true,
+  "dvc": true,
+  "hub": true,
+  "mlflow": true,
+  "neptune": true,
+  "raytune": true,
+  "tensorboard": false,
+  "wandb": false,
+  "vscode_msg": true,
+  "openvino_msg": false
+}

@@ -1,0 +1,2790 @@
+{
+  "recipe_version": 4,
+  "source_id": "overhead-demo-camera-1",
+  "source": "Harsh Bafna / CVZone overhead educational footage",
+  "source_resolution": [
+    1100,
+    720
+  ],
+  "analysis_resolution": [
+    1100,
+    720
+  ],
+  "setup": [
+    "overhead-1",
+    0
+  ],
+  "stabilization": {
+    "version": 1,
+    "max_displacement_pixels": 35,
+    "min_inliers": 80,
+    "min_inlier_fraction": 0.6,
+    "max_scale_change": 0.03,
+    "max_rotation_degrees": 2,
+    "ransac_reprojection_pixels": 3
+  },
+  "reviewed_on": "2026-09-21",
+  "review_note": "All 69 painted parking bays visible in this recording, reviewed against the source coordinate inventory. West 24, middle 22, east 23. Hatched loading/access zones and roadway excluded. Vehicles that remain stationary are included. Existing W01/E01 IDs retained; W02 gains stabilized empty examples. Constant occupied bays have no invented empty reference. No-detection YOLO results remain uncertain per proposal. Recipe v4 adds visually inspected empty references and five vacant-only examples for 12 previously unreferenced bays; no occupied examples invented. W01 adds a late verified empty appearance. Classic calibration remains pending for vacant-only bays. 15/69 have reviewed empty evidence; permanent occupied bays remain without fabricated empty references.",
+  "slots": [
+    {
+      "id": "WL01",
+      "bay_id": "OVER-WL01",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 1,
+      "polygon": [
+        [
+          55,
+          100
+        ],
+        [
+          158,
+          100
+        ],
+        [
+          158,
+          143
+        ],
+        [
+          55,
+          143
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL02",
+      "bay_id": "OVER-WL02",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 2,
+      "polygon": [
+        [
+          56,
+          146
+        ],
+        [
+          159,
+          146
+        ],
+        [
+          159,
+          189
+        ],
+        [
+          56,
+          189
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL03",
+      "bay_id": "OVER-WL03",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 3,
+      "polygon": [
+        [
+          50,
+          193
+        ],
+        [
+          153,
+          193
+        ],
+        [
+          153,
+          236
+        ],
+        [
+          50,
+          236
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL04",
+      "bay_id": "OVER-WL04",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 4,
+      "polygon": [
+        [
+          50,
+          241
+        ],
+        [
+          153,
+          241
+        ],
+        [
+          153,
+          284
+        ],
+        [
+          50,
+          284
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL05",
+      "bay_id": "OVER-WL05",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 5,
+      "polygon": [
+        [
+          53,
+          289
+        ],
+        [
+          156,
+          289
+        ],
+        [
+          156,
+          332
+        ],
+        [
+          53,
+          332
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL06",
+      "bay_id": "OVER-WL06",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 6,
+      "polygon": [
+        [
+          54,
+          337
+        ],
+        [
+          157,
+          337
+        ],
+        [
+          157,
+          380
+        ],
+        [
+          54,
+          380
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL07",
+      "bay_id": "OVER-WL07",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 7,
+      "polygon": [
+        [
+          46,
+          384
+        ],
+        [
+          149,
+          384
+        ],
+        [
+          149,
+          427
+        ],
+        [
+          46,
+          427
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "WL08",
+      "bay_id": "OVER-WL08",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 8,
+      "polygon": [
+        [
+          51,
+          431
+        ],
+        [
+          154,
+          431
+        ],
+        [
+          154,
+          474
+        ],
+        [
+          51,
+          474
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL09",
+      "bay_id": "OVER-WL09",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 9,
+      "polygon": [
+        [
+          52,
+          479
+        ],
+        [
+          155,
+          479
+        ],
+        [
+          155,
+          522
+        ],
+        [
+          52,
+          522
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL10",
+      "bay_id": "OVER-WL10",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 10,
+      "polygon": [
+        [
+          52,
+          527
+        ],
+        [
+          155,
+          527
+        ],
+        [
+          155,
+          570
+        ],
+        [
+          52,
+          570
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL11",
+      "bay_id": "OVER-WL11",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 11,
+      "polygon": [
+        [
+          50,
+          573
+        ],
+        [
+          153,
+          573
+        ],
+        [
+          153,
+          616
+        ],
+        [
+          50,
+          616
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WL12",
+      "bay_id": "OVER-WL12",
+      "area": "overhead-west",
+      "column": "WL",
+      "row": 12,
+      "polygon": [
+        [
+          56,
+          623
+        ],
+        [
+          159,
+          623
+        ],
+        [
+          159,
+          666
+        ],
+        [
+          56,
+          666
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR01",
+      "bay_id": "OVER-WR01",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 1,
+      "polygon": [
+        [
+          163,
+          98
+        ],
+        [
+          266,
+          98
+        ],
+        [
+          266,
+          141
+        ],
+        [
+          163,
+          141
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR02",
+      "bay_id": "OVER-WR02",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 2,
+      "polygon": [
+        [
+          164,
+          146
+        ],
+        [
+          267,
+          146
+        ],
+        [
+          267,
+          189
+        ],
+        [
+          164,
+          189
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR03",
+      "bay_id": "OVER-WR03",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 3,
+      "polygon": [
+        [
+          158,
+          194
+        ],
+        [
+          261,
+          194
+        ],
+        [
+          261,
+          237
+        ],
+        [
+          158,
+          237
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR04",
+      "bay_id": "OVER-WR04",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 4,
+      "polygon": [
+        [
+          159,
+          242
+        ],
+        [
+          262,
+          242
+        ],
+        [
+          262,
+          285
+        ],
+        [
+          159,
+          285
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR05",
+      "bay_id": "OVER-WR05",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 5,
+      "polygon": [
+        [
+          161,
+          290
+        ],
+        [
+          264,
+          290
+        ],
+        [
+          264,
+          333
+        ],
+        [
+          161,
+          333
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR06",
+      "bay_id": "OVER-WR06",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 6,
+      "polygon": [
+        [
+          161,
+          339
+        ],
+        [
+          264,
+          339
+        ],
+        [
+          264,
+          382
+        ],
+        [
+          161,
+          382
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR07",
+      "bay_id": "OVER-WR07",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 7,
+      "polygon": [
+        [
+          160,
+          387
+        ],
+        [
+          263,
+          387
+        ],
+        [
+          263,
+          430
+        ],
+        [
+          160,
+          430
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "W02",
+      "bay_id": "OVER-W02",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 8,
+      "polygon": [
+        [
+          162,
+          429
+        ],
+        [
+          265,
+          429
+        ],
+        [
+          265,
+          472
+        ],
+        [
+          162,
+          472
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        27
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          24,
+          24.5,
+          25.5,
+          26,
+          26.5
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": [
+          0.125,
+          0.375,
+          0.625,
+          0.875,
+          1.125
+        ]
+      },
+      "calibration_pending": false
+    },
+    {
+      "id": "WR09",
+      "bay_id": "OVER-WR09",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 9,
+      "polygon": [
+        [
+          162,
+          478
+        ],
+        [
+          265,
+          478
+        ],
+        [
+          265,
+          521
+        ],
+        [
+          162,
+          521
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "WR10",
+      "bay_id": "OVER-WR10",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 10,
+      "polygon": [
+        [
+          167,
+          525
+        ],
+        [
+          270,
+          525
+        ],
+        [
+          270,
+          568
+        ],
+        [
+          167,
+          568
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "W01",
+      "bay_id": "OVER-W01",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 11,
+      "polygon": [
+        [
+          164,
+          576
+        ],
+        [
+          267,
+          576
+        ],
+        [
+          267,
+          619
+        ],
+        [
+          164,
+          619
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        12
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": [
+          0.125,
+          0.375,
+          0.625,
+          0.875,
+          1.125
+        ]
+      },
+      "calibration_pending": false,
+      "vehicle_empty_references": [
+        [
+          "overhead-1",
+          27
+        ]
+      ]
+    },
+    {
+      "id": "WR12",
+      "bay_id": "OVER-WR12",
+      "area": "overhead-west",
+      "column": "WR",
+      "row": 12,
+      "polygon": [
+        [
+          165,
+          619
+        ],
+        [
+          268,
+          619
+        ],
+        [
+          268,
+          662
+        ],
+        [
+          165,
+          662
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML01",
+      "bay_id": "OVER-ML01",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 1,
+      "polygon": [
+        [
+          406,
+          89
+        ],
+        [
+          509,
+          89
+        ],
+        [
+          509,
+          132
+        ],
+        [
+          406,
+          132
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML02",
+      "bay_id": "OVER-ML02",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 2,
+      "polygon": [
+        [
+          402,
+          138
+        ],
+        [
+          505,
+          138
+        ],
+        [
+          505,
+          181
+        ],
+        [
+          402,
+          181
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML03",
+      "bay_id": "OVER-ML03",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 3,
+      "polygon": [
+        [
+          404,
+          189
+        ],
+        [
+          507,
+          189
+        ],
+        [
+          507,
+          232
+        ],
+        [
+          404,
+          232
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "ML04",
+      "bay_id": "OVER-ML04",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 4,
+      "polygon": [
+        [
+          401,
+          238
+        ],
+        [
+          504,
+          238
+        ],
+        [
+          504,
+          281
+        ],
+        [
+          401,
+          281
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML05",
+      "bay_id": "OVER-ML05",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 5,
+      "polygon": [
+        [
+          401,
+          289
+        ],
+        [
+          504,
+          289
+        ],
+        [
+          504,
+          332
+        ],
+        [
+          401,
+          332
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML06",
+      "bay_id": "OVER-ML06",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 6,
+      "polygon": [
+        [
+          402,
+          338
+        ],
+        [
+          505,
+          338
+        ],
+        [
+          505,
+          381
+        ],
+        [
+          402,
+          381
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML07",
+      "bay_id": "OVER-ML07",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 7,
+      "polygon": [
+        [
+          404,
+          381
+        ],
+        [
+          507,
+          381
+        ],
+        [
+          507,
+          424
+        ],
+        [
+          404,
+          424
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML08",
+      "bay_id": "OVER-ML08",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 8,
+      "polygon": [
+        [
+          405,
+          427
+        ],
+        [
+          508,
+          427
+        ],
+        [
+          508,
+          470
+        ],
+        [
+          405,
+          470
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML10",
+      "bay_id": "OVER-ML10",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 10,
+      "polygon": [
+        [
+          406,
+          525
+        ],
+        [
+          509,
+          525
+        ],
+        [
+          509,
+          568
+        ],
+        [
+          406,
+          568
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ML11",
+      "bay_id": "OVER-ML11",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 11,
+      "polygon": [
+        [
+          402,
+          569
+        ],
+        [
+          505,
+          569
+        ],
+        [
+          505,
+          612
+        ],
+        [
+          402,
+          612
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "ML12",
+      "bay_id": "OVER-ML12",
+      "area": "overhead-middle",
+      "column": "ML",
+      "row": 12,
+      "polygon": [
+        [
+          407,
+          619
+        ],
+        [
+          510,
+          619
+        ],
+        [
+          510,
+          662
+        ],
+        [
+          407,
+          662
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR01",
+      "bay_id": "OVER-MR01",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 1,
+      "polygon": [
+        [
+          514,
+          92
+        ],
+        [
+          617,
+          92
+        ],
+        [
+          617,
+          135
+        ],
+        [
+          514,
+          135
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR02",
+      "bay_id": "OVER-MR02",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 2,
+      "polygon": [
+        [
+          512,
+          138
+        ],
+        [
+          615,
+          138
+        ],
+        [
+          615,
+          181
+        ],
+        [
+          512,
+          181
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR03",
+      "bay_id": "OVER-MR03",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 3,
+      "polygon": [
+        [
+          514,
+          187
+        ],
+        [
+          617,
+          187
+        ],
+        [
+          617,
+          230
+        ],
+        [
+          514,
+          230
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR04",
+      "bay_id": "OVER-MR04",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 4,
+      "polygon": [
+        [
+          511,
+          236
+        ],
+        [
+          614,
+          236
+        ],
+        [
+          614,
+          279
+        ],
+        [
+          511,
+          279
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR05",
+      "bay_id": "OVER-MR05",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 5,
+      "polygon": [
+        [
+          511,
+          284
+        ],
+        [
+          614,
+          284
+        ],
+        [
+          614,
+          327
+        ],
+        [
+          511,
+          327
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "MR06",
+      "bay_id": "OVER-MR06",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 6,
+      "polygon": [
+        [
+          513,
+          329
+        ],
+        [
+          616,
+          329
+        ],
+        [
+          616,
+          372
+        ],
+        [
+          513,
+          372
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR07",
+      "bay_id": "OVER-MR07",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 7,
+      "polygon": [
+        [
+          510,
+          380
+        ],
+        [
+          613,
+          380
+        ],
+        [
+          613,
+          423
+        ],
+        [
+          510,
+          423
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR08",
+      "bay_id": "OVER-MR08",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 8,
+      "polygon": [
+        [
+          511,
+          426
+        ],
+        [
+          614,
+          426
+        ],
+        [
+          614,
+          469
+        ],
+        [
+          511,
+          469
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "MR10",
+      "bay_id": "OVER-MR10",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 10,
+      "polygon": [
+        [
+          513,
+          524
+        ],
+        [
+          616,
+          524
+        ],
+        [
+          616,
+          567
+        ],
+        [
+          513,
+          567
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "MR11",
+      "bay_id": "OVER-MR11",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 11,
+      "polygon": [
+        [
+          513,
+          568
+        ],
+        [
+          616,
+          568
+        ],
+        [
+          616,
+          611
+        ],
+        [
+          513,
+          611
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "MR12",
+      "bay_id": "OVER-MR12",
+      "area": "overhead-middle",
+      "column": "MR",
+      "row": 12,
+      "polygon": [
+        [
+          513,
+          619
+        ],
+        [
+          616,
+          619
+        ],
+        [
+          616,
+          662
+        ],
+        [
+          513,
+          662
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL01",
+      "bay_id": "OVER-EL01",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 1,
+      "polygon": [
+        [
+          751,
+          87
+        ],
+        [
+          854,
+          87
+        ],
+        [
+          854,
+          130
+        ],
+        [
+          751,
+          130
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL02",
+      "bay_id": "OVER-EL02",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 2,
+      "polygon": [
+        [
+          751,
+          136
+        ],
+        [
+          854,
+          136
+        ],
+        [
+          854,
+          179
+        ],
+        [
+          751,
+          179
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL03",
+      "bay_id": "OVER-EL03",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 3,
+      "polygon": [
+        [
+          750,
+          188
+        ],
+        [
+          853,
+          188
+        ],
+        [
+          853,
+          231
+        ],
+        [
+          750,
+          231
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL04",
+      "bay_id": "OVER-EL04",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 4,
+      "polygon": [
+        [
+          754,
+          232
+        ],
+        [
+          857,
+          232
+        ],
+        [
+          857,
+          275
+        ],
+        [
+          754,
+          275
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL05",
+      "bay_id": "OVER-EL05",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 5,
+      "polygon": [
+        [
+          752,
+          276
+        ],
+        [
+          855,
+          276
+        ],
+        [
+          855,
+          319
+        ],
+        [
+          752,
+          319
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "E01",
+      "bay_id": "OVER-E01",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 6,
+      "polygon": [
+        [
+          751,
+          327
+        ],
+        [
+          854,
+          327
+        ],
+        [
+          854,
+          370
+        ],
+        [
+          751,
+          370
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        12
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          9.5,
+          10,
+          10.5,
+          11,
+          11.5
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "calibration_pending": false
+    },
+    {
+      "id": "EL07",
+      "bay_id": "OVER-EL07",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 7,
+      "polygon": [
+        [
+          752,
+          377
+        ],
+        [
+          855,
+          377
+        ],
+        [
+          855,
+          420
+        ],
+        [
+          752,
+          420
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "EL08",
+      "bay_id": "OVER-EL08",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 8,
+      "polygon": [
+        [
+          757,
+          426
+        ],
+        [
+          860,
+          426
+        ],
+        [
+          860,
+          469
+        ],
+        [
+          757,
+          469
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL09",
+      "bay_id": "OVER-EL09",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 9,
+      "polygon": [
+        [
+          753,
+          472
+        ],
+        [
+          856,
+          472
+        ],
+        [
+          856,
+          515
+        ],
+        [
+          753,
+          515
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        27
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          24,
+          24.5,
+          25.5,
+          26,
+          26.5
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visually_clear_late_frames_only; early_passing_objects_excluded",
+        "contact_sheets": [
+          "assets/empty-review/overhead-EL09-late.jpg"
+        ]
+      }
+    },
+    {
+      "id": "EL10",
+      "bay_id": "OVER-EL10",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 10,
+      "polygon": [
+        [
+          757,
+          518
+        ],
+        [
+          860,
+          518
+        ],
+        [
+          860,
+          561
+        ],
+        [
+          757,
+          561
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "EL11",
+      "bay_id": "OVER-EL11",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 11,
+      "polygon": [
+        [
+          760,
+          573
+        ],
+        [
+          863,
+          573
+        ],
+        [
+          863,
+          616
+        ],
+        [
+          760,
+          616
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "EL12",
+      "bay_id": "OVER-EL12",
+      "area": "overhead-east",
+      "column": "EL",
+      "row": 12,
+      "polygon": [
+        [
+          760,
+          616
+        ],
+        [
+          863,
+          616
+        ],
+        [
+          863,
+          659
+        ],
+        [
+          760,
+          659
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER02",
+      "bay_id": "OVER-ER02",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 2,
+      "polygon": [
+        [
+          892,
+          141
+        ],
+        [
+          995,
+          141
+        ],
+        [
+          995,
+          184
+        ],
+        [
+          892,
+          184
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "ER03",
+      "bay_id": "OVER-ER03",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 3,
+      "polygon": [
+        [
+          892,
+          190
+        ],
+        [
+          995,
+          190
+        ],
+        [
+          995,
+          233
+        ],
+        [
+          892,
+          233
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER04",
+      "bay_id": "OVER-ER04",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 4,
+      "polygon": [
+        [
+          892,
+          235
+        ],
+        [
+          995,
+          235
+        ],
+        [
+          995,
+          278
+        ],
+        [
+          892,
+          278
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER05",
+      "bay_id": "OVER-ER05",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 5,
+      "polygon": [
+        [
+          895,
+          284
+        ],
+        [
+          998,
+          284
+        ],
+        [
+          998,
+          327
+        ],
+        [
+          895,
+          327
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER06",
+      "bay_id": "OVER-ER06",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 6,
+      "polygon": [
+        [
+          897,
+          330
+        ],
+        [
+          1000,
+          330
+        ],
+        [
+          1000,
+          373
+        ],
+        [
+          897,
+          373
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER07",
+      "bay_id": "OVER-ER07",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 7,
+      "polygon": [
+        [
+          898,
+          374
+        ],
+        [
+          1001,
+          374
+        ],
+        [
+          1001,
+          417
+        ],
+        [
+          898,
+          417
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER08",
+      "bay_id": "OVER-ER08",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 8,
+      "polygon": [
+        [
+          901,
+          424
+        ],
+        [
+          1004,
+          424
+        ],
+        [
+          1004,
+          467
+        ],
+        [
+          901,
+          467
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER09",
+      "bay_id": "OVER-ER09",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 9,
+      "polygon": [
+        [
+          903,
+          474
+        ],
+        [
+          1006,
+          474
+        ],
+        [
+          1006,
+          517
+        ],
+        [
+          903,
+          517
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "ER10",
+      "bay_id": "OVER-ER10",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 10,
+      "polygon": [
+        [
+          899,
+          522
+        ],
+        [
+          1002,
+          522
+        ],
+        [
+          1002,
+          565
+        ],
+        [
+          899,
+          565
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": [
+        "overhead-1",
+        0
+      ],
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": [
+          5,
+          10,
+          15,
+          20,
+          26
+        ]
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true,
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "basis": "visual_inspection_same_bay_same_view",
+        "contact_sheets": [
+          "assets/empty-review/overhead-candidates-1.jpg",
+          "assets/empty-review/overhead-candidates-2.jpg",
+          "assets/empty-review/overhead-candidates-3.jpg",
+          "assets/empty-review/overhead-26s.jpg"
+        ]
+      }
+    },
+    {
+      "id": "ER11",
+      "bay_id": "OVER-ER11",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 11,
+      "polygon": [
+        [
+          900,
+          576
+        ],
+        [
+          1003,
+          576
+        ],
+        [
+          1003,
+          619
+        ],
+        [
+          900,
+          619
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "ER12",
+      "bay_id": "OVER-ER12",
+      "area": "overhead-east",
+      "column": "ER",
+      "row": 12,
+      "polygon": [
+        [
+          900,
+          620
+        ],
+        [
+          1003,
+          620
+        ],
+        [
+          1003,
+          663
+        ],
+        [
+          900,
+          663
+        ]
+      ],
+      "mapping_status": "reviewed_full_visible_inventory",
+      "reference": null,
+      "vacant": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "overhead-1",
+        "seconds": []
+      },
+      "calibration_pending": true
+    }
+  ]
+}

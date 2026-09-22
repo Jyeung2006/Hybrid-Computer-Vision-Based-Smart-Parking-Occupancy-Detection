@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "site_id": "my-carpark",
+  "mapping_verified": false,
+  "synchronization": {
+    "verified": false,
+    "note": "Replace with evidence that both recordings cover the same period and the measured offsets. Do not combine the four CHAD demo clips as separate cameras."
+  },
+  "bay_ids": ["P001", "P002", "P003"],
+  "cameras": [
+    {
+      "camera_id": "camera-a",
+      "config": "data/camera-a/config.json",
+      "video_path": "data/camera-a/video.mp4",
+      "video_offset_seconds": 0,
+      "source_resolution": [1920, 1080],
+      "analysis_resolution": [1280, 720],
+      "slot_map": {"A01": "P001", "A02": "P002"}
+    },
+    {
+      "camera_id": "camera-b",
+      "config": "data/camera-b/config.json",
+      "video_path": "data/camera-b/video.mp4",
+      "video_offset_seconds": 0,
+      "source_resolution": [1920, 1080],
+      "analysis_resolution": [1280, 720],
+      "slot_map": {"B07": "P001", "B08": "P003"}
+    }
+  ]
+}

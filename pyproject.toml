@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "parking-probe"
+version = "0.1.0"
+description = "Experimental OpenCV parking occupancy with selective YOLOv8s verification"
+requires-python = ">=3.12,<3.13"
+dependencies = ["numpy>=2,<3", "opencv-python>=4.10,<5", "requests>=2.32,<3"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+yolo-export = ["ultralytics==8.3.203", "onnx==1.19.0"]
+
+[project.scripts]
+parking-probe = "parking_probe.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
