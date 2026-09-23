@@ -1,0 +1,175 @@
+{
+  "recipe_version": 2,
+  "source": "CHAD camera 3",
+  "source_id": "chad-camera-3",
+  "source_resolution": [
+    1920,
+    1080
+  ],
+  "analysis_resolution": [
+    1280,
+    720
+  ],
+  "setup": [
+    "chad-camera-3",
+    0
+  ],
+  "reviewed_on": "2026-09-19",
+  "review_note": "Manually reviewed visible parking polygons, excluding hatched access zones. P009 is the shared storefront SUV bay; P010/P011 are adjacent storefront bays seen by Camera 4. Oblique far-row identities for Cameras 2/3 remain view-local; do not combine their counts as unique physical site capacity. No verified synchronized capture offset. Vacant-only samples support supplemental empty matching, not two-state reference/MOG2 calibration.",
+  "slots": [
+    {
+      "id": "N09",
+      "bay_id": "CHAD-P009",
+      "area": "chad-near",
+      "polygon": [
+        [
+          15,
+          134
+        ],
+        [
+          176,
+          138
+        ],
+        [
+          275,
+          217
+        ],
+        [
+          49,
+          242
+        ]
+      ],
+      "mapping_status": "shared_physical_id",
+      "reference": null,
+      "vacant": {
+        "clip": "chad-camera-3",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "chad-camera-3",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F01",
+      "bay_id": "CHAD-C3-F01",
+      "area": "chad-c3-row",
+      "polygon": [
+        [
+          967,
+          210
+        ],
+        [
+          1275,
+          226
+        ],
+        [
+          1275,
+          307
+        ],
+        [
+          908,
+          279
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": null,
+      "vacant": {
+        "clip": "chad-camera-3",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "chad-camera-3",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F02",
+      "bay_id": "CHAD-C3-F02",
+      "area": "chad-c3-row",
+      "polygon": [
+        [
+          741,
+          296
+        ],
+        [
+          1248,
+          386
+        ],
+        [
+          1140,
+          451
+        ],
+        [
+          586,
+          332
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": [
+        "chad-camera-3",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-camera-3",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-camera-3",
+        "seconds": []
+      },
+      "calibration_pending": true
+    },
+    {
+      "id": "F03",
+      "bay_id": "CHAD-C3-F03",
+      "area": "chad-c3-row",
+      "polygon": [
+        [
+          579,
+          345
+        ],
+        [
+          1123,
+          473
+        ],
+        [
+          944,
+          601
+        ],
+        [
+          382,
+          414
+        ]
+      ],
+      "mapping_status": "view_local_correspondence_unverified",
+      "reference": [
+        "chad-camera-3",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-camera-3",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-camera-3",
+        "seconds": []
+      },
+      "calibration_pending": true
+    }
+  ]
+}

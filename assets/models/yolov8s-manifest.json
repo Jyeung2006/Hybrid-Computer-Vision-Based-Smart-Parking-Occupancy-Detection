@@ -1,0 +1,49 @@
+{
+  "version": 1,
+  "architecture": "YOLOv8s",
+  "runtime": "OpenCV DNN CPU",
+  "input_size": 640,
+  "ultralytics_export_version": "8.3.203",
+  "onnx_opset": 12,
+  "profiles": {
+    "coco": {
+      "file": "yolov8s-coco.onnx",
+      "size": 44842278,
+      "sha256": "ae75b0723f52572be456bbf04f415c3662b25d960b8abc133bd036de7a076c4d",
+      "vehicle_classes": {
+        "2": "car",
+        "3": "motorcycle",
+        "5": "bus",
+        "7": "truck"
+      },
+      "class_count": 80,
+      "source": {
+        "source_url": "https://github.com/ultralytics/assets/releases/download/v8.3.0/yolov8s.pt",
+        "bytes": 22588772,
+        "sha256": "1f47a78bf100391c2a140b7ac73a1caae18c32779be7d310658112f7ac9aa78a",
+        "model": "YOLOv8s COCO detection",
+        "release": "v8.3.0"
+      }
+    },
+    "aerial": {
+      "file": "yolov8s-aerial.onnx",
+      "size": 44734231,
+      "sha256": "3907e0368e404630ee5c7c6d0d0d942d224d3095c84d6b1ca6899580e6415019",
+      "vehicle_classes": {
+        "3": "car",
+        "4": "van",
+        "5": "truck",
+        "8": "bus",
+        "9": "motor"
+      },
+      "class_count": 11,
+      "source": {
+        "repository": "dronefreak/visdrone-yolov8s",
+        "revision": "4475b4d86d5f4b120806d1b953be15cedaac9285",
+        "url": "https://huggingface.co/dronefreak/visdrone-yolov8s/resolve/4475b4d86d5f4b120806d1b953be15cedaac9285/best.pt",
+        "bytes": 22546666,
+        "sha256": "9b9911be383dabfd3376c5b882dc520d84faaa6282271dce75830555268b35bc"
+      }
+    }
+  }
+}

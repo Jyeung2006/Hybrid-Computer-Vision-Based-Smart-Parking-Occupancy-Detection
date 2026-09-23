@@ -1,0 +1,1704 @@
+{
+  "basis": "assistant_visual_review; demonstration_not_independent_accuracy",
+  "analysis_directory": "runs\\areas\\20260920T171708_941751Z",
+  "sources": {
+    "chad": {
+      "config": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\config.json",
+      "bay_count": 8,
+      "bays": [
+        {
+          "slot_id": "B01",
+          "polygon": [
+            [
+              302,
+              59
+            ],
+            [
+              422,
+              59
+            ],
+            [
+              367,
+              147
+            ],
+            [
+              222,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000000.png",
+              "crop": "chad-B01-empty-0.png",
+              "full_frame_pixel_hash": "fcffc409a4c660609690a022fe216415c9a201abd6f5cfd4699c183f93a7a8ad"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.04,
+            "vacant_examples": 10,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0621ac60460d087b7a147094ad049d82432d1c150bdadf7a4b50f9077e3b76fe",
+              "06cd944570ac1c7cab12a1d7f070d47a8edcb50d727a47dd0db29fe7879382e3",
+              "0f9b4fd3e0ae30a5473cf12e76f42a5a24c3c8c57bbb86e5108a05845126c0fe",
+              "0fcbb446d40db119380b003552021a2bab230008e3a73ed8b5505d0b7331a781",
+              "22ced8d0ac8510a71aa4a4f585cd217f1e31da7c66184d2fd842d3935c5594ff",
+              "235734b2c7bccaa1e682edda822e93d07ffe5ed0580987ab5752245a27d77ed7",
+              "2ed357d3d913989fbf66b890ec45e9ba6b4a3a34f6acfbfea7b179c317769dcc",
+              "37d0ce1c99292d190bf3c9ec7d3d71a41eef196b75f4a6fa91b5310b994023c0",
+              "47f93ce4db70f4075e478f123026b28e828de98b33a710892f4a4f57395b0f05",
+              "4cfa816f9644933ddea362f19eb381e2fa7ac9a2867b06bb782cdfb7e7f7515a",
+              "55b5749eecdd9550cd5236497bd3042df29b346256b7e7aafbf22672b5573ace",
+              "5f9ad9bda135e49c020cff9112b98714b55a0cfe60ed905d999aec75976ca645",
+              "6346e199bdafc52688c340350bbf400e94d038a56a1ea8a035a1a9bff8b205bc",
+              "6fd93183e6eb068d4216e15f2910f05da532b9a6e8e51b71d3976d1797a6c03e",
+              "7a4189a08b2eb0704a429f441b9c962d31c867b39880f081833a0670bd8d75d1",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "878a8cf1416fd7534c6ec12bb1fe766518b0960ba2a4ef2a371c9cca5c5d035c",
+              "8bbd9559c8e6a9709497ecfc10310eb536a5f15271360f2d72f0e7884e40347f",
+              "8f763f2c23d13e8f7ce92f6a3303c7dfd21cd427c1eea411021b3ecf78b3e5b3",
+              "9876ece7f7319b0ba39dc9873b5122e21d48df8b748771e2285f65a07a33cc0b",
+              "994544ac688a2712f4a4a3ce0299c2a4a45ba1cc569314e6227eb67c82d4e707",
+              "9d2adec8a78bfc4230fd017f9dfad103324b7d745ed8a4b2ae9442e23dbd1e23",
+              "9f92689d7cbf49a8853f68a405666132e417a8b173373fa09b937caf63e41c85",
+              "a0d4eca11f583e66c39e6a30d469dfdfaf17574dd0521e83b42e6e5b1a35ac2b",
+              "a399f2d214e977c424967a660726e752d0d6827c3b554c909d9775d9bb8a6f6f",
+              "a7f8f3a90fdcdfdb105a30243d4193c42cf0f2dba009a843f0988130b6524950",
+              "ac63d3c94d66444792e30d9c82a1ae41bb2876a9e9ae617c4297793ed28e8353",
+              "b02026d9252b0d0aa1a1e6306a69a93d539f03012d03295e1ddb36b49df0dfea",
+              "b4f08a78324a61e99f6fe34544507aaf169128d0c703f7d4bcc1d39537cea7a4",
+              "bd3fb4ce8cfb7ee8a37952cd6b850f8ad35f0ea84b2469fd8448d35db06bbc47",
+              "c67bd202be67125050d20e45aa243fc5852f9bf793e4c1d5184e4e2f74f28685",
+              "c79a7230721725cafcad9d5bc81e30710ef1df822f47032968ddbfbe47d5553f",
+              "ce9b7f7ae842518ee737dad4779baefcebffcee1e4db0f5a5e0c1ae7d09d1983",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "f9c849e1d62877ce0992278bedf205160626dacfc53c216781ca3f50dbb9499f"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "fcffc409a4c660609690a022fe216415c9a201abd6f5cfd4699c183f93a7a8ad",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "3749d2f4873f4fd844f147bb0e21f199684d18b24ec7bb601727d4eea2e4d2d2"
+          }
+        },
+        {
+          "slot_id": "B02",
+          "polygon": [
+            [
+              441,
+              59
+            ],
+            [
+              557,
+              59
+            ],
+            [
+              535,
+              147
+            ],
+            [
+              384,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-1-000000.png",
+              "crop": "chad-B02-empty-0.png",
+              "full_frame_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.034342415896124336,
+            "vacant_examples": 21,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0621ac60460d087b7a147094ad049d82432d1c150bdadf7a4b50f9077e3b76fe",
+              "06cd944570ac1c7cab12a1d7f070d47a8edcb50d727a47dd0db29fe7879382e3",
+              "0f9b4fd3e0ae30a5473cf12e76f42a5a24c3c8c57bbb86e5108a05845126c0fe",
+              "0fcbb446d40db119380b003552021a2bab230008e3a73ed8b5505d0b7331a781",
+              "22ced8d0ac8510a71aa4a4f585cd217f1e31da7c66184d2fd842d3935c5594ff",
+              "235734b2c7bccaa1e682edda822e93d07ffe5ed0580987ab5752245a27d77ed7",
+              "2ed357d3d913989fbf66b890ec45e9ba6b4a3a34f6acfbfea7b179c317769dcc",
+              "37d0ce1c99292d190bf3c9ec7d3d71a41eef196b75f4a6fa91b5310b994023c0",
+              "47f93ce4db70f4075e478f123026b28e828de98b33a710892f4a4f57395b0f05",
+              "4cfa816f9644933ddea362f19eb381e2fa7ac9a2867b06bb782cdfb7e7f7515a",
+              "55b5749eecdd9550cd5236497bd3042df29b346256b7e7aafbf22672b5573ace",
+              "5f9ad9bda135e49c020cff9112b98714b55a0cfe60ed905d999aec75976ca645",
+              "6346e199bdafc52688c340350bbf400e94d038a56a1ea8a035a1a9bff8b205bc",
+              "6fd93183e6eb068d4216e15f2910f05da532b9a6e8e51b71d3976d1797a6c03e",
+              "7a4189a08b2eb0704a429f441b9c962d31c867b39880f081833a0670bd8d75d1",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "8bbd9559c8e6a9709497ecfc10310eb536a5f15271360f2d72f0e7884e40347f",
+              "8f763f2c23d13e8f7ce92f6a3303c7dfd21cd427c1eea411021b3ecf78b3e5b3",
+              "9876ece7f7319b0ba39dc9873b5122e21d48df8b748771e2285f65a07a33cc0b",
+              "9f92689d7cbf49a8853f68a405666132e417a8b173373fa09b937caf63e41c85",
+              "a0d4eca11f583e66c39e6a30d469dfdfaf17574dd0521e83b42e6e5b1a35ac2b",
+              "a399f2d214e977c424967a660726e752d0d6827c3b554c909d9775d9bb8a6f6f",
+              "a80277e3e177e2201215a1d9931c6677d883d301aea719288033a4334c14271e",
+              "ac63d3c94d66444792e30d9c82a1ae41bb2876a9e9ae617c4297793ed28e8353",
+              "b02026d9252b0d0aa1a1e6306a69a93d539f03012d03295e1ddb36b49df0dfea",
+              "b4f08a78324a61e99f6fe34544507aaf169128d0c703f7d4bcc1d39537cea7a4",
+              "bd3fb4ce8cfb7ee8a37952cd6b850f8ad35f0ea84b2469fd8448d35db06bbc47",
+              "c67bd202be67125050d20e45aa243fc5852f9bf793e4c1d5184e4e2f74f28685",
+              "c79a7230721725cafcad9d5bc81e30710ef1df822f47032968ddbfbe47d5553f",
+              "ce9b7f7ae842518ee737dad4779baefcebffcee1e4db0f5a5e0c1ae7d09d1983",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "f9c849e1d62877ce0992278bedf205160626dacfc53c216781ca3f50dbb9499f"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "9c6d74869945229f9134f2dedd2a13d481390f8df6c622559bfd70e7ddc14e58"
+          }
+        },
+        {
+          "slot_id": "B03",
+          "polygon": [
+            [
+              574,
+              59
+            ],
+            [
+              688,
+              59
+            ],
+            [
+              705,
+              147
+            ],
+            [
+              551,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-2-000000.png",
+              "crop": "chad-B03-empty-0.png",
+              "full_frame_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.026624317642162984,
+            "vacant_examples": 26,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0621ac60460d087b7a147094ad049d82432d1c150bdadf7a4b50f9077e3b76fe",
+              "06cd944570ac1c7cab12a1d7f070d47a8edcb50d727a47dd0db29fe7879382e3",
+              "0f9b4fd3e0ae30a5473cf12e76f42a5a24c3c8c57bbb86e5108a05845126c0fe",
+              "0fcbb446d40db119380b003552021a2bab230008e3a73ed8b5505d0b7331a781",
+              "22ced8d0ac8510a71aa4a4f585cd217f1e31da7c66184d2fd842d3935c5594ff",
+              "235734b2c7bccaa1e682edda822e93d07ffe5ed0580987ab5752245a27d77ed7",
+              "28233752ed8fe3269efc19e0cc6f519e2bee7be93d7d7fc85258d3e4d227c95f",
+              "37d0ce1c99292d190bf3c9ec7d3d71a41eef196b75f4a6fa91b5310b994023c0",
+              "3d38790b45f5e7390425b14c457837e67fb5066d0dee1194564f3c16d91c16eb",
+              "47f93ce4db70f4075e478f123026b28e828de98b33a710892f4a4f57395b0f05",
+              "4cfa816f9644933ddea362f19eb381e2fa7ac9a2867b06bb782cdfb7e7f7515a",
+              "55b5749eecdd9550cd5236497bd3042df29b346256b7e7aafbf22672b5573ace",
+              "5f9ad9bda135e49c020cff9112b98714b55a0cfe60ed905d999aec75976ca645",
+              "6346e199bdafc52688c340350bbf400e94d038a56a1ea8a035a1a9bff8b205bc",
+              "6fd93183e6eb068d4216e15f2910f05da532b9a6e8e51b71d3976d1797a6c03e",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "8bbd9559c8e6a9709497ecfc10310eb536a5f15271360f2d72f0e7884e40347f",
+              "8d6b014805f853427361539f0b960b69f3c3ae88edd847af8c6fd837606e4668",
+              "8f763f2c23d13e8f7ce92f6a3303c7dfd21cd427c1eea411021b3ecf78b3e5b3",
+              "9876ece7f7319b0ba39dc9873b5122e21d48df8b748771e2285f65a07a33cc0b",
+              "9f92689d7cbf49a8853f68a405666132e417a8b173373fa09b937caf63e41c85",
+              "a0d4eca11f583e66c39e6a30d469dfdfaf17574dd0521e83b42e6e5b1a35ac2b",
+              "a399f2d214e977c424967a660726e752d0d6827c3b554c909d9775d9bb8a6f6f",
+              "a80277e3e177e2201215a1d9931c6677d883d301aea719288033a4334c14271e",
+              "ac63d3c94d66444792e30d9c82a1ae41bb2876a9e9ae617c4297793ed28e8353",
+              "b02026d9252b0d0aa1a1e6306a69a93d539f03012d03295e1ddb36b49df0dfea",
+              "b4f08a78324a61e99f6fe34544507aaf169128d0c703f7d4bcc1d39537cea7a4",
+              "c67bd202be67125050d20e45aa243fc5852f9bf793e4c1d5184e4e2f74f28685",
+              "c79a7230721725cafcad9d5bc81e30710ef1df822f47032968ddbfbe47d5553f",
+              "ce9b7f7ae842518ee737dad4779baefcebffcee1e4db0f5a5e0c1ae7d09d1983",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "f9c849e1d62877ce0992278bedf205160626dacfc53c216781ca3f50dbb9499f"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "36ef0ab83fa82faf8766cc34c60119a948b36afb46b470e7563370c379754e2a"
+          }
+        },
+        {
+          "slot_id": "B04",
+          "polygon": [
+            [
+              157,
+              58
+            ],
+            [
+              280,
+              58
+            ],
+            [
+              196,
+              147
+            ],
+            [
+              40,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-1-000000.png",
+              "crop": "chad-B04-empty-0.png",
+              "full_frame_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-2-000000.png",
+              "crop": "chad-B04-empty-1.png",
+              "full_frame_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000300.png",
+              "crop": "chad-B04-empty-2.png",
+              "full_frame_pixel_hash": "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-4-000000.png",
+              "crop": "chad-B04-empty-3.png",
+              "full_frame_pixel_hash": "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012194044692685514,
+            "vacant_examples": 20,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "02de2f0b4f8733f0033f434d0904da32116b5137fdef3a365392d55e52ab1472",
+              "0563837db95c360711dbe46ecee6f14a502a35751e960975d4d04e8e88b95140",
+              "121dcdccb9864807a4e247fcb5b7a31b4f91baeec8e3cd17cdb7c13283c3d2e5",
+              "1791f7db298d14b2b6e4dafd6a81a6ceb81b8bed5128fa0233407c58d00d6748",
+              "2fca11fc95a6ac3a38be7529c061f68eb58eb97b1c6dbe409871d5bdb8ad39f2",
+              "36573cf198232797044e0d35e036cacd3b79e4f327904c1940158f3ad1b5ecf8",
+              "430f39b5da4e2232f4ca6e385479466a2a17165afa5799117994b18dea48cbb3",
+              "482604374d1bf725c128312e382bec995acb6f170962e833b2268b3c5f205751",
+              "49e96c87c5ae0112bb33903aa5b4e172aae566d5b65f524adc7450a5bcf56ca8",
+              "63c40e0be072b722de6ef99d870148cf906f48d1f5214e46cac7c837d189547c",
+              "8075b1ae60b7f5775194c253588a44d67b1bc0961b7fe1c2b09d717adbc947c7",
+              "99ae11343c0005f3eb2d33859a1d1e8e33f339cbf07ae37146c3f3f045ca9256",
+              "9af224ee11b96513c381a228b97e8722192f9e03de0e8faffb68f9bcd13c89ff",
+              "9fa5fc8cad64ea0358347e2c93211cf55890bea1e1cf43cfbfd236495b3fadf4",
+              "a0aebaeb887a0e7fec5b641e7b02ab54a712038228aadc5a66e618a0a608d8b0",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "d7f382a5899ed1abe835db6b249f8107b4c1a434cd3454e082536a69b1080d5d",
+              "dfd2afd3344fbd49225c0491dcee7b02c42ae75b8cc4e89c1ce9a7313f29e817",
+              "f468fa9ec3f094353c50ec5e584f799077862e320c06f33c0360cce8648662b0",
+              "faeafea5440a7d6294350e0a7fee3c4a66f3f510bf0aaee0f731aa1dd1094b57"
+            ],
+            "additional_reference_hashes": [
+              "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032"
+            ],
+            "reference_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "65b3c19d00cb5d08735d3ad67841e458da6f011aa54b0a3b0bb9be2e5de27614"
+          }
+        },
+        {
+          "slot_id": "B05",
+          "polygon": [
+            [
+              699,
+              58
+            ],
+            [
+              817,
+              58
+            ],
+            [
+              874,
+              147
+            ],
+            [
+              723,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-1-000000.png",
+              "crop": "chad-B05-empty-0.png",
+              "full_frame_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-2-000000.png",
+              "crop": "chad-B05-empty-1.png",
+              "full_frame_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000300.png",
+              "crop": "chad-B05-empty-2.png",
+              "full_frame_pixel_hash": "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-4-000000.png",
+              "crop": "chad-B05-empty-3.png",
+              "full_frame_pixel_hash": "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000539.png",
+              "crop": "chad-B05-empty-4.png",
+              "full_frame_pixel_hash": "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000450.png",
+              "crop": "chad-B05-empty-5.png",
+              "full_frame_pixel_hash": "ceed7f4c1486d5aa535178fdc91b7f32eb9b4205e7de3976736ac9902e6247fc"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012912090297373561,
+            "vacant_examples": 20,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "02de2f0b4f8733f0033f434d0904da32116b5137fdef3a365392d55e52ab1472",
+              "0563837db95c360711dbe46ecee6f14a502a35751e960975d4d04e8e88b95140",
+              "121dcdccb9864807a4e247fcb5b7a31b4f91baeec8e3cd17cdb7c13283c3d2e5",
+              "1791f7db298d14b2b6e4dafd6a81a6ceb81b8bed5128fa0233407c58d00d6748",
+              "2fca11fc95a6ac3a38be7529c061f68eb58eb97b1c6dbe409871d5bdb8ad39f2",
+              "36573cf198232797044e0d35e036cacd3b79e4f327904c1940158f3ad1b5ecf8",
+              "430f39b5da4e2232f4ca6e385479466a2a17165afa5799117994b18dea48cbb3",
+              "482604374d1bf725c128312e382bec995acb6f170962e833b2268b3c5f205751",
+              "49e96c87c5ae0112bb33903aa5b4e172aae566d5b65f524adc7450a5bcf56ca8",
+              "63c40e0be072b722de6ef99d870148cf906f48d1f5214e46cac7c837d189547c",
+              "8075b1ae60b7f5775194c253588a44d67b1bc0961b7fe1c2b09d717adbc947c7",
+              "99ae11343c0005f3eb2d33859a1d1e8e33f339cbf07ae37146c3f3f045ca9256",
+              "9af224ee11b96513c381a228b97e8722192f9e03de0e8faffb68f9bcd13c89ff",
+              "9fa5fc8cad64ea0358347e2c93211cf55890bea1e1cf43cfbfd236495b3fadf4",
+              "a0aebaeb887a0e7fec5b641e7b02ab54a712038228aadc5a66e618a0a608d8b0",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "d7f382a5899ed1abe835db6b249f8107b4c1a434cd3454e082536a69b1080d5d",
+              "dfd2afd3344fbd49225c0491dcee7b02c42ae75b8cc4e89c1ce9a7313f29e817",
+              "f468fa9ec3f094353c50ec5e584f799077862e320c06f33c0360cce8648662b0",
+              "faeafea5440a7d6294350e0a7fee3c4a66f3f510bf0aaee0f731aa1dd1094b57"
+            ],
+            "additional_reference_hashes": [
+              "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032",
+              "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a",
+              "ceed7f4c1486d5aa535178fdc91b7f32eb9b4205e7de3976736ac9902e6247fc"
+            ],
+            "reference_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "eea7680c9c210e3cae6edde48f7430aec2ffa1e903ea65f4e94c4660f6af18af"
+          }
+        },
+        {
+          "slot_id": "B06",
+          "polygon": [
+            [
+              834,
+              58
+            ],
+            [
+              949,
+              58
+            ],
+            [
+              1047,
+              147
+            ],
+            [
+              892,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-1-000000.png",
+              "crop": "chad-B06-empty-0.png",
+              "full_frame_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-2-000000.png",
+              "crop": "chad-B06-empty-1.png",
+              "full_frame_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000300.png",
+              "crop": "chad-B06-empty-2.png",
+              "full_frame_pixel_hash": "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-4-000000.png",
+              "crop": "chad-B06-empty-3.png",
+              "full_frame_pixel_hash": "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000539.png",
+              "crop": "chad-B06-empty-4.png",
+              "full_frame_pixel_hash": "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000450.png",
+              "crop": "chad-B06-empty-5.png",
+              "full_frame_pixel_hash": "ceed7f4c1486d5aa535178fdc91b7f32eb9b4205e7de3976736ac9902e6247fc"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012,
+            "vacant_examples": 20,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "02de2f0b4f8733f0033f434d0904da32116b5137fdef3a365392d55e52ab1472",
+              "0563837db95c360711dbe46ecee6f14a502a35751e960975d4d04e8e88b95140",
+              "121dcdccb9864807a4e247fcb5b7a31b4f91baeec8e3cd17cdb7c13283c3d2e5",
+              "1791f7db298d14b2b6e4dafd6a81a6ceb81b8bed5128fa0233407c58d00d6748",
+              "2fca11fc95a6ac3a38be7529c061f68eb58eb97b1c6dbe409871d5bdb8ad39f2",
+              "36573cf198232797044e0d35e036cacd3b79e4f327904c1940158f3ad1b5ecf8",
+              "430f39b5da4e2232f4ca6e385479466a2a17165afa5799117994b18dea48cbb3",
+              "482604374d1bf725c128312e382bec995acb6f170962e833b2268b3c5f205751",
+              "49e96c87c5ae0112bb33903aa5b4e172aae566d5b65f524adc7450a5bcf56ca8",
+              "63c40e0be072b722de6ef99d870148cf906f48d1f5214e46cac7c837d189547c",
+              "8075b1ae60b7f5775194c253588a44d67b1bc0961b7fe1c2b09d717adbc947c7",
+              "99ae11343c0005f3eb2d33859a1d1e8e33f339cbf07ae37146c3f3f045ca9256",
+              "9af224ee11b96513c381a228b97e8722192f9e03de0e8faffb68f9bcd13c89ff",
+              "9fa5fc8cad64ea0358347e2c93211cf55890bea1e1cf43cfbfd236495b3fadf4",
+              "a0aebaeb887a0e7fec5b641e7b02ab54a712038228aadc5a66e618a0a608d8b0",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "d7f382a5899ed1abe835db6b249f8107b4c1a434cd3454e082536a69b1080d5d",
+              "dfd2afd3344fbd49225c0491dcee7b02c42ae75b8cc4e89c1ce9a7313f29e817",
+              "f468fa9ec3f094353c50ec5e584f799077862e320c06f33c0360cce8648662b0",
+              "faeafea5440a7d6294350e0a7fee3c4a66f3f510bf0aaee0f731aa1dd1094b57"
+            ],
+            "additional_reference_hashes": [
+              "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032",
+              "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a",
+              "ceed7f4c1486d5aa535178fdc91b7f32eb9b4205e7de3976736ac9902e6247fc"
+            ],
+            "reference_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "90212c8f2ec5bbc582b91df61a9323e1e5e2830032e2f25f29b819aaea64bad0"
+          }
+        },
+        {
+          "slot_id": "B07",
+          "polygon": [
+            [
+              965,
+              58
+            ],
+            [
+              1081,
+              58
+            ],
+            [
+              1220,
+              147
+            ],
+            [
+              1068,
+              147
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-1-000000.png",
+              "crop": "chad-B07-empty-0.png",
+              "full_frame_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-2-000000.png",
+              "crop": "chad-B07-empty-1.png",
+              "full_frame_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000300.png",
+              "crop": "chad-B07-empty-2.png",
+              "full_frame_pixel_hash": "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-4-000000.png",
+              "crop": "chad-B07-empty-3.png",
+              "full_frame_pixel_hash": "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000539.png",
+              "crop": "chad-B07-empty-4.png",
+              "full_frame_pixel_hash": "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000450.png",
+              "crop": "chad-B07-empty-5.png",
+              "full_frame_pixel_hash": "ceed7f4c1486d5aa535178fdc91b7f32eb9b4205e7de3976736ac9902e6247fc"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012,
+            "vacant_examples": 20,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "02de2f0b4f8733f0033f434d0904da32116b5137fdef3a365392d55e52ab1472",
+              "0563837db95c360711dbe46ecee6f14a502a35751e960975d4d04e8e88b95140",
+              "121dcdccb9864807a4e247fcb5b7a31b4f91baeec8e3cd17cdb7c13283c3d2e5",
+              "1791f7db298d14b2b6e4dafd6a81a6ceb81b8bed5128fa0233407c58d00d6748",
+              "2fca11fc95a6ac3a38be7529c061f68eb58eb97b1c6dbe409871d5bdb8ad39f2",
+              "36573cf198232797044e0d35e036cacd3b79e4f327904c1940158f3ad1b5ecf8",
+              "430f39b5da4e2232f4ca6e385479466a2a17165afa5799117994b18dea48cbb3",
+              "482604374d1bf725c128312e382bec995acb6f170962e833b2268b3c5f205751",
+              "49e96c87c5ae0112bb33903aa5b4e172aae566d5b65f524adc7450a5bcf56ca8",
+              "63c40e0be072b722de6ef99d870148cf906f48d1f5214e46cac7c837d189547c",
+              "8075b1ae60b7f5775194c253588a44d67b1bc0961b7fe1c2b09d717adbc947c7",
+              "99ae11343c0005f3eb2d33859a1d1e8e33f339cbf07ae37146c3f3f045ca9256",
+              "9af224ee11b96513c381a228b97e8722192f9e03de0e8faffb68f9bcd13c89ff",
+              "9fa5fc8cad64ea0358347e2c93211cf55890bea1e1cf43cfbfd236495b3fadf4",
+              "a0aebaeb887a0e7fec5b641e7b02ab54a712038228aadc5a66e618a0a608d8b0",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "d7f382a5899ed1abe835db6b249f8107b4c1a434cd3454e082536a69b1080d5d",
+              "dfd2afd3344fbd49225c0491dcee7b02c42ae75b8cc4e89c1ce9a7313f29e817",
+              "f468fa9ec3f094353c50ec5e584f799077862e320c06f33c0360cce8648662b0",
+              "faeafea5440a7d6294350e0a7fee3c4a66f3f510bf0aaee0f731aa1dd1094b57"
+            ],
+            "additional_reference_hashes": [
+              "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032",
+              "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a",
+              "ceed7f4c1486d5aa535178fdc91b7f32eb9b4205e7de3976736ac9902e6247fc"
+            ],
+            "reference_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "0a089c81a4dec7c6736492b0dadf2f2c38511b7f0d1ef9c7b30de52c6dd998fe"
+          }
+        },
+        {
+          "slot_id": "B08",
+          "polygon": [
+            [
+              520,
+              416
+            ],
+            [
+              763,
+              416
+            ],
+            [
+              817,
+              708
+            ],
+            [
+              489,
+              708
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-1-000000.png",
+              "crop": "chad-B08-empty-0.png",
+              "full_frame_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-2-000000.png",
+              "crop": "chad-B08-empty-1.png",
+              "full_frame_pixel_hash": "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000300.png",
+              "crop": "chad-B08-empty-2.png",
+              "full_frame_pixel_hash": "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-4-000000.png",
+              "crop": "chad-B08-empty-3.png",
+              "full_frame_pixel_hash": "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-1\\preset-36a2f03813a8db2c\\frames\\chad-3-000539.png",
+              "crop": "chad-B08-empty-4.png",
+              "full_frame_pixel_hash": "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.014092360593336736,
+            "vacant_examples": 20,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "02de2f0b4f8733f0033f434d0904da32116b5137fdef3a365392d55e52ab1472",
+              "0563837db95c360711dbe46ecee6f14a502a35751e960975d4d04e8e88b95140",
+              "121dcdccb9864807a4e247fcb5b7a31b4f91baeec8e3cd17cdb7c13283c3d2e5",
+              "1791f7db298d14b2b6e4dafd6a81a6ceb81b8bed5128fa0233407c58d00d6748",
+              "2fca11fc95a6ac3a38be7529c061f68eb58eb97b1c6dbe409871d5bdb8ad39f2",
+              "36573cf198232797044e0d35e036cacd3b79e4f327904c1940158f3ad1b5ecf8",
+              "430f39b5da4e2232f4ca6e385479466a2a17165afa5799117994b18dea48cbb3",
+              "482604374d1bf725c128312e382bec995acb6f170962e833b2268b3c5f205751",
+              "49e96c87c5ae0112bb33903aa5b4e172aae566d5b65f524adc7450a5bcf56ca8",
+              "63c40e0be072b722de6ef99d870148cf906f48d1f5214e46cac7c837d189547c",
+              "8075b1ae60b7f5775194c253588a44d67b1bc0961b7fe1c2b09d717adbc947c7",
+              "99ae11343c0005f3eb2d33859a1d1e8e33f339cbf07ae37146c3f3f045ca9256",
+              "9af224ee11b96513c381a228b97e8722192f9e03de0e8faffb68f9bcd13c89ff",
+              "9fa5fc8cad64ea0358347e2c93211cf55890bea1e1cf43cfbfd236495b3fadf4",
+              "a0aebaeb887a0e7fec5b641e7b02ab54a712038228aadc5a66e618a0a608d8b0",
+              "cfef5b7939ce81f63aba20f71fe78f1c4ed83d8727244b9a06d6b375c1630f02",
+              "d7f382a5899ed1abe835db6b249f8107b4c1a434cd3454e082536a69b1080d5d",
+              "dfd2afd3344fbd49225c0491dcee7b02c42ae75b8cc4e89c1ce9a7313f29e817",
+              "f468fa9ec3f094353c50ec5e584f799077862e320c06f33c0360cce8648662b0",
+              "faeafea5440a7d6294350e0a7fee3c4a66f3f510bf0aaee0f731aa1dd1094b57"
+            ],
+            "additional_reference_hashes": [
+              "7f27334e77818c30cc6132569110171038cf1a5a657382c4c53a49a144d2cd74",
+              "7f7192a8d262fab26db31db6a563592e0254d9f681bdd91ddd4a1e3c8d038ac3",
+              "2eab2f7eaef40ab46752a1f88983a41ec4504e90d54afd007f68f6113626d032",
+              "6949838967d48486441a20a327097f14076f76e7d479a10833ddedf070b9d08a"
+            ],
+            "reference_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "setup_pixel_hash": "349f3fa50cccdd739e901968f45a69406f88e525ff4500210eb86975ecb7e6b0",
+            "polygon_signature": "58e327f53d63098e16e5ac28e53d4c9f553533d2558589ca70e2e1097930d94f"
+          }
+        }
+      ]
+    },
+    "chad-camera-2": {
+      "config": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-2\\preset-bc6bef6175cc794b\\config.json",
+      "bay_count": 3,
+      "bays": [
+        {
+          "slot_id": "F02",
+          "polygon": [
+            [
+              362,
+              308
+            ],
+            [
+              535,
+              328
+            ],
+            [
+              239,
+              478
+            ],
+            [
+              25,
+              439
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-2\\preset-bc6bef6175cc794b\\frames\\chad-camera-2-000000.png",
+              "crop": "chad-camera-2-F02-empty-0.png",
+              "full_frame_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "262a1a7bed2c3632f940cdb825e52c0d508b8b1157353fae6341b7339a780fd2",
+              "662fbd324730084ae8175b9e750d8df92004082a6b54dd12017d21b576d57363",
+              "6697b8b8c409b0bd7675f3ab7293d661837e597e47048875c7972a79d3a98191",
+              "797ff2486c3072768cac6f71536086cb1d48b6d6134916bce70eed084d6cc708",
+              "bfac405686d9f47dbf0b2d84eba58b77fd86a7e6e418a2eebc62e59953a394b1"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663",
+            "setup_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663",
+            "polygon_signature": "83638234bd66cc0fab493deaa280468487cffb6d26a0117e23164d82e8f29264"
+          }
+        },
+        {
+          "slot_id": "F03",
+          "polygon": [
+            [
+              557,
+              339
+            ],
+            [
+              749,
+              360
+            ],
+            [
+              572,
+              536
+            ],
+            [
+              264,
+              489
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-2\\preset-bc6bef6175cc794b\\frames\\chad-camera-2-000000.png",
+              "crop": "chad-camera-2-F03-empty-0.png",
+              "full_frame_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "262a1a7bed2c3632f940cdb825e52c0d508b8b1157353fae6341b7339a780fd2",
+              "662fbd324730084ae8175b9e750d8df92004082a6b54dd12017d21b576d57363",
+              "6697b8b8c409b0bd7675f3ab7293d661837e597e47048875c7972a79d3a98191",
+              "797ff2486c3072768cac6f71536086cb1d48b6d6134916bce70eed084d6cc708",
+              "bfac405686d9f47dbf0b2d84eba58b77fd86a7e6e418a2eebc62e59953a394b1"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663",
+            "setup_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663",
+            "polygon_signature": "eba8ab37335171e5d111ad5989ca2a192585206efbc7522a984f82d877092188"
+          }
+        },
+        {
+          "slot_id": "F04",
+          "polygon": [
+            [
+              780,
+              371
+            ],
+            [
+              1007,
+              405
+            ],
+            [
+              971,
+              512
+            ],
+            [
+              601,
+              538
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-2\\preset-bc6bef6175cc794b\\frames\\chad-camera-2-000000.png",
+              "crop": "chad-camera-2-F04-empty-0.png",
+              "full_frame_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.012,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "262a1a7bed2c3632f940cdb825e52c0d508b8b1157353fae6341b7339a780fd2",
+              "662fbd324730084ae8175b9e750d8df92004082a6b54dd12017d21b576d57363",
+              "6697b8b8c409b0bd7675f3ab7293d661837e597e47048875c7972a79d3a98191",
+              "797ff2486c3072768cac6f71536086cb1d48b6d6134916bce70eed084d6cc708",
+              "bfac405686d9f47dbf0b2d84eba58b77fd86a7e6e418a2eebc62e59953a394b1"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663",
+            "setup_pixel_hash": "ac662f3739e597ed467897d4ed97d19bb89f81227df5381f69131cf202786663",
+            "polygon_signature": "775ae22da69d14c17371a9ffe55d775b39a815fce4922130122f575a98b90041"
+          }
+        }
+      ]
+    },
+    "chad-camera-3": {
+      "config": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-3\\preset-aa08fe9ab7ff8f5f\\config.json",
+      "bay_count": 2,
+      "bays": [
+        {
+          "slot_id": "F02",
+          "polygon": [
+            [
+              741,
+              296
+            ],
+            [
+              1248,
+              386
+            ],
+            [
+              1140,
+              451
+            ],
+            [
+              586,
+              332
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-3\\preset-aa08fe9ab7ff8f5f\\frames\\chad-camera-3-000000.png",
+              "crop": "chad-camera-3-F02-empty-0.png",
+              "full_frame_pixel_hash": "f9407af14d85f5714eaadd8527477c823fce9a2bdd67a08d56e5e6b0fc0008a1"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.01871677031050313,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0b6a98bf0d09109e622a78c5e19874baf78a028faea47b02bba2f9bd8254905f",
+              "7346931c4f796b39d7cda08333ffc7a715bb8ae084b1a4593848661da8290b0e",
+              "95f14a77a21f7537c83293b55c077909ae0e11c24af19484babf36448a5cade7",
+              "a2858fd5a4a332e9776a511038fdcc07b7af8753092cef7f0cee70e0308af545",
+              "eb1179edd80e93244c034278a68ed6270eaeb6a323684975808cc05a32eb0cf6"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "f9407af14d85f5714eaadd8527477c823fce9a2bdd67a08d56e5e6b0fc0008a1",
+            "setup_pixel_hash": "f9407af14d85f5714eaadd8527477c823fce9a2bdd67a08d56e5e6b0fc0008a1",
+            "polygon_signature": "c196c58fd623a1e26150b14656ea10cc6f2af1c70f0af0490bb0cc7b5cdd2770"
+          }
+        },
+        {
+          "slot_id": "F03",
+          "polygon": [
+            [
+              579,
+              345
+            ],
+            [
+              1123,
+              473
+            ],
+            [
+              944,
+              601
+            ],
+            [
+              382,
+              414
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-3\\preset-aa08fe9ab7ff8f5f\\frames\\chad-camera-3-000000.png",
+              "crop": "chad-camera-3-F03-empty-0.png",
+              "full_frame_pixel_hash": "f9407af14d85f5714eaadd8527477c823fce9a2bdd67a08d56e5e6b0fc0008a1"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.020561154362006527,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0b6a98bf0d09109e622a78c5e19874baf78a028faea47b02bba2f9bd8254905f",
+              "7346931c4f796b39d7cda08333ffc7a715bb8ae084b1a4593848661da8290b0e",
+              "95f14a77a21f7537c83293b55c077909ae0e11c24af19484babf36448a5cade7",
+              "a2858fd5a4a332e9776a511038fdcc07b7af8753092cef7f0cee70e0308af545",
+              "eb1179edd80e93244c034278a68ed6270eaeb6a323684975808cc05a32eb0cf6"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "f9407af14d85f5714eaadd8527477c823fce9a2bdd67a08d56e5e6b0fc0008a1",
+            "setup_pixel_hash": "f9407af14d85f5714eaadd8527477c823fce9a2bdd67a08d56e5e6b0fc0008a1",
+            "polygon_signature": "35acf838694e24258e51ce169dedd23872d7f30d28193eedae5151b129c81f69"
+          }
+        }
+      ]
+    },
+    "chad-camera-4": {
+      "config": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-4\\preset-95ec698c4b383a3b\\config.json",
+      "bay_count": 2,
+      "bays": [
+        {
+          "slot_id": "N10",
+          "polygon": [
+            [
+              604,
+              304
+            ],
+            [
+              979,
+              300
+            ],
+            [
+              1067,
+              333
+            ],
+            [
+              607,
+              341
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-4\\preset-95ec698c4b383a3b\\frames\\chad-camera-4-000000.png",
+              "crop": "chad-camera-4-N10-empty-0.png",
+              "full_frame_pixel_hash": "58a85a6ad7cf07149c63d8d562e1eaaea68ef7467bb5bb90d92499872a4d7766"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.04,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "2ff3540b426c9ecf03c5b96e297ce973991f8c088fb0c28a8bab7b46c49c6122",
+              "302966f525fd98c0d240ecaa467ca01df68147f966189b34de689c563d2cc074",
+              "871572684df9ab438076fcaed5a8b5658263c06fabbcc52c960a5c4626e732c4",
+              "e8ed3dffa29fac8ac27bb91fc540c0edf23c7db5efab5b667b6e54b5ffe2c58f",
+              "e8fc3e036375ab47ba21efb6ae1e2828f6274c0aa3756e276f113616184f8850"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "58a85a6ad7cf07149c63d8d562e1eaaea68ef7467bb5bb90d92499872a4d7766",
+            "setup_pixel_hash": "58a85a6ad7cf07149c63d8d562e1eaaea68ef7467bb5bb90d92499872a4d7766",
+            "polygon_signature": "ce05bf7d9ccefbc080d9b6ef585de590e5eaef748cf07c02a3b17974707d4123"
+          }
+        },
+        {
+          "slot_id": "N11",
+          "polygon": [
+            [
+              613,
+              360
+            ],
+            [
+              1081,
+              355
+            ],
+            [
+              1195,
+              429
+            ],
+            [
+              617,
+              437
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\chad-mapped\\Camera-4\\preset-95ec698c4b383a3b\\frames\\chad-camera-4-000000.png",
+              "crop": "chad-camera-4-N11-empty-0.png",
+              "full_frame_pixel_hash": "58a85a6ad7cf07149c63d8d562e1eaaea68ef7467bb5bb90d92499872a4d7766"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.04,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "2ff3540b426c9ecf03c5b96e297ce973991f8c088fb0c28a8bab7b46c49c6122",
+              "302966f525fd98c0d240ecaa467ca01df68147f966189b34de689c563d2cc074",
+              "871572684df9ab438076fcaed5a8b5658263c06fabbcc52c960a5c4626e732c4",
+              "e8ed3dffa29fac8ac27bb91fc540c0edf23c7db5efab5b667b6e54b5ffe2c58f",
+              "e8fc3e036375ab47ba21efb6ae1e2828f6274c0aa3756e276f113616184f8850"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "58a85a6ad7cf07149c63d8d562e1eaaea68ef7467bb5bb90d92499872a4d7766",
+            "setup_pixel_hash": "58a85a6ad7cf07149c63d8d562e1eaaea68ef7467bb5bb90d92499872a4d7766",
+            "polygon_signature": "b5008b058fb2a29580fb7031625a4c99c312dfbd285993645cc533d1de225bee"
+          }
+        }
+      ]
+    },
+    "overhead": {
+      "config": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\config.json",
+      "bay_count": 15,
+      "bays": [
+        {
+          "slot_id": "WL07",
+          "polygon": [
+            [
+              46,
+              384
+            ],
+            [
+              149,
+              384
+            ],
+            [
+              149,
+              427
+            ],
+            [
+              46,
+              427
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-WL07-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.01849059029206088,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "3d4ac20de7c134146de5d6e1631d8d86896cf7996e9dfc90fa5ac49549159ced"
+          }
+        },
+        {
+          "slot_id": "W02",
+          "polygon": [
+            [
+              162,
+              429
+            ],
+            [
+              265,
+              429
+            ],
+            [
+              265,
+              472
+            ],
+            [
+              162,
+              472
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000648.png",
+              "crop": "overhead-W02-empty-0.png",
+              "full_frame_pixel_hash": "d4da9b7a9c4de8afa052d4ae16cc31932ca2b66419d4432a1ced31d89ec86d42"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.017974598930481284,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "517565c634b280bdb0a3f0e4422aa44f0c51335b9624dd575efaf903f095433d",
+              "523eba193fb28afd9c876ead2fd5442e474fef69d9e63be7e8f5a654ec2d4c10",
+              "66f20a03438c4d0bd8817a25c4731f9f4c5ee71484ff997400156f9d777eaca1",
+              "8731805a25e2571220f91edae2da1aec8bfff4bee1871101dddd8c608102cbde",
+              "8bceb79fb1168dec7bd517fdaee25b553e246f42ae86af7f6d6d1c6c55f35378",
+              "aef84a9e707fd0b682b749d31d817a5d8b6c4d0ac21afca40504adaefb774848",
+              "cb88d52706040ef0979879131b697ae470c0151fa3249e623771328c8bd1ef15",
+              "d00ac242f4e03fb975bfca0eef91f56f1be4d715c48dfc47cb37d93f0eee4039",
+              "d0a2e9a3614a470e78ed88511a0313690e893b4b483da581bcd50dbf4b4d89f1"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "d4da9b7a9c4de8afa052d4ae16cc31932ca2b66419d4432a1ced31d89ec86d42",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "23a88fb79b479244a3d88161e400ae65802ebceae1b08f8e43c16fbba5cbf8d4"
+          }
+        },
+        {
+          "slot_id": "W01",
+          "polygon": [
+            [
+              164,
+              576
+            ],
+            [
+              267,
+              576
+            ],
+            [
+              267,
+              619
+            ],
+            [
+              164,
+              619
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000288.png",
+              "crop": "overhead-W01-empty-0.png",
+              "full_frame_pixel_hash": "706c67a724c3a5d33e267b036339d6110f6d5bcd2c375300a65d5fbad828e489"
+            },
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000648.png",
+              "crop": "overhead-W01-empty-1.png",
+              "full_frame_pixel_hash": "d4da9b7a9c4de8afa052d4ae16cc31932ca2b66419d4432a1ced31d89ec86d42"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.018511672151378035,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0de9b600ae769002ef3d14a2dd583007bd698829f80251ca1e8e60217956ba20",
+              "41ea51324a407cd7a303cabf034c45a2c1486d0119dba757b43f9b6d001d8dee",
+              "517565c634b280bdb0a3f0e4422aa44f0c51335b9624dd575efaf903f095433d",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "523eba193fb28afd9c876ead2fd5442e474fef69d9e63be7e8f5a654ec2d4c10",
+              "66f20a03438c4d0bd8817a25c4731f9f4c5ee71484ff997400156f9d777eaca1",
+              "d00ac242f4e03fb975bfca0eef91f56f1be4d715c48dfc47cb37d93f0eee4039",
+              "d0a2e9a3614a470e78ed88511a0313690e893b4b483da581bcd50dbf4b4d89f1",
+              "e9c5553d5b4073400fbbb16be7793a42b17f7379df43bfa43bb0bc209845923e",
+              "f68043a72d9944e960970f2d929075f725b4cb071105a546cad69d282a9b4e85"
+            ],
+            "additional_reference_hashes": [
+              "d4da9b7a9c4de8afa052d4ae16cc31932ca2b66419d4432a1ced31d89ec86d42"
+            ],
+            "reference_pixel_hash": "706c67a724c3a5d33e267b036339d6110f6d5bcd2c375300a65d5fbad828e489",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "ab7272b4b8f82c5c0628a2c17a7cd16c996e122300f25f70695a12b068064b54"
+          }
+        },
+        {
+          "slot_id": "ML03",
+          "polygon": [
+            [
+              404,
+              189
+            ],
+            [
+              507,
+              189
+            ],
+            [
+              507,
+              232
+            ],
+            [
+              404,
+              232
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-ML03-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.020003342245989306,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "d31c5f0cb0083b94046cd05e83474493f41064f8435373c9bc03ac7225e57def"
+          }
+        },
+        {
+          "slot_id": "ML11",
+          "polygon": [
+            [
+              402,
+              569
+            ],
+            [
+              505,
+              569
+            ],
+            [
+              505,
+              612
+            ],
+            [
+              402,
+              612
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-ML11-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.022082733443027563,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "53bc916354a5fa7aeba8179db6d7bc4cf93da76cff3dcfa2a0e8f4a4c7b2a6e7"
+          }
+        },
+        {
+          "slot_id": "MR05",
+          "polygon": [
+            [
+              511,
+              284
+            ],
+            [
+              614,
+              284
+            ],
+            [
+              614,
+              327
+            ],
+            [
+              511,
+              327
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-MR05-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.0157851707116413,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "5b5acbf22a2e5deed2ed1fbf336fb0d8bbdc9da2987089094976ccb24024fb7c"
+          }
+        },
+        {
+          "slot_id": "MR08",
+          "polygon": [
+            [
+              511,
+              426
+            ],
+            [
+              614,
+              426
+            ],
+            [
+              614,
+              469
+            ],
+            [
+              511,
+              469
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-MR08-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.015625771287535995,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "bc52580cff533c8b2121765bc6baeb41b7184f1e7e9b548b812fd8a57203fdff"
+          }
+        },
+        {
+          "slot_id": "MR10",
+          "polygon": [
+            [
+              513,
+              524
+            ],
+            [
+              616,
+              524
+            ],
+            [
+              616,
+              567
+            ],
+            [
+              513,
+              567
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-MR10-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.017264500205676676,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "4b8972914bc81ce85279f407ae05e542341bac3d2933d0cfd5f569058f6ac809"
+          }
+        },
+        {
+          "slot_id": "E01",
+          "polygon": [
+            [
+              751,
+              327
+            ],
+            [
+              854,
+              327
+            ],
+            [
+              854,
+              370
+            ],
+            [
+              751,
+              370
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000288.png",
+              "crop": "overhead-E01-empty-0.png",
+              "full_frame_pixel_hash": "706c67a724c3a5d33e267b036339d6110f6d5bcd2c375300a65d5fbad828e489"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.01738456396544632,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "0de9b600ae769002ef3d14a2dd583007bd698829f80251ca1e8e60217956ba20",
+              "16018ff5aa60c6e9b57bf9ae03251796b4d405662fa987219ad7daf898bceeaf",
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "41ea51324a407cd7a303cabf034c45a2c1486d0119dba757b43f9b6d001d8dee",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "5d99385a7b4b17b03daa742f9d16f885338895a0a725ff16be2917d83badd6b2",
+              "9e695b7a9f7bd306573d5d2d97ebb854debeea0b9b384f49d93dd37f64e4d0cb",
+              "cc23031f3e03ef4a8fdded10b7ca23ac5c775a78398878a3e8dfc1945365d663",
+              "e9c5553d5b4073400fbbb16be7793a42b17f7379df43bfa43bb0bc209845923e",
+              "f68043a72d9944e960970f2d929075f725b4cb071105a546cad69d282a9b4e85"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "706c67a724c3a5d33e267b036339d6110f6d5bcd2c375300a65d5fbad828e489",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "9e0ee2f6b61deab397ef6fa16e0bdfd1644fe9cbb334ae74153148b128df902f"
+          }
+        },
+        {
+          "slot_id": "EL07",
+          "polygon": [
+            [
+              752,
+              377
+            ],
+            [
+              855,
+              377
+            ],
+            [
+              855,
+              420
+            ],
+            [
+              752,
+              420
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-EL07-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.03135335252982312,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "03c512465f7695f5104b4bdc9df94902410f66c9d3ddcf5b0762b3f76af03dba"
+          }
+        },
+        {
+          "slot_id": "EL09",
+          "polygon": [
+            [
+              753,
+              472
+            ],
+            [
+              856,
+              472
+            ],
+            [
+              856,
+              515
+            ],
+            [
+              753,
+              515
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000648.png",
+              "crop": "overhead-EL09-empty-0.png",
+              "full_frame_pixel_hash": "d4da9b7a9c4de8afa052d4ae16cc31932ca2b66419d4432a1ced31d89ec86d42"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.01446266968325792,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "8731805a25e2571220f91edae2da1aec8bfff4bee1871101dddd8c608102cbde",
+              "8bceb79fb1168dec7bd517fdaee25b553e246f42ae86af7f6d6d1c6c55f35378",
+              "aef84a9e707fd0b682b749d31d817a5d8b6c4d0ac21afca40504adaefb774848",
+              "cb88d52706040ef0979879131b697ae470c0151fa3249e623771328c8bd1ef15"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "d4da9b7a9c4de8afa052d4ae16cc31932ca2b66419d4432a1ced31d89ec86d42",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "54913687b4c75f49b7d977dc72cfac970b612d8de81661ea9b9548eb6afddb5f"
+          }
+        },
+        {
+          "slot_id": "EL11",
+          "polygon": [
+            [
+              760,
+              573
+            ],
+            [
+              863,
+              573
+            ],
+            [
+              863,
+              616
+            ],
+            [
+              760,
+              616
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-EL11-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.030382558617852735,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "7802a11fd24a73fa897bb9a5ecaa309182c0fb9d49de4628c75c6e68f22fd962"
+          }
+        },
+        {
+          "slot_id": "ER02",
+          "polygon": [
+            [
+              892,
+              141
+            ],
+            [
+              995,
+              141
+            ],
+            [
+              995,
+              184
+            ],
+            [
+              892,
+              184
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-ER02-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.030233700123406006,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "e8dfcc8db9792f6b754405675cc7b5ac4d8016b100e41c8025556ce430c3f58c"
+          }
+        },
+        {
+          "slot_id": "ER09",
+          "polygon": [
+            [
+              903,
+              474
+            ],
+            [
+              1006,
+              474
+            ],
+            [
+              1006,
+              517
+            ],
+            [
+              903,
+              517
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-ER09-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.022521081859317154,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "0bdd54200bb91c6df7ab9bba0bd8893e2c6e53ca2d839d8c9085f72ec17097ba"
+          }
+        },
+        {
+          "slot_id": "ER10",
+          "polygon": [
+            [
+              899,
+              522
+            ],
+            [
+              1002,
+              522
+            ],
+            [
+              1002,
+              565
+            ],
+            [
+              899,
+              565
+            ]
+          ],
+          "references": [
+            {
+              "source_frame": "C:\\Users\\Ji Yeung\\Downloads\\Capstone Project Implementation\\data\\overhead-all\\preset-6cf3e5ced65301e7\\frames\\overhead-1-000000.png",
+              "crop": "overhead-ER10-empty-0.png",
+              "full_frame_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2"
+            }
+          ],
+          "empty_match_metadata": {
+            "max_difference": 0.024243624023035787,
+            "vacant_examples": 5,
+            "basis": "reviewed_vacant_only_heuristic_not_two_state_calibration",
+            "preprocessing": "gray-gaussian-5x5-sigma0-v1",
+            "sample_pixel_hashes": [
+              "1cf795112d71b01baba4833a8126b5c519c349eb5b34fe53d32f224b49ea5ad9",
+              "2cbbe40ed3bbeecdb1d39c9555f2b8097ddf92ce0348506d39500bf5e9ea5cc2",
+              "520bc70fe843d37b5e0fb4ebd94365c7de6603473e194f0f0f79049b23898672",
+              "b6ead92d3cc503a784bd49dc4b7562f6987dd3c5d1c2b1bc56c8f74ed3044370",
+              "edd408ebf93eedba70a6f69e5518c8fc4b595cdb4fcc2f066b3c329169dd0704"
+            ],
+            "additional_reference_hashes": [],
+            "reference_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "setup_pixel_hash": "e9c7d4773c649c530e0300da26b30d4f868e9688cd75bf28fe3f198658a819f2",
+            "polygon_signature": "e471f8e63c5b5bfb2d582bf934bf14d6dbb067a97e656a5f5880c16d07cb4d48"
+          }
+        }
+      ]
+    }
+  }
+}

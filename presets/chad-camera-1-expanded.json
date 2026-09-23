@@ -1,0 +1,842 @@
+{
+  "recipe_version": 6,
+  "source": "CHAD / camera 1 / same outdoor car park",
+  "source_resolution": [
+    1920,
+    1080
+  ],
+  "analysis_resolution": [
+    1280,
+    720
+  ],
+  "setup": [
+    "chad-1",
+    0
+  ],
+  "reviewed_on": "2026-09-21",
+  "review_note": "Nine visible bays. Original three retain two-state labels. Added empty bays have reviewed vacant-only evidence for the supplemental OpenCV vehicle branch; these are NOT full reference/MOG2 calibration. P009 has no verified empty reference. All labels are demonstration data. Recipe v4 adds manually reviewed empty-only appearance references for the other recording periods (Camera 1 extra empty bays only); a reference bank is not automatic background replacement. Video 4 is now demonstration data for these supplemental bays and is not held-out evaluation. Recipe v5 adds visually reviewed late empty images at chad-3 18s for B05-B08. B04 15/18s and B08 chad-4 27s contain people and are not used as added references. No occupancy labels are inferred from detector results. Recipe v6 also includes the already visually reviewed clear 15s frame for B05-B07 to represent their intermediate lighting appearance; thresholds and sample-confirmation requirement unchanged.",
+  "slots": [
+    {
+      "id": "B01",
+      "description": "Far row, gray SUV bay in videos 1 and 2",
+      "polygon": [
+        [
+          302,
+          59
+        ],
+        [
+          422,
+          59
+        ],
+        [
+          367,
+          147
+        ],
+        [
+          222,
+          147
+        ]
+      ],
+      "reference": [
+        "chad-3",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-3",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-3",
+            "seconds": [
+              7,
+              10,
+              13,
+              16,
+              19
+            ]
+          }
+        ],
+        "occupied": [
+          {
+            "clip": "chad-1",
+            "seconds": [
+              0.5,
+              7,
+              10,
+              13,
+              16,
+              19,
+              22,
+              25,
+              28
+            ]
+          },
+          {
+            "clip": "chad-2",
+            "seconds": [
+              1,
+              4,
+              7,
+              10,
+              13,
+              16,
+              19,
+              22,
+              25,
+              28,
+              31
+            ]
+          }
+        ]
+      },
+      "bay_id": "CHAD-P001",
+      "area": "chad-far",
+      "mapping_status": "shared_physical_id"
+    },
+    {
+      "id": "B02",
+      "description": "Next bay to the right, red SUV in videos 3 and 4",
+      "polygon": [
+        [
+          441,
+          59
+        ],
+        [
+          557,
+          59
+        ],
+        [
+          535,
+          147
+        ],
+        [
+          384,
+          147
+        ]
+      ],
+      "reference": [
+        "chad-1",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "occupied": {
+        "clip": "chad-3",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-1",
+            "seconds": [
+              0.5,
+              19,
+              22,
+              25,
+              28
+            ]
+          },
+          {
+            "clip": "chad-2",
+            "seconds": [
+              1,
+              4,
+              7,
+              10,
+              13,
+              16,
+              19,
+              22,
+              25,
+              28,
+              31
+            ]
+          }
+        ],
+        "occupied": [
+          {
+            "clip": "chad-3",
+            "seconds": [
+              0.5,
+              7,
+              10,
+              13,
+              16,
+              19
+            ]
+          }
+        ]
+      },
+      "bay_id": "CHAD-P002",
+      "area": "chad-far",
+      "mapping_status": "shared_physical_id"
+    },
+    {
+      "id": "B03",
+      "description": "Next bay to the right, dark sedan leaving in video 1",
+      "polygon": [
+        [
+          574,
+          59
+        ],
+        [
+          688,
+          59
+        ],
+        [
+          705,
+          147
+        ],
+        [
+          551,
+          147
+        ]
+      ],
+      "reference": [
+        "chad-2",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-2",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-2",
+            "seconds": [
+              7,
+              10,
+              13,
+              16,
+              19,
+              22,
+              25,
+              28,
+              31
+            ]
+          },
+          {
+            "clip": "chad-1",
+            "seconds": [
+              19,
+              22,
+              25,
+              28
+            ]
+          },
+          {
+            "clip": "chad-3",
+            "seconds": [
+              0.5,
+              1,
+              4,
+              7,
+              10,
+              13,
+              16,
+              19
+            ]
+          }
+        ],
+        "occupied": [
+          {
+            "clip": "chad-1",
+            "seconds": [
+              0.5
+            ]
+          }
+        ]
+      },
+      "bay_id": "CHAD-P003",
+      "area": "chad-far",
+      "mapping_status": "shared_physical_id"
+    },
+    {
+      "id": "B04",
+      "bay_id": "CHAD-P004",
+      "area": "chad-far",
+      "polygon": [
+        [
+          157,
+          58
+        ],
+        [
+          280,
+          58
+        ],
+        [
+          196,
+          147
+        ],
+        [
+          40,
+          147
+        ]
+      ],
+      "calibration_pending": true,
+      "mapping_status": "shared_physical_id",
+      "reference": [
+        "chad-1",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": []
+      },
+      "vehicle_empty_references": [
+        [
+          "chad-2",
+          0
+        ],
+        [
+          "chad-3",
+          10
+        ],
+        [
+          "chad-4",
+          0
+        ]
+      ],
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-2",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          },
+          {
+            "clip": "chad-3",
+            "seconds": [
+              6,
+              7,
+              8,
+              9,
+              11
+            ]
+          },
+          {
+            "clip": "chad-4",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "B05",
+      "bay_id": "CHAD-P005",
+      "area": "chad-far",
+      "polygon": [
+        [
+          699,
+          58
+        ],
+        [
+          817,
+          58
+        ],
+        [
+          874,
+          147
+        ],
+        [
+          723,
+          147
+        ]
+      ],
+      "calibration_pending": true,
+      "mapping_status": "shared_physical_id",
+      "reference": [
+        "chad-1",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": []
+      },
+      "vehicle_empty_references": [
+        [
+          "chad-2",
+          0
+        ],
+        [
+          "chad-3",
+          10
+        ],
+        [
+          "chad-4",
+          0
+        ],
+        [
+          "chad-3",
+          18
+        ],
+        [
+          "chad-3",
+          15
+        ]
+      ],
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-2",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          },
+          {
+            "clip": "chad-3",
+            "seconds": [
+              6,
+              7,
+              8,
+              9,
+              11
+            ]
+          },
+          {
+            "clip": "chad-4",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          }
+        ]
+      },
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "contact_sheet": "assets/empty-review/chad-late-candidates.jpg",
+        "basis": "same_bay_same_view; late clear empty appearance; B04 with people excluded; B08 chad-4 at27s with person excluded"
+      }
+    },
+    {
+      "id": "B06",
+      "bay_id": "CHAD-P006",
+      "area": "chad-far",
+      "polygon": [
+        [
+          834,
+          58
+        ],
+        [
+          949,
+          58
+        ],
+        [
+          1047,
+          147
+        ],
+        [
+          892,
+          147
+        ]
+      ],
+      "calibration_pending": true,
+      "mapping_status": "shared_physical_id",
+      "reference": [
+        "chad-1",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": []
+      },
+      "vehicle_empty_references": [
+        [
+          "chad-2",
+          0
+        ],
+        [
+          "chad-3",
+          10
+        ],
+        [
+          "chad-4",
+          0
+        ],
+        [
+          "chad-3",
+          18
+        ],
+        [
+          "chad-3",
+          15
+        ]
+      ],
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-2",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          },
+          {
+            "clip": "chad-3",
+            "seconds": [
+              6,
+              7,
+              8,
+              9,
+              11
+            ]
+          },
+          {
+            "clip": "chad-4",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          }
+        ]
+      },
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "contact_sheet": "assets/empty-review/chad-late-candidates.jpg",
+        "basis": "same_bay_same_view; late clear empty appearance; B04 with people excluded; B08 chad-4 at27s with person excluded"
+      }
+    },
+    {
+      "id": "B07",
+      "bay_id": "CHAD-P007",
+      "area": "chad-far",
+      "polygon": [
+        [
+          965,
+          58
+        ],
+        [
+          1081,
+          58
+        ],
+        [
+          1220,
+          147
+        ],
+        [
+          1068,
+          147
+        ]
+      ],
+      "calibration_pending": true,
+      "mapping_status": "shared_physical_id",
+      "reference": [
+        "chad-1",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": []
+      },
+      "vehicle_empty_references": [
+        [
+          "chad-2",
+          0
+        ],
+        [
+          "chad-3",
+          10
+        ],
+        [
+          "chad-4",
+          0
+        ],
+        [
+          "chad-3",
+          18
+        ],
+        [
+          "chad-3",
+          15
+        ]
+      ],
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-2",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          },
+          {
+            "clip": "chad-3",
+            "seconds": [
+              6,
+              7,
+              8,
+              9,
+              11
+            ]
+          },
+          {
+            "clip": "chad-4",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          }
+        ]
+      },
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "contact_sheet": "assets/empty-review/chad-late-candidates.jpg",
+        "basis": "same_bay_same_view; late clear empty appearance; B04 with people excluded; B08 chad-4 at27s with person excluded"
+      }
+    },
+    {
+      "id": "B08",
+      "bay_id": "CHAD-P008",
+      "area": "chad-near",
+      "polygon": [
+        [
+          520,
+          416
+        ],
+        [
+          763,
+          416
+        ],
+        [
+          817,
+          708
+        ],
+        [
+          489,
+          708
+        ]
+      ],
+      "calibration_pending": true,
+      "mapping_status": "shared_physical_id",
+      "reference": [
+        "chad-1",
+        0
+      ],
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": [
+          0.25,
+          0.75,
+          1.25,
+          1.75,
+          2.25
+        ]
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": []
+      },
+      "vehicle_empty_references": [
+        [
+          "chad-2",
+          0
+        ],
+        [
+          "chad-3",
+          10
+        ],
+        [
+          "chad-4",
+          0
+        ],
+        [
+          "chad-3",
+          18
+        ]
+      ],
+      "additional_samples": {
+        "vacant": [
+          {
+            "clip": "chad-2",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          },
+          {
+            "clip": "chad-3",
+            "seconds": [
+              6,
+              7,
+              8,
+              9,
+              11
+            ]
+          },
+          {
+            "clip": "chad-4",
+            "seconds": [
+              0.5,
+              1.5,
+              2.5,
+              3.5,
+              4.5
+            ]
+          }
+        ]
+      },
+      "empty_review": {
+        "reviewed_on": "2026-09-21",
+        "contact_sheet": "assets/empty-review/chad-late-candidates.jpg",
+        "basis": "same_bay_same_view; late clear empty appearance; B04 with people excluded; B08 chad-4 at27s with person excluded"
+      }
+    },
+    {
+      "id": "B09",
+      "bay_id": "CHAD-P009",
+      "area": "chad-near",
+      "polygon": [
+        [
+          785,
+          414
+        ],
+        [
+          1061,
+          414
+        ],
+        [
+          1215,
+          708
+        ],
+        [
+          851,
+          708
+        ]
+      ],
+      "calibration_pending": true,
+      "mapping_status": "shared_physical_id",
+      "reference": null,
+      "vacant": {
+        "clip": "chad-1",
+        "seconds": []
+      },
+      "occupied": {
+        "clip": "chad-1",
+        "seconds": []
+      }
+    }
+  ],
+  "source_id": "chad-camera-1"
+}
