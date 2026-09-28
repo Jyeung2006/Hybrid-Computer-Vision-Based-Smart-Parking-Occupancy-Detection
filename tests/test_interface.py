@@ -88,6 +88,30 @@ def test_ui_decisions_render_and_video_failure_clears_chart(app):
     assert app.photo is None
 
 
+def test_popup_shows_mobilenet_source_and_provisional_occupied(app):
+    sample = pair()
+    first = sample['rows'][0]
+    first.update(vehicle_state='vacant', vehicle_reason='reviewed_empty_appearance_matches_and_no_vehicle_detected',
+                 yolo_state='unknown', yolo_requested=False, final_state='vacant',
+                 final_reason='mobilenet_vacant', final_confirmed_by='mobilenet_reviewed_empty',
+                 final_provisional=False)
+    second = sample['rows'][1]
+    second.update(vehicle_state='uncertain', vehicle_reason='no_vehicle_detection_is_not_proof_of_vacancy',
+                  yolo_state='uncertain', yolo_requested=True, yolo_reason='no_qualifying_detection_is_not_vacancy',
+                  final_state='occupied', final_reason='provisional_occupied_no_definite_evidence',
+                  final_confirmed_by=None, final_provisional=True)
+    app.render_observation(sample)
+    assert app.primary_columns == ('bay', 'reference', 'mog2', 'vehicle', 'yolo', 'final')
+    ids = app.table.get_children()
+    assert app.table.item(ids[0])['values'][3:6] == ['VACANT', 'SKIPPED', 'VACANT']
+    assert app.table.item(ids[1])['values'][3:6] == ['UNCERTAIN', 'UNCERTAIN', 'OCCUPIED (P)']
+    app.table.selection_set(ids[0]); app.show_bay_details()
+    assert 'MobileNet + reviewed empty appearance' in app.row_details.cget('text')
+    app.table.selection_set(ids[1]); app.show_bay_details()
+    assert 'PROVISIONAL OCCUPIED' in app.row_details.cget('text')
+    assert '1 provisional occupied' in app.video_counts.cget('text')
+
+
 def test_switching_camera_uses_its_inventory_without_borrowing_old_evidence(app):
     app.render_observation(pair())
     app.selection.set('chad-camera-2')

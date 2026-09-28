@@ -31,6 +31,7 @@ from .areas import SITES, VIEWS, EXTRA_VIEWS, OVERHEAD, OVERHEAD_MAP, fetch_view
 from .monitor import prepare_preset
 from .view_presets import prepare_view
 from .yolo import YOLODetector, VerificationService
+from .vehicle import VehicleDetector, prepare_model as prepare_mobilenet
 from .display_model import occupancy_text, video_clock, local_time
 from .interface_model import Review, PlaybackGuard, STATES, chart_data, ring_segments, window_text
 from .sources import CameraSource, SourceError, utcnow
@@ -196,7 +197,7 @@ class ParkingInterface:
         header = tk.Frame(root, bg="#142840", padx=20, pady=10)
         header.pack(fill="x")
         self.label(header, "PARKING OBSERVATORY", 17, "white", True).pack(anchor="w")
-        self.label(header, "OpenCV experiment  /  Reference + MOG2 → selective YOLOv8s  /  Every 3 video seconds",
+        self.label(header, "OpenCV experiment  /  Reference + MOG2 + MobileNet → selective YOLOv8s  /  Every 3 video seconds",
                    10, "#bacadd").pack(anchor="w", pady=(4, 0))
         self.tabs = ttk.Notebook(root)
         # Reserve the status bar before the expanding notebooks.
@@ -269,11 +270,12 @@ class ParkingInterface:
         table_frame = tk.Frame(right, bg="white")
         table_frame.pack(fill="x")
         table_frame.columnconfigure(0, weight=1)
-        self.primary_columns = ('bay', 'reference', 'mog2', 'yolo', 'final')
+        self.primary_columns = ('bay', 'reference', 'mog2', 'vehicle', 'yolo', 'final')
         self.table = ttk.Treeview(table_frame, columns=(*self.primary_columns, 'final_alt', 'alt_basis'),
             displaycolumns=self.primary_columns, show="headings", height=3)
         for col, title, width in (("bay", "Bay ID", 115), ("reference", "Reference", 95),
-                                  ("mog2", "MOG2", 95), ("yolo", "YOLOv8", 95), ("final", "Final estimate", 110),
+                                  ("mog2", "MOG2", 95), ("vehicle", "MobileNet + empty", 130),
+                                  ("yolo", "YOLOv8", 95), ("final", "Final estimate", 110),
                                   ('final_alt', 'EXP: Alternate', 150), ('alt_basis', 'EXP: Confirmed by', 225)):
             self.table.heading(col, text=title)
             self.table.column(col, width=width, minwidth=85, anchor="center", stretch=True)
@@ -289,7 +291,7 @@ class ParkingInterface:
         for state in STATES:
             self.table.tag_configure(state, foreground={"vacant": "#087b61", "occupied": "#b33149", "uncertain": "#956412", "unknown": MUTED}[state])
         self.table.tag_configure('provisional', foreground='#956412')
-        self.row_details = self.label(right, "Select a bay to see why it has this result.\nMatching definite OpenCV results are kept; other cases go to YOLOv8.",
+        self.row_details = self.label(right, "Select a bay to see its method results and Final source.\nYOLOv8 runs only for unresolved bays or Reference/MOG2 conflicts.",
                                      9, MUTED, justify="left", anchor="w", wraplength=650)
         self.row_details.pack(fill="x", pady=4)
         self.table.bind('<<TreeviewSelect>>', self.show_bay_details)
@@ -327,7 +329,7 @@ class ParkingInterface:
             self.area_table.column(col, width=width, anchor="w" if col in ("area", "basis") else "center")
         self.area_table.pack(fill="x", pady=4)
         self.area_table.bind("<Double-1>", self.open_area)
-        self.label(self.areas_page, "P = provisional vacant from repeated no detection. Separate recording times are not fused as live availability.",
+        self.label(self.areas_page, "P = provisional estimate (occupied or vacant); see the Final source. Separate recording times are not fused as live availability.",
                    9, MUTED, justify="left").pack(anchor="w", pady=3)
 
         self.video_label = tk.Label(self.watch, bg="#101d2e", fg="#d2e0ee", text="Preparing the recordings…",
@@ -399,7 +401,8 @@ class ParkingInterface:
             self.area_table.delete(iid)
         for r in reports:
             sample = "no usable observation" if r['sample_seconds'] is None else f"{r['sample_seconds']:.0f}s"
-            counts = (f"{r['vacant']} (P:{r['provisional_vacant']})", r['occupied']) if r['available'] else ("—", "—")
+            counts = (f"{r['vacant']} (P:{r['provisional_vacant']})",
+                      f"{r['occupied']} (P:{r['provisional_occupied']})") if r['available'] else ("—", "—")
             self.area_table.insert("", "end", iid=r['area_id'], values=(r['area_name'], *counts, r['unresolved'],
                 r['total_monitored_bays'], f"{VIEWS[r['recording_id']].label} / {sample}"))
         if self.ready and self.out:
@@ -452,12 +455,19 @@ class ParkingInterface:
         for widget in (self.play_button, self.replay_button, self.scrubber, self.prepare_button, self.results_button):
             widget.configure(state="disabled")
         self.render_areas()
-        self.status.configure(text="Preparing all mapped views, selective YOLOv8s and 69 overhead bays…")
+        self.status.configure(text="Preparing all mapped views, MobileNet, selective YOLOv8s and 69 overhead bays…")
         self.out = PROJECT_ROOT / "runs/areas" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S_%fZ")
 
         def work():
             issues = []
             detector = None
+            mobilenet = None
+            try:
+                self.events.put(("status", "Loading the local MobileNet-SSD model…"))
+                mobilenet = VehicleDetector(prepare_mobilenet(
+                    lambda k,v: self.events.put((k,v)), self.stop.is_set))
+            except Exception:
+                issues.append("MobileNet-SSD unavailable; its branch will show unknown.")
             try:
                 self.events.put(("status", "Loading the local YOLOv8s models…"))
                 detector = YOLODetector()
@@ -475,7 +485,8 @@ class ParkingInterface:
                     mapping = {s['id']:s['bay_id'] for s in inventory(view)}
                     code = run_comparison(clips, self.interval, self.stop, lambda k,v: self.events.put((k,v)), fast=True,
                         out=self.out / ('chad' if view.camera == 'Camera 1' else view.clip.id),
-                        prepared=prepared, bay_map=mapping, verification=True, service=service)
+                        prepared=prepared, bay_map=mapping, verification=True, service=service,
+                        detector=mobilenet, opencv_first=True)
                     if code:
                         issues.append(f"{view.camera} processing reported unavailable samples.")
                 except Exception:
@@ -488,7 +499,8 @@ class ParkingInterface:
                     PROJECT_ROOT / "presets/overhead-all-bays.json", [OVERHEAD], fetch_overhead, PROJECT_ROOT / "data/overhead-all")
                 code = run_comparison([OVERHEAD], self.interval, self.stop, lambda k,v: self.events.put((k,v)), fast=True,
                     out=self.out / "overhead", prepared=prepared, bay_map={s['id']:s['bay_id'] for s in inventory(VIEWS['overhead-1'])},
-                    verification=True, service=service, verification_profile='aerial')
+                    verification=True, service=service, verification_profile='aerial',
+                    detector=mobilenet, opencv_first=True)
                 if code:
                     issues.append("Overhead processing reported unavailable samples.")
             except Exception:
@@ -578,14 +590,21 @@ class ParkingInterface:
         selected = self.table.selection()
         row = self.displayed_rows.get(selected[0]) if selected else None
         if row:
-            reason = ((row.get('yolo_reason') if row.get('yolo_requested') else row.get('reference_reason')) or 'methods agree').replace('_',' ')
             basis = (row.get('final_reason') or 'reference and MOG2 comparison').replace('_',' ')
             confirmed = {'reference_and_mog2':'Reference + MOG2', 'yolov8':'YOLOv8',
+                         'reference':'Reference', 'mog2':'MOG2', 'mobilenet_ssd':'MobileNet vehicle detection',
+                         'mobilenet_reviewed_empty':'MobileNet + reviewed empty appearance',
                          'reviewed_empty_and_three_clean_no_detections':'reviewed empty reference + three clean observations'}.get(row.get('final_confirmed_by'))
             confirmation = f"Supported by {confirmed}" if confirmed else "No method confirmation"
             if row.get('final_provisional'):
-                confirmation = 'PROVISIONAL vacancy: three clean no-detection observations; no reviewed empty reference. Not model-confirmed'
-            detail = f"{row['bay_id']}: {confirmation}. {reason}.\nFinal: {basis}."
+                confirmation = f"PROVISIONAL {row['state'].upper()}: no definite method confirmation"
+            detail = (f"{row['bay_id']}: {confirmation}.\nFinal: {basis}.\n"
+                      f"Reference: {row['reference_state']} ({row.get('reference_reason') or 'classified'}); "
+                      f"MOG2: {row['mog2_state']} ({row.get('mog2_reason') or 'classified'}).\n"
+                      f"MobileNet + empty: {row.get('vehicle_state', 'unknown')} "
+                      f"({row.get('vehicle_reason') or 'not run'}); "
+                      f"YOLOv8: {row.get('yolo_state', 'unknown') if row.get('yolo_requested') else 'skipped'} "
+                      f"({row.get('yolo_reason') or 'not run'}).")
             if row.get('vacancy_guard_streak') and row.get('final_state') not in ('occupied', 'vacant'):
                 detail += f"\nVacancy guard: {row['vacancy_guard_streak']}/3 consecutive observations."
             if self.show_alternate.get():
@@ -640,20 +659,22 @@ class ParkingInterface:
         self.displayed_rows = {}
         for row in rows:
             values = (row["bay_id"], row["reference_state"].upper(), row["mog2_state"].upper(),
+                      row.get('vehicle_state','unknown').upper(),
                       (row.get('yolo_state','unknown').upper() if row.get('yolo_requested') else 'SKIPPED'),
-                      'VACANT (P)' if row.get('final_provisional') else row["state"].upper())
+                      row["state"].upper() + (' (P)' if row.get('final_provisional') else ''))
             if self.show_alternate.get():
                 values += ('EXP: ' + row.get('final_alt_state', 'unknown').upper(),
                            row.get('final_alt_confirmed_by') or 'No confirmation')
             iid = self.table.insert("", "end", values=values,
                                     tags=('provisional' if row.get('final_provisional') else row["state"],))
             self.displayed_rows[iid] = row
-        self.row_details.configure(text='Select a bay to inspect the evidence. VACANT (P) means provisional vacancy after three clean no-detection observations.')
-        provisional = sum(bool(row.get('final_provisional')) for row in rows)
+        self.row_details.configure(text='Select a bay to inspect each method and the Final source. (P) means provisional, without definite method confirmation.')
+        provisional_occupied = sum(row['state']=='occupied' and bool(row.get('final_provisional')) for row in rows)
+        provisional_vacant = sum(row['state']=='vacant' and bool(row.get('final_provisional')) for row in rows)
         self.video_counts.configure(text="   |   ".join(f"{s[state]} {state}" for state in STATES) +
-                                    f"   |   Occupancy: {occupancy_text(s)}   |   {provisional} provisional vacant")
+                                    f"   |   Occupancy: {occupancy_text(s)}   |   {provisional_occupied} provisional occupied, {provisional_vacant} provisional vacant")
         pending = sum(b.get('calibration_pending', False) for b in self.polygons)
-        self.scope_label.configure(text=f"{len(rows)} mapped bays; {pending} lack full two-state calibration. P = provisional vacancy, based on repeated no detection." if rows else
+        self.scope_label.configure(text=f"{len(rows)} mapped bays; {pending} lack full two-state calibration. (P) = provisional estimate, not method-confirmed." if rows else
                                    "View only: bay correspondence/calibration not verified.")
         if not rows:
             self.video_counts.configure(text="VIEW ONLY · Overlapping CHAD view; no verified bay mapping or occupancy counts.")
@@ -704,7 +725,7 @@ class ParkingInterface:
                 cv2.polylines(image, [points], True, rgb[::-1], 1 if dense else 3)
                 x, y = points[0]
                 label = slot['id'] if dense else slot['bay_id'].split('-')[-1]
-                cv2.putText(image, label + (' P?' if result.get('final_provisional') else ''),
+                cv2.putText(image, label + (f" {state[0].upper()}(P)" if result.get('final_provisional') else ''),
                     (int(x)+2, int(y)+13) if dense else (int(x), max(20, int(y)-9)),
                     cv2.FONT_HERSHEY_SIMPLEX, .34 if dense else .58, rgb[::-1], 1 if dense else 2)
             self.photo = png_photo(image, self.video_label.winfo_width(), self.video_label.winfo_height())
@@ -821,7 +842,7 @@ class ParkingInterface:
                     self.results_button.configure(state="normal")
                     self.source_errors = value
                     self.status.configure(text=("; ".join(value) if value else
-                        "Ready: definite method agreement is immediate; guarded vacancy needs three clean observations. P marks provisional results."))
+                        "Ready: OpenCV-first decisions; YOLOv8 only checks unresolved or conflicting bays. (P) marks provisional results."))
                     self.select_clip()
                     if self.tabs.select() == str(self.live):
                         self.pause()

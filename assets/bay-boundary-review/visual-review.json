@@ -1,0 +1,5952 @@
+{
+  "reviewed_on": "2026-09-24",
+  "reviewer": "Codex visual inspection of image pixels; not an independent human label set",
+  "method": "Native analysis frames exported for all 60 samples. Each bay inspected in setup and selected start/middle/end crops; Camera 4 has only two sampled frames.",
+  "accuracy_established": false,
+  "reviews": [
+    {
+      "camera": "chad",
+      "slot_id": "B01",
+      "bay_id": "CHAD-P001",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "Vehicle hides part of footprint in occupied frames; inspect corresponding empty period where available. Transient pedestrian obstruction occurs; those frames cannot demonstrate clear empty appearance.",
+      "issue": "Painted sides and curb end visible in chad-3/4; SUV in chad-1/2; pedestrians cross at chad-3 9/18s.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          302,
+          59
+        ],
+        [
+          422,
+          59
+        ],
+        [
+          367,
+          147
+        ],
+        [
+          222,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          302,
+          59
+        ],
+        [
+          422,
+          59
+        ],
+        [
+          367,
+          147
+        ],
+        [
+          222,
+          147
+        ]
+      ],
+      "evidence": "chad/B01-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B02",
+      "bay_id": "CHAD-P002",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "Vehicle hides part of footprint in occupied frames; inspect corresponding empty period where available.",
+      "issue": "Empty chad-1/2 and occupied chad-3/4; visible paint supports the existing inset.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          441,
+          59
+        ],
+        [
+          557,
+          59
+        ],
+        [
+          535,
+          147
+        ],
+        [
+          384,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          441,
+          59
+        ],
+        [
+          557,
+          59
+        ],
+        [
+          535,
+          147
+        ],
+        [
+          384,
+          147
+        ]
+      ],
+      "evidence": "chad/B02-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B03",
+      "bay_id": "CHAD-P003",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "Vehicle hides part of footprint in occupied frames; inspect corresponding empty period where available.",
+      "issue": "Car departs in chad-1 (15s foreground intrusion); later empty frames expose both painted sides.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          574,
+          59
+        ],
+        [
+          688,
+          59
+        ],
+        [
+          705,
+          147
+        ],
+        [
+          551,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          574,
+          59
+        ],
+        [
+          688,
+          59
+        ],
+        [
+          705,
+          147
+        ],
+        [
+          551,
+          147
+        ]
+      ],
+      "evidence": "chad/B03-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B04",
+      "bay_id": "CHAD-P004",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames. Transient pedestrian obstruction occurs; those frames cannot demonstrate clear empty appearance.",
+      "issue": "Empty bay; neighbouring SUV projects across right edge in chad-1/2; people in chad-3 18s.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          157,
+          58
+        ],
+        [
+          280,
+          58
+        ],
+        [
+          196,
+          147
+        ],
+        [
+          40,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          157,
+          58
+        ],
+        [
+          280,
+          58
+        ],
+        [
+          196,
+          147
+        ],
+        [
+          40,
+          147
+        ]
+      ],
+      "evidence": "chad/B04-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B05",
+      "bay_id": "CHAD-P005",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty footprint; moving car projects across bottom edge at chad-1 15s; surface lighting varies.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          699,
+          58
+        ],
+        [
+          817,
+          58
+        ],
+        [
+          874,
+          147
+        ],
+        [
+          723,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          699,
+          58
+        ],
+        [
+          817,
+          58
+        ],
+        [
+          874,
+          147
+        ],
+        [
+          723,
+          147
+        ]
+      ],
+      "evidence": "chad/B05-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B06",
+      "bay_id": "CHAD-P006",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty footprint; moving neighbour at chad-1 15s and chad-2 30s; faded right paint.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          834,
+          58
+        ],
+        [
+          949,
+          58
+        ],
+        [
+          1047,
+          147
+        ],
+        [
+          892,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          834,
+          58
+        ],
+        [
+          949,
+          58
+        ],
+        [
+          1047,
+          147
+        ],
+        [
+          892,
+          147
+        ]
+      ],
+      "evidence": "chad/B06-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B07",
+      "bay_id": "CHAD-P007",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty footprint; moving neighbour at chad-2 30s; covered object outside right boundary.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          965,
+          58
+        ],
+        [
+          1081,
+          58
+        ],
+        [
+          1220,
+          147
+        ],
+        [
+          1068,
+          147
+        ]
+      ],
+      "after_polygon": [
+        [
+          965,
+          58
+        ],
+        [
+          1081,
+          58
+        ],
+        [
+          1220,
+          147
+        ],
+        [
+          1068,
+          147
+        ]
+      ],
+      "evidence": "chad/B07-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B08",
+      "bay_id": "CHAD-P008",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "yes_before_removed_after",
+      "roadway": "not_observed",
+      "curb": "yes_before_removed_after",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Other three edges retained; new left edge follows curb with about 3-7px asphalt margin except retained upper inset.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames. Transient pedestrian obstruction occurs; those frames cannot demonstrate clear empty appearance.",
+      "issue": "Near-left CHAD-P008 confirmed. Old left chord includes concrete curb/sidewalk strip; curved asphalt edge visible across four periods. People at chad-4 15/30s are not empty references.",
+      "decision": "correct_left_edge_to_visible_asphalt",
+      "before_polygon": [
+        [
+          520,
+          416
+        ],
+        [
+          763,
+          416
+        ],
+        [
+          817,
+          708
+        ],
+        [
+          489,
+          708
+        ]
+      ],
+      "after_polygon": [
+        [
+          520,
+          416
+        ],
+        [
+          763,
+          416
+        ],
+        [
+          817,
+          708
+        ],
+        [
+          501,
+          708
+        ],
+        [
+          537,
+          520
+        ],
+        [
+          543,
+          484
+        ],
+        [
+          538,
+          461
+        ],
+        [
+          527,
+          439
+        ]
+      ],
+      "evidence": "chad/B08-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad",
+      "slot_id": "B09",
+      "bay_id": "CHAD-P009",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-1-000.0s",
+        "chad-1-015.0s",
+        "chad-1-027.0s",
+        "chad-2-000.0s",
+        "chad-2-015.0s",
+        "chad-2-030.0s",
+        "chad-3-000.0s",
+        "chad-3-009.0s",
+        "chad-3-018.0s",
+        "chad-4-000.0s",
+        "chad-4-015.0s",
+        "chad-4-030.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Not fully verifiable while occupied; visible paint retained.",
+      "marking_obscured": "Vehicle hides part of footprint in occupied frames; inspect corresponding empty period where available.",
+      "issue": "SUV throughout all four periods. Painted sides visible; far/end footprint partly hidden by vehicle. No empty example.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          785,
+          414
+        ],
+        [
+          1061,
+          414
+        ],
+        [
+          1215,
+          708
+        ],
+        [
+          851,
+          708
+        ]
+      ],
+      "after_polygon": [
+        [
+          785,
+          414
+        ],
+        [
+          1061,
+          414
+        ],
+        [
+          1215,
+          708
+        ],
+        [
+          851,
+          708
+        ]
+      ],
+      "evidence": "chad/B09-contact.png",
+      "before_image": "chad/setup-before.png",
+      "after_image": "chad/chad-1-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-2",
+      "slot_id": "N09",
+      "bay_id": "CHAD-P009",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-2-000.0s",
+        "chad-camera-2-006.0s",
+        "chad-camera-2-012.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Full perimeter not independently verifiable; no empty frame in this recording.",
+      "marking_obscured": "Vehicle hides substantial interior/end markings in every sampled frame.",
+      "issue": "SUV throughout; partly hidden paint near storefront. No empty example; no demonstrated sidewalk intrusion.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          175,
+          111
+        ],
+        [
+          334,
+          101
+        ],
+        [
+          363,
+          159
+        ],
+        [
+          172,
+          174
+        ]
+      ],
+      "after_polygon": [
+        [
+          175,
+          111
+        ],
+        [
+          334,
+          101
+        ],
+        [
+          363,
+          159
+        ],
+        [
+          172,
+          174
+        ]
+      ],
+      "evidence": "chad-camera-2/N09-contact.png",
+      "before_image": "chad-camera-2/setup-before.png",
+      "after_image": "chad-camera-2/chad-camera-2-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-2",
+      "slot_id": "F01",
+      "bay_id": "CHAD-C2-F01",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-2-000.0s",
+        "chad-camera-2-006.0s",
+        "chad-camera-2-012.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Full perimeter not independently verifiable; no empty frame in this recording. Image-edge clipping limits footprint completeness.",
+      "marking_obscured": "Vehicle hides substantial interior/end markings in every sampled frame.",
+      "issue": "Vehicle throughout; left footprint clipped at image edge and hidden by vehicle. Keep unresolved boundary extent; do not infer entire bay from car box.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          0,
+          219
+        ],
+        [
+          175,
+          222
+        ],
+        [
+          287,
+          331
+        ],
+        [
+          0,
+          425
+        ]
+      ],
+      "after_polygon": [
+        [
+          0,
+          219
+        ],
+        [
+          175,
+          222
+        ],
+        [
+          287,
+          331
+        ],
+        [
+          0,
+          425
+        ]
+      ],
+      "evidence": "chad-camera-2/F01-contact.png",
+      "before_image": "chad-camera-2/setup-before.png",
+      "after_image": "chad-camera-2/chad-camera-2-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-2",
+      "slot_id": "F02",
+      "bay_id": "CHAD-C2-F02",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-2-000.0s",
+        "chad-camera-2-006.0s",
+        "chad-camera-2-012.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty asphalt between painted sides at 0/6/12s; strong shadow and neighbouring F01 vehicle. Keep footprint; bounding-box spill is an attribution issue.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          362,
+          308
+        ],
+        [
+          535,
+          328
+        ],
+        [
+          239,
+          478
+        ],
+        [
+          25,
+          439
+        ]
+      ],
+      "after_polygon": [
+        [
+          362,
+          308
+        ],
+        [
+          535,
+          328
+        ],
+        [
+          239,
+          478
+        ],
+        [
+          25,
+          439
+        ]
+      ],
+      "evidence": "chad-camera-2/F02-contact.png",
+      "before_image": "chad-camera-2/setup-before.png",
+      "after_image": "chad-camera-2/chad-camera-2-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-2",
+      "slot_id": "F03",
+      "bay_id": "CHAD-C2-F03",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-2-000.0s",
+        "chad-camera-2-006.0s",
+        "chad-camera-2-012.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty painted footprint at 0/6/12s; shadow over lower-right asphalt; no demonstrated non-bay inclusion.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          557,
+          339
+        ],
+        [
+          749,
+          360
+        ],
+        [
+          572,
+          536
+        ],
+        [
+          264,
+          489
+        ]
+      ],
+      "after_polygon": [
+        [
+          557,
+          339
+        ],
+        [
+          749,
+          360
+        ],
+        [
+          572,
+          536
+        ],
+        [
+          264,
+          489
+        ]
+      ],
+      "evidence": "chad-camera-2/F03-contact.png",
+      "before_image": "chad-camera-2/setup-before.png",
+      "after_image": "chad-camera-2/chad-camera-2-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-2",
+      "slot_id": "F04",
+      "bay_id": "CHAD-C2-F04",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-2-000.0s",
+        "chad-camera-2-006.0s",
+        "chad-camera-2-012.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "possible_at_lower_right_boundary",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "Shrub and shadow partly conceal lower-right boundary; exact edge unresolved.",
+      "issue": "Empty painted footprint at 0/6/12s; strong shadow; shrub masks a small part of the lower-right perimeter.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          780,
+          371
+        ],
+        [
+          1007,
+          405
+        ],
+        [
+          971,
+          512
+        ],
+        [
+          601,
+          538
+        ]
+      ],
+      "after_polygon": [
+        [
+          780,
+          371
+        ],
+        [
+          1007,
+          405
+        ],
+        [
+          971,
+          512
+        ],
+        [
+          601,
+          538
+        ]
+      ],
+      "evidence": "chad-camera-2/F04-contact.png",
+      "before_image": "chad-camera-2/setup-before.png",
+      "after_image": "chad-camera-2/chad-camera-2-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-3",
+      "slot_id": "N09",
+      "bay_id": "CHAD-P009",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-3-000.0s",
+        "chad-camera-3-006.0s",
+        "chad-camera-3-009.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Full perimeter not independently verifiable; no empty frame in this recording.",
+      "marking_obscured": "Vehicle hides substantial interior/end markings in every sampled frame.",
+      "issue": "SUV throughout; side paint visible, far boundary hidden. No empty example.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          15,
+          134
+        ],
+        [
+          176,
+          138
+        ],
+        [
+          275,
+          217
+        ],
+        [
+          49,
+          242
+        ]
+      ],
+      "after_polygon": [
+        [
+          15,
+          134
+        ],
+        [
+          176,
+          138
+        ],
+        [
+          275,
+          217
+        ],
+        [
+          49,
+          242
+        ]
+      ],
+      "evidence": "chad-camera-3/N09-contact.png",
+      "before_image": "chad-camera-3/setup-before.png",
+      "after_image": "chad-camera-3/chad-camera-3-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-3",
+      "slot_id": "F01",
+      "bay_id": "CHAD-C3-F01",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-3-000.0s",
+        "chad-camera-3-006.0s",
+        "chad-camera-3-009.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Full perimeter not independently verifiable; no empty frame in this recording. Image-edge clipping limits footprint completeness.",
+      "marking_obscured": "Vehicle hides substantial interior/end markings in every sampled frame.",
+      "issue": "Silver car throughout; side paint visible, far/right perimeter partly hidden/clipped. No empty example.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          967,
+          210
+        ],
+        [
+          1275,
+          226
+        ],
+        [
+          1275,
+          307
+        ],
+        [
+          908,
+          279
+        ]
+      ],
+      "after_polygon": [
+        [
+          967,
+          210
+        ],
+        [
+          1275,
+          226
+        ],
+        [
+          1275,
+          307
+        ],
+        [
+          908,
+          279
+        ]
+      ],
+      "evidence": "chad-camera-3/F01-contact.png",
+      "before_image": "chad-camera-3/setup-before.png",
+      "after_image": "chad-camera-3/chad-camera-3-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-3",
+      "slot_id": "F02",
+      "bay_id": "CHAD-C3-F02",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-3-000.0s",
+        "chad-camera-3-006.0s",
+        "chad-camera-3-009.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty long oblique bay; both side lines visible at 0/6/9s; adjacent parked car remains outside painted footprint.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          741,
+          296
+        ],
+        [
+          1248,
+          386
+        ],
+        [
+          1140,
+          451
+        ],
+        [
+          586,
+          332
+        ]
+      ],
+      "after_polygon": [
+        [
+          741,
+          296
+        ],
+        [
+          1248,
+          386
+        ],
+        [
+          1140,
+          451
+        ],
+        [
+          586,
+          332
+        ]
+      ],
+      "evidence": "chad-camera-3/F02-contact.png",
+      "before_image": "chad-camera-3/setup-before.png",
+      "after_image": "chad-camera-3/chad-camera-3-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-3",
+      "slot_id": "F03",
+      "bay_id": "CHAD-C3-F03",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-3-000.0s",
+        "chad-camera-3-006.0s",
+        "chad-camera-3-009.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty oblique bay; curb outside right end, shadow near lower edge; no demonstrated non-bay inclusion.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          579,
+          345
+        ],
+        [
+          1123,
+          473
+        ],
+        [
+          944,
+          601
+        ],
+        [
+          382,
+          414
+        ]
+      ],
+      "after_polygon": [
+        [
+          579,
+          345
+        ],
+        [
+          1123,
+          473
+        ],
+        [
+          944,
+          601
+        ],
+        [
+          382,
+          414
+        ]
+      ],
+      "evidence": "chad-camera-3/F03-contact.png",
+      "before_image": "chad-camera-3/setup-before.png",
+      "after_image": "chad-camera-3/chad-camera-3-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-4",
+      "slot_id": "N09",
+      "bay_id": "CHAD-P009",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-4-000.0s",
+        "chad-camera-4-003.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Full perimeter not independently verifiable; no empty frame in this recording.",
+      "marking_obscured": "Vehicle hides substantial interior/end markings in every sampled frame.",
+      "issue": "SUV throughout both samples; side paint visible, far boundary hidden. No empty example.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          604,
+          207
+        ],
+        [
+          892,
+          203
+        ],
+        [
+          975,
+          280
+        ],
+        [
+          604,
+          290
+        ]
+      ],
+      "after_polygon": [
+        [
+          604,
+          207
+        ],
+        [
+          892,
+          203
+        ],
+        [
+          975,
+          280
+        ],
+        [
+          604,
+          290
+        ]
+      ],
+      "evidence": "chad-camera-4/N09-contact.png",
+      "before_image": "chad-camera-4/setup-before.png",
+      "after_image": "chad-camera-4/chad-camera-4-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-4",
+      "slot_id": "N10",
+      "bay_id": "CHAD-P010",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-4-000.0s",
+        "chad-camera-4-003.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty narrow perspective footprint at 0/3s; neighbouring vehicle shadow at far edge. Clip too short for a three-sample streak.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          604,
+          304
+        ],
+        [
+          979,
+          300
+        ],
+        [
+          1067,
+          333
+        ],
+        [
+          607,
+          341
+        ]
+      ],
+      "after_polygon": [
+        [
+          604,
+          304
+        ],
+        [
+          979,
+          300
+        ],
+        [
+          1067,
+          333
+        ],
+        [
+          607,
+          341
+        ]
+      ],
+      "evidence": "chad-camera-4/N10-contact.png",
+      "before_image": "chad-camera-4/setup-before.png",
+      "after_image": "chad-camera-4/chad-camera-4-000.0s-after.png"
+    },
+    {
+      "camera": "chad-camera-4",
+      "slot_id": "N11",
+      "bay_id": "CHAD-P011",
+      "resolution": [
+        1280,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "chad-camera-4-000.0s",
+        "chad-camera-4-003.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Only small paint/edge inset observed; no demonstrated meaningful loss of own bay.",
+      "marking_obscured": "No persistent obstruction in the selected empty frames.",
+      "issue": "Empty footprint at 0/3s; hatched zone below bottom line is excluded. Clip too short for a three-sample streak.",
+      "decision": "retain",
+      "before_polygon": [
+        [
+          613,
+          360
+        ],
+        [
+          1081,
+          355
+        ],
+        [
+          1195,
+          429
+        ],
+        [
+          617,
+          437
+        ]
+      ],
+      "after_polygon": [
+        [
+          613,
+          360
+        ],
+        [
+          1081,
+          355
+        ],
+        [
+          1195,
+          429
+        ],
+        [
+          617,
+          437
+        ]
+      ],
+      "evidence": "chad-camera-4/N11-contact.png",
+      "before_image": "chad-camera-4/setup-before.png",
+      "after_image": "chad-camera-4/chad-camera-4-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL01",
+      "bay_id": "OVER-WL01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Large van hides upper paint; body projects above ROI. Do not enlarge solely to fit vehicle silhouette.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          55,
+          100
+        ],
+        [
+          158,
+          100
+        ],
+        [
+          158,
+          143
+        ],
+        [
+          55,
+          143
+        ]
+      ],
+      "after_polygon": [
+        [
+          55,
+          100
+        ],
+        [
+          158,
+          100
+        ],
+        [
+          158,
+          143
+        ],
+        [
+          55,
+          143
+        ]
+      ],
+      "evidence": "overhead/WL01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL02",
+      "bay_id": "OVER-WL02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          56,
+          146
+        ],
+        [
+          159,
+          146
+        ],
+        [
+          159,
+          189
+        ],
+        [
+          56,
+          189
+        ]
+      ],
+      "after_polygon": [
+        [
+          56,
+          146
+        ],
+        [
+          159,
+          146
+        ],
+        [
+          159,
+          189
+        ],
+        [
+          56,
+          189
+        ]
+      ],
+      "evidence": "overhead/WL02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL03",
+      "bay_id": "OVER-WL03",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          50,
+          193
+        ],
+        [
+          153,
+          193
+        ],
+        [
+          153,
+          236
+        ],
+        [
+          50,
+          236
+        ]
+      ],
+      "after_polygon": [
+        [
+          50,
+          193
+        ],
+        [
+          153,
+          193
+        ],
+        [
+          153,
+          236
+        ],
+        [
+          50,
+          236
+        ]
+      ],
+      "evidence": "overhead/WL03-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL04",
+      "bay_id": "OVER-WL04",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          50,
+          241
+        ],
+        [
+          153,
+          241
+        ],
+        [
+          153,
+          284
+        ],
+        [
+          50,
+          284
+        ]
+      ],
+      "after_polygon": [
+        [
+          50,
+          241
+        ],
+        [
+          153,
+          241
+        ],
+        [
+          153,
+          284
+        ],
+        [
+          50,
+          284
+        ]
+      ],
+      "evidence": "overhead/WL04-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL05",
+      "bay_id": "OVER-WL05",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          53,
+          289
+        ],
+        [
+          156,
+          289
+        ],
+        [
+          156,
+          332
+        ],
+        [
+          53,
+          332
+        ]
+      ],
+      "after_polygon": [
+        [
+          53,
+          289
+        ],
+        [
+          156,
+          289
+        ],
+        [
+          156,
+          332
+        ],
+        [
+          53,
+          332
+        ]
+      ],
+      "evidence": "overhead/WL05-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL06",
+      "bay_id": "OVER-WL06",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          54,
+          337
+        ],
+        [
+          157,
+          337
+        ],
+        [
+          157,
+          380
+        ],
+        [
+          54,
+          380
+        ]
+      ],
+      "after_polygon": [
+        [
+          54,
+          337
+        ],
+        [
+          157,
+          337
+        ],
+        [
+          157,
+          380
+        ],
+        [
+          54,
+          380
+        ]
+      ],
+      "evidence": "overhead/WL06-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL07",
+      "bay_id": "OVER-WL07",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          46,
+          384
+        ],
+        [
+          149,
+          384
+        ],
+        [
+          149,
+          427
+        ],
+        [
+          46,
+          427
+        ]
+      ],
+      "after_polygon": [
+        [
+          46,
+          384
+        ],
+        [
+          149,
+          384
+        ],
+        [
+          149,
+          427
+        ],
+        [
+          46,
+          427
+        ]
+      ],
+      "evidence": "overhead/WL07-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL08",
+      "bay_id": "OVER-WL08",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          51,
+          431
+        ],
+        [
+          154,
+          431
+        ],
+        [
+          154,
+          474
+        ],
+        [
+          51,
+          474
+        ]
+      ],
+      "after_polygon": [
+        [
+          51,
+          431
+        ],
+        [
+          154,
+          431
+        ],
+        [
+          154,
+          474
+        ],
+        [
+          51,
+          474
+        ]
+      ],
+      "evidence": "overhead/WL08-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL09",
+      "bay_id": "OVER-WL09",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          52,
+          479
+        ],
+        [
+          155,
+          479
+        ],
+        [
+          155,
+          522
+        ],
+        [
+          52,
+          522
+        ]
+      ],
+      "after_polygon": [
+        [
+          52,
+          479
+        ],
+        [
+          155,
+          479
+        ],
+        [
+          155,
+          522
+        ],
+        [
+          52,
+          522
+        ]
+      ],
+      "evidence": "overhead/WL09-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL10",
+      "bay_id": "OVER-WL10",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          52,
+          527
+        ],
+        [
+          155,
+          527
+        ],
+        [
+          155,
+          570
+        ],
+        [
+          52,
+          570
+        ]
+      ],
+      "after_polygon": [
+        [
+          52,
+          527
+        ],
+        [
+          155,
+          527
+        ],
+        [
+          155,
+          570
+        ],
+        [
+          52,
+          570
+        ]
+      ],
+      "evidence": "overhead/WL10-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL11",
+      "bay_id": "OVER-WL11",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Pedestrian/door or neighbour projection changes near perimeter in later frames.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          50,
+          573
+        ],
+        [
+          153,
+          573
+        ],
+        [
+          153,
+          616
+        ],
+        [
+          50,
+          616
+        ]
+      ],
+      "after_polygon": [
+        [
+          50,
+          573
+        ],
+        [
+          153,
+          573
+        ],
+        [
+          153,
+          616
+        ],
+        [
+          50,
+          616
+        ]
+      ],
+      "evidence": "overhead/WL11-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WL12",
+      "bay_id": "OVER-WL12",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          56,
+          623
+        ],
+        [
+          159,
+          623
+        ],
+        [
+          159,
+          666
+        ],
+        [
+          56,
+          666
+        ]
+      ],
+      "after_polygon": [
+        [
+          56,
+          623
+        ],
+        [
+          159,
+          623
+        ],
+        [
+          159,
+          666
+        ],
+        [
+          56,
+          666
+        ]
+      ],
+      "evidence": "overhead/WL12-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR01",
+      "bay_id": "OVER-WR01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          163,
+          98
+        ],
+        [
+          266,
+          98
+        ],
+        [
+          266,
+          141
+        ],
+        [
+          163,
+          141
+        ]
+      ],
+      "after_polygon": [
+        [
+          163,
+          98
+        ],
+        [
+          266,
+          98
+        ],
+        [
+          266,
+          141
+        ],
+        [
+          163,
+          141
+        ]
+      ],
+      "evidence": "overhead/WR01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR02",
+      "bay_id": "OVER-WR02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          164,
+          146
+        ],
+        [
+          267,
+          146
+        ],
+        [
+          267,
+          189
+        ],
+        [
+          164,
+          189
+        ]
+      ],
+      "after_polygon": [
+        [
+          164,
+          146
+        ],
+        [
+          267,
+          146
+        ],
+        [
+          267,
+          189
+        ],
+        [
+          164,
+          189
+        ]
+      ],
+      "evidence": "overhead/WR02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR03",
+      "bay_id": "OVER-WR03",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          158,
+          194
+        ],
+        [
+          261,
+          194
+        ],
+        [
+          261,
+          237
+        ],
+        [
+          158,
+          237
+        ]
+      ],
+      "after_polygon": [
+        [
+          158,
+          194
+        ],
+        [
+          261,
+          194
+        ],
+        [
+          261,
+          237
+        ],
+        [
+          158,
+          237
+        ]
+      ],
+      "evidence": "overhead/WR03-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR04",
+      "bay_id": "OVER-WR04",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          159,
+          242
+        ],
+        [
+          262,
+          242
+        ],
+        [
+          262,
+          285
+        ],
+        [
+          159,
+          285
+        ]
+      ],
+      "after_polygon": [
+        [
+          159,
+          242
+        ],
+        [
+          262,
+          242
+        ],
+        [
+          262,
+          285
+        ],
+        [
+          159,
+          285
+        ]
+      ],
+      "evidence": "overhead/WR04-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR05",
+      "bay_id": "OVER-WR05",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          161,
+          290
+        ],
+        [
+          264,
+          290
+        ],
+        [
+          264,
+          333
+        ],
+        [
+          161,
+          333
+        ]
+      ],
+      "after_polygon": [
+        [
+          161,
+          290
+        ],
+        [
+          264,
+          290
+        ],
+        [
+          264,
+          333
+        ],
+        [
+          161,
+          333
+        ]
+      ],
+      "evidence": "overhead/WR05-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR06",
+      "bay_id": "OVER-WR06",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          161,
+          339
+        ],
+        [
+          264,
+          339
+        ],
+        [
+          264,
+          382
+        ],
+        [
+          161,
+          382
+        ]
+      ],
+      "after_polygon": [
+        [
+          161,
+          339
+        ],
+        [
+          264,
+          339
+        ],
+        [
+          264,
+          382
+        ],
+        [
+          161,
+          382
+        ]
+      ],
+      "evidence": "overhead/WR06-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR07",
+      "bay_id": "OVER-WR07",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "one_pixel_shared_ROI_strip_not_proven_paint_intrusion",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. WR07/W02 rectangles overlap for one pixel in y. Counterfactual tested separately; no production trim.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          160,
+          387
+        ],
+        [
+          263,
+          387
+        ],
+        [
+          263,
+          430
+        ],
+        [
+          160,
+          430
+        ]
+      ],
+      "after_polygon": [
+        [
+          160,
+          387
+        ],
+        [
+          263,
+          387
+        ],
+        [
+          263,
+          430
+        ],
+        [
+          160,
+          430
+        ]
+      ],
+      "evidence": "overhead/WR07-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "W02",
+      "bay_id": "OVER-W02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "one_pixel_shared_ROI_strip_not_proven_paint_intrusion",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Car present at 0s; departing vehicle overlaps view at 15s; clear empty asphalt at 27s. WR07/W02 rectangles overlap for one pixel in y. Counterfactual tested separately; no production trim.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          162,
+          429
+        ],
+        [
+          265,
+          429
+        ],
+        [
+          265,
+          472
+        ],
+        [
+          162,
+          472
+        ]
+      ],
+      "after_polygon": [
+        [
+          162,
+          429
+        ],
+        [
+          265,
+          429
+        ],
+        [
+          265,
+          472
+        ],
+        [
+          162,
+          472
+        ]
+      ],
+      "evidence": "overhead/W02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR09",
+      "bay_id": "OVER-WR09",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          162,
+          478
+        ],
+        [
+          265,
+          478
+        ],
+        [
+          265,
+          521
+        ],
+        [
+          162,
+          521
+        ]
+      ],
+      "after_polygon": [
+        [
+          162,
+          478
+        ],
+        [
+          265,
+          478
+        ],
+        [
+          265,
+          521
+        ],
+        [
+          162,
+          521
+        ]
+      ],
+      "evidence": "overhead/WR09-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR10",
+      "bay_id": "OVER-WR10",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          167,
+          525
+        ],
+        [
+          270,
+          525
+        ],
+        [
+          270,
+          568
+        ],
+        [
+          167,
+          568
+        ]
+      ],
+      "after_polygon": [
+        [
+          167,
+          525
+        ],
+        [
+          270,
+          525
+        ],
+        [
+          270,
+          568
+        ],
+        [
+          167,
+          568
+        ]
+      ],
+      "evidence": "overhead/WR10-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "W01",
+      "bay_id": "OVER-W01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "SUV departs between 0 and 15s; asphalt empty at 15/27s; roadway neighbour shadow at 27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          164,
+          576
+        ],
+        [
+          267,
+          576
+        ],
+        [
+          267,
+          619
+        ],
+        [
+          164,
+          619
+        ]
+      ],
+      "after_polygon": [
+        [
+          164,
+          576
+        ],
+        [
+          267,
+          576
+        ],
+        [
+          267,
+          619
+        ],
+        [
+          164,
+          619
+        ]
+      ],
+      "evidence": "overhead/W01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "WR12",
+      "bay_id": "OVER-WR12",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          165,
+          619
+        ],
+        [
+          268,
+          619
+        ],
+        [
+          268,
+          662
+        ],
+        [
+          165,
+          662
+        ]
+      ],
+      "after_polygon": [
+        [
+          165,
+          619
+        ],
+        [
+          268,
+          619
+        ],
+        [
+          268,
+          662
+        ],
+        [
+          165,
+          662
+        ]
+      ],
+      "evidence": "overhead/WR12-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML01",
+      "bay_id": "OVER-ML01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          406,
+          89
+        ],
+        [
+          509,
+          89
+        ],
+        [
+          509,
+          132
+        ],
+        [
+          406,
+          132
+        ]
+      ],
+      "after_polygon": [
+        [
+          406,
+          89
+        ],
+        [
+          509,
+          89
+        ],
+        [
+          509,
+          132
+        ],
+        [
+          406,
+          132
+        ]
+      ],
+      "evidence": "overhead/ML01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML02",
+      "bay_id": "OVER-ML02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          402,
+          138
+        ],
+        [
+          505,
+          138
+        ],
+        [
+          505,
+          181
+        ],
+        [
+          402,
+          181
+        ]
+      ],
+      "after_polygon": [
+        [
+          402,
+          138
+        ],
+        [
+          505,
+          138
+        ],
+        [
+          505,
+          181
+        ],
+        [
+          402,
+          181
+        ]
+      ],
+      "evidence": "overhead/ML02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML03",
+      "bay_id": "OVER-ML03",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          404,
+          189
+        ],
+        [
+          507,
+          189
+        ],
+        [
+          507,
+          232
+        ],
+        [
+          404,
+          232
+        ]
+      ],
+      "after_polygon": [
+        [
+          404,
+          189
+        ],
+        [
+          507,
+          189
+        ],
+        [
+          507,
+          232
+        ],
+        [
+          404,
+          232
+        ]
+      ],
+      "evidence": "overhead/ML03-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML04",
+      "bay_id": "OVER-ML04",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          401,
+          238
+        ],
+        [
+          504,
+          238
+        ],
+        [
+          504,
+          281
+        ],
+        [
+          401,
+          281
+        ]
+      ],
+      "after_polygon": [
+        [
+          401,
+          238
+        ],
+        [
+          504,
+          238
+        ],
+        [
+          504,
+          281
+        ],
+        [
+          401,
+          281
+        ]
+      ],
+      "evidence": "overhead/ML04-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML05",
+      "bay_id": "OVER-ML05",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Pedestrian/door or neighbour projection changes near perimeter in later frames.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          401,
+          289
+        ],
+        [
+          504,
+          289
+        ],
+        [
+          504,
+          332
+        ],
+        [
+          401,
+          332
+        ]
+      ],
+      "after_polygon": [
+        [
+          401,
+          289
+        ],
+        [
+          504,
+          289
+        ],
+        [
+          504,
+          332
+        ],
+        [
+          401,
+          332
+        ]
+      ],
+      "evidence": "overhead/ML05-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML06",
+      "bay_id": "OVER-ML06",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          402,
+          338
+        ],
+        [
+          505,
+          338
+        ],
+        [
+          505,
+          381
+        ],
+        [
+          402,
+          381
+        ]
+      ],
+      "after_polygon": [
+        [
+          402,
+          338
+        ],
+        [
+          505,
+          338
+        ],
+        [
+          505,
+          381
+        ],
+        [
+          402,
+          381
+        ]
+      ],
+      "evidence": "overhead/ML06-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML07",
+      "bay_id": "OVER-ML07",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          404,
+          381
+        ],
+        [
+          507,
+          381
+        ],
+        [
+          507,
+          424
+        ],
+        [
+          404,
+          424
+        ]
+      ],
+      "after_polygon": [
+        [
+          404,
+          381
+        ],
+        [
+          507,
+          381
+        ],
+        [
+          507,
+          424
+        ],
+        [
+          404,
+          424
+        ]
+      ],
+      "evidence": "overhead/ML07-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML08",
+      "bay_id": "OVER-ML08",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Adjacent central hatched/service zone stays outside mapped rectangle.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          405,
+          427
+        ],
+        [
+          508,
+          427
+        ],
+        [
+          508,
+          470
+        ],
+        [
+          405,
+          470
+        ]
+      ],
+      "after_polygon": [
+        [
+          405,
+          427
+        ],
+        [
+          508,
+          427
+        ],
+        [
+          508,
+          470
+        ],
+        [
+          405,
+          470
+        ]
+      ],
+      "evidence": "overhead/ML08-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML10",
+      "bay_id": "OVER-ML10",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Adjacent central hatched/service zone stays outside mapped rectangle.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          406,
+          525
+        ],
+        [
+          509,
+          525
+        ],
+        [
+          509,
+          568
+        ],
+        [
+          406,
+          568
+        ]
+      ],
+      "after_polygon": [
+        [
+          406,
+          525
+        ],
+        [
+          509,
+          525
+        ],
+        [
+          509,
+          568
+        ],
+        [
+          406,
+          568
+        ]
+      ],
+      "evidence": "overhead/ML10-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML11",
+      "bay_id": "OVER-ML11",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          402,
+          569
+        ],
+        [
+          505,
+          569
+        ],
+        [
+          505,
+          612
+        ],
+        [
+          402,
+          612
+        ]
+      ],
+      "after_polygon": [
+        [
+          402,
+          569
+        ],
+        [
+          505,
+          569
+        ],
+        [
+          505,
+          612
+        ],
+        [
+          402,
+          612
+        ]
+      ],
+      "evidence": "overhead/ML11-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ML12",
+      "bay_id": "OVER-ML12",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          407,
+          619
+        ],
+        [
+          510,
+          619
+        ],
+        [
+          510,
+          662
+        ],
+        [
+          407,
+          662
+        ]
+      ],
+      "after_polygon": [
+        [
+          407,
+          619
+        ],
+        [
+          510,
+          619
+        ],
+        [
+          510,
+          662
+        ],
+        [
+          407,
+          662
+        ]
+      ],
+      "evidence": "overhead/ML12-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR01",
+      "bay_id": "OVER-MR01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          514,
+          92
+        ],
+        [
+          617,
+          92
+        ],
+        [
+          617,
+          135
+        ],
+        [
+          514,
+          135
+        ]
+      ],
+      "after_polygon": [
+        [
+          514,
+          92
+        ],
+        [
+          617,
+          92
+        ],
+        [
+          617,
+          135
+        ],
+        [
+          514,
+          135
+        ]
+      ],
+      "evidence": "overhead/MR01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR02",
+      "bay_id": "OVER-MR02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          512,
+          138
+        ],
+        [
+          615,
+          138
+        ],
+        [
+          615,
+          181
+        ],
+        [
+          512,
+          181
+        ]
+      ],
+      "after_polygon": [
+        [
+          512,
+          138
+        ],
+        [
+          615,
+          138
+        ],
+        [
+          615,
+          181
+        ],
+        [
+          512,
+          181
+        ]
+      ],
+      "evidence": "overhead/MR02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR03",
+      "bay_id": "OVER-MR03",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          514,
+          187
+        ],
+        [
+          617,
+          187
+        ],
+        [
+          617,
+          230
+        ],
+        [
+          514,
+          230
+        ]
+      ],
+      "after_polygon": [
+        [
+          514,
+          187
+        ],
+        [
+          617,
+          187
+        ],
+        [
+          617,
+          230
+        ],
+        [
+          514,
+          230
+        ]
+      ],
+      "evidence": "overhead/MR03-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR04",
+      "bay_id": "OVER-MR04",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          511,
+          236
+        ],
+        [
+          614,
+          236
+        ],
+        [
+          614,
+          279
+        ],
+        [
+          511,
+          279
+        ]
+      ],
+      "after_polygon": [
+        [
+          511,
+          236
+        ],
+        [
+          614,
+          236
+        ],
+        [
+          614,
+          279
+        ],
+        [
+          511,
+          279
+        ]
+      ],
+      "evidence": "overhead/MR04-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR05",
+      "bay_id": "OVER-MR05",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          511,
+          284
+        ],
+        [
+          614,
+          284
+        ],
+        [
+          614,
+          327
+        ],
+        [
+          511,
+          327
+        ]
+      ],
+      "after_polygon": [
+        [
+          511,
+          284
+        ],
+        [
+          614,
+          284
+        ],
+        [
+          614,
+          327
+        ],
+        [
+          511,
+          327
+        ]
+      ],
+      "evidence": "overhead/MR05-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR06",
+      "bay_id": "OVER-MR06",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          513,
+          329
+        ],
+        [
+          616,
+          329
+        ],
+        [
+          616,
+          372
+        ],
+        [
+          513,
+          372
+        ]
+      ],
+      "after_polygon": [
+        [
+          513,
+          329
+        ],
+        [
+          616,
+          329
+        ],
+        [
+          616,
+          372
+        ],
+        [
+          513,
+          372
+        ]
+      ],
+      "evidence": "overhead/MR06-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR07",
+      "bay_id": "OVER-MR07",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          510,
+          380
+        ],
+        [
+          613,
+          380
+        ],
+        [
+          613,
+          423
+        ],
+        [
+          510,
+          423
+        ]
+      ],
+      "after_polygon": [
+        [
+          510,
+          380
+        ],
+        [
+          613,
+          380
+        ],
+        [
+          613,
+          423
+        ],
+        [
+          510,
+          423
+        ]
+      ],
+      "evidence": "overhead/MR07-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR08",
+      "bay_id": "OVER-MR08",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s. Adjacent central hatched/service zone stays outside mapped rectangle.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          511,
+          426
+        ],
+        [
+          614,
+          426
+        ],
+        [
+          614,
+          469
+        ],
+        [
+          511,
+          469
+        ]
+      ],
+      "after_polygon": [
+        [
+          511,
+          426
+        ],
+        [
+          614,
+          426
+        ],
+        [
+          614,
+          469
+        ],
+        [
+          511,
+          469
+        ]
+      ],
+      "evidence": "overhead/MR08-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR10",
+      "bay_id": "OVER-MR10",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s. Adjacent central hatched/service zone stays outside mapped rectangle.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          513,
+          524
+        ],
+        [
+          616,
+          524
+        ],
+        [
+          616,
+          567
+        ],
+        [
+          513,
+          567
+        ]
+      ],
+      "after_polygon": [
+        [
+          513,
+          524
+        ],
+        [
+          616,
+          524
+        ],
+        [
+          616,
+          567
+        ],
+        [
+          513,
+          567
+        ]
+      ],
+      "evidence": "overhead/MR10-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR11",
+      "bay_id": "OVER-MR11",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          513,
+          568
+        ],
+        [
+          616,
+          568
+        ],
+        [
+          616,
+          611
+        ],
+        [
+          513,
+          611
+        ]
+      ],
+      "after_polygon": [
+        [
+          513,
+          568
+        ],
+        [
+          616,
+          568
+        ],
+        [
+          616,
+          611
+        ],
+        [
+          513,
+          611
+        ]
+      ],
+      "evidence": "overhead/MR11-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "MR12",
+      "bay_id": "OVER-MR12",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          513,
+          619
+        ],
+        [
+          616,
+          619
+        ],
+        [
+          616,
+          662
+        ],
+        [
+          513,
+          662
+        ]
+      ],
+      "after_polygon": [
+        [
+          513,
+          619
+        ],
+        [
+          616,
+          619
+        ],
+        [
+          616,
+          662
+        ],
+        [
+          513,
+          662
+        ]
+      ],
+      "evidence": "overhead/MR12-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL01",
+      "bay_id": "OVER-EL01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          751,
+          87
+        ],
+        [
+          854,
+          87
+        ],
+        [
+          854,
+          130
+        ],
+        [
+          751,
+          130
+        ]
+      ],
+      "after_polygon": [
+        [
+          751,
+          87
+        ],
+        [
+          854,
+          87
+        ],
+        [
+          854,
+          130
+        ],
+        [
+          751,
+          130
+        ]
+      ],
+      "evidence": "overhead/EL01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL02",
+      "bay_id": "OVER-EL02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          751,
+          136
+        ],
+        [
+          854,
+          136
+        ],
+        [
+          854,
+          179
+        ],
+        [
+          751,
+          179
+        ]
+      ],
+      "after_polygon": [
+        [
+          751,
+          136
+        ],
+        [
+          854,
+          136
+        ],
+        [
+          854,
+          179
+        ],
+        [
+          751,
+          179
+        ]
+      ],
+      "evidence": "overhead/EL02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL03",
+      "bay_id": "OVER-EL03",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          750,
+          188
+        ],
+        [
+          853,
+          188
+        ],
+        [
+          853,
+          231
+        ],
+        [
+          750,
+          231
+        ]
+      ],
+      "after_polygon": [
+        [
+          750,
+          188
+        ],
+        [
+          853,
+          188
+        ],
+        [
+          853,
+          231
+        ],
+        [
+          750,
+          231
+        ]
+      ],
+      "evidence": "overhead/EL03-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL04",
+      "bay_id": "OVER-EL04",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint. Pedestrian/door or neighbour projection changes near perimeter in later frames.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          754,
+          232
+        ],
+        [
+          857,
+          232
+        ],
+        [
+          857,
+          275
+        ],
+        [
+          754,
+          275
+        ]
+      ],
+      "after_polygon": [
+        [
+          754,
+          232
+        ],
+        [
+          857,
+          232
+        ],
+        [
+          857,
+          275
+        ],
+        [
+          754,
+          275
+        ]
+      ],
+      "evidence": "overhead/EL04-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL05",
+      "bay_id": "OVER-EL05",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          752,
+          276
+        ],
+        [
+          855,
+          276
+        ],
+        [
+          855,
+          319
+        ],
+        [
+          752,
+          319
+        ]
+      ],
+      "after_polygon": [
+        [
+          752,
+          276
+        ],
+        [
+          855,
+          276
+        ],
+        [
+          855,
+          319
+        ],
+        [
+          752,
+          319
+        ]
+      ],
+      "evidence": "overhead/EL05-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "E01",
+      "bay_id": "OVER-E01",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Car present at 0s; empty asphalt at 15/27s. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          751,
+          327
+        ],
+        [
+          854,
+          327
+        ],
+        [
+          854,
+          370
+        ],
+        [
+          751,
+          370
+        ]
+      ],
+      "after_polygon": [
+        [
+          751,
+          327
+        ],
+        [
+          854,
+          327
+        ],
+        [
+          854,
+          370
+        ],
+        [
+          751,
+          370
+        ]
+      ],
+      "evidence": "overhead/E01-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL07",
+      "bay_id": "OVER-EL07",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          752,
+          377
+        ],
+        [
+          855,
+          377
+        ],
+        [
+          855,
+          420
+        ],
+        [
+          752,
+          420
+        ]
+      ],
+      "after_polygon": [
+        [
+          752,
+          377
+        ],
+        [
+          855,
+          377
+        ],
+        [
+          855,
+          420
+        ],
+        [
+          752,
+          420
+        ]
+      ],
+      "evidence": "overhead/EL07-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL08",
+      "bay_id": "OVER-EL08",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint. Pedestrian/door or neighbour projection changes near perimeter in later frames.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          757,
+          426
+        ],
+        [
+          860,
+          426
+        ],
+        [
+          860,
+          469
+        ],
+        [
+          757,
+          469
+        ]
+      ],
+      "after_polygon": [
+        [
+          757,
+          426
+        ],
+        [
+          860,
+          426
+        ],
+        [
+          860,
+          469
+        ],
+        [
+          757,
+          469
+        ]
+      ],
+      "evidence": "overhead/EL08-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL09",
+      "bay_id": "OVER-EL09",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint. Pedestrian/door or neighbour projection changes near perimeter in later frames.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          753,
+          472
+        ],
+        [
+          856,
+          472
+        ],
+        [
+          856,
+          515
+        ],
+        [
+          753,
+          515
+        ]
+      ],
+      "after_polygon": [
+        [
+          753,
+          472
+        ],
+        [
+          856,
+          472
+        ],
+        [
+          856,
+          515
+        ],
+        [
+          753,
+          515
+        ]
+      ],
+      "evidence": "overhead/EL09-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL10",
+      "bay_id": "OVER-EL10",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          757,
+          518
+        ],
+        [
+          860,
+          518
+        ],
+        [
+          860,
+          561
+        ],
+        [
+          757,
+          561
+        ]
+      ],
+      "after_polygon": [
+        [
+          757,
+          518
+        ],
+        [
+          860,
+          518
+        ],
+        [
+          860,
+          561
+        ],
+        [
+          757,
+          561
+        ]
+      ],
+      "evidence": "overhead/EL10-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL11",
+      "bay_id": "OVER-EL11",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          760,
+          573
+        ],
+        [
+          863,
+          573
+        ],
+        [
+          863,
+          616
+        ],
+        [
+          760,
+          616
+        ]
+      ],
+      "after_polygon": [
+        [
+          760,
+          573
+        ],
+        [
+          863,
+          573
+        ],
+        [
+          863,
+          616
+        ],
+        [
+          760,
+          616
+        ]
+      ],
+      "evidence": "overhead/EL11-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "EL12",
+      "bay_id": "OVER-EL12",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "possible_thin_right_edge_median_strip",
+      "roadway": "not_observed",
+      "curb": "possible_thin_right_edge_median_strip",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity. Right edge approaches/slightly crosses the pale central median in some rows; do not silently treat this rectangular ROI as a surveyed footprint.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          760,
+          616
+        ],
+        [
+          863,
+          616
+        ],
+        [
+          863,
+          659
+        ],
+        [
+          760,
+          659
+        ]
+      ],
+      "after_polygon": [
+        [
+          760,
+          616
+        ],
+        [
+          863,
+          616
+        ],
+        [
+          863,
+          659
+        ],
+        [
+          760,
+          659
+        ]
+      ],
+      "evidence": "overhead/EL12-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER02",
+      "bay_id": "OVER-ER02",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          892,
+          141
+        ],
+        [
+          995,
+          141
+        ],
+        [
+          995,
+          184
+        ],
+        [
+          892,
+          184
+        ]
+      ],
+      "after_polygon": [
+        [
+          892,
+          141
+        ],
+        [
+          995,
+          141
+        ],
+        [
+          995,
+          184
+        ],
+        [
+          892,
+          184
+        ]
+      ],
+      "evidence": "overhead/ER02-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER03",
+      "bay_id": "OVER-ER03",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          892,
+          190
+        ],
+        [
+          995,
+          190
+        ],
+        [
+          995,
+          233
+        ],
+        [
+          892,
+          233
+        ]
+      ],
+      "after_polygon": [
+        [
+          892,
+          190
+        ],
+        [
+          995,
+          190
+        ],
+        [
+          995,
+          233
+        ],
+        [
+          892,
+          233
+        ]
+      ],
+      "evidence": "overhead/ER03-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER04",
+      "bay_id": "OVER-ER04",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          892,
+          235
+        ],
+        [
+          995,
+          235
+        ],
+        [
+          995,
+          278
+        ],
+        [
+          892,
+          278
+        ]
+      ],
+      "after_polygon": [
+        [
+          892,
+          235
+        ],
+        [
+          995,
+          235
+        ],
+        [
+          995,
+          278
+        ],
+        [
+          892,
+          278
+        ]
+      ],
+      "evidence": "overhead/ER04-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER05",
+      "bay_id": "OVER-ER05",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          895,
+          284
+        ],
+        [
+          998,
+          284
+        ],
+        [
+          998,
+          327
+        ],
+        [
+          895,
+          327
+        ]
+      ],
+      "after_polygon": [
+        [
+          895,
+          284
+        ],
+        [
+          998,
+          284
+        ],
+        [
+          998,
+          327
+        ],
+        [
+          895,
+          327
+        ]
+      ],
+      "evidence": "overhead/ER05-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER06",
+      "bay_id": "OVER-ER06",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          897,
+          330
+        ],
+        [
+          1000,
+          330
+        ],
+        [
+          1000,
+          373
+        ],
+        [
+          897,
+          373
+        ]
+      ],
+      "after_polygon": [
+        [
+          897,
+          330
+        ],
+        [
+          1000,
+          330
+        ],
+        [
+          1000,
+          373
+        ],
+        [
+          897,
+          373
+        ]
+      ],
+      "evidence": "overhead/ER06-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER07",
+      "bay_id": "OVER-ER07",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          898,
+          374
+        ],
+        [
+          1001,
+          374
+        ],
+        [
+          1001,
+          417
+        ],
+        [
+          898,
+          417
+        ]
+      ],
+      "after_polygon": [
+        [
+          898,
+          374
+        ],
+        [
+          1001,
+          374
+        ],
+        [
+          1001,
+          417
+        ],
+        [
+          898,
+          417
+        ]
+      ],
+      "evidence": "overhead/ER07-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER08",
+      "bay_id": "OVER-ER08",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          901,
+          424
+        ],
+        [
+          1004,
+          424
+        ],
+        [
+          1004,
+          467
+        ],
+        [
+          901,
+          467
+        ]
+      ],
+      "after_polygon": [
+        [
+          901,
+          424
+        ],
+        [
+          1004,
+          424
+        ],
+        [
+          1004,
+          467
+        ],
+        [
+          901,
+          467
+        ]
+      ],
+      "evidence": "overhead/ER08-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER09",
+      "bay_id": "OVER-ER09",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          903,
+          474
+        ],
+        [
+          1006,
+          474
+        ],
+        [
+          1006,
+          517
+        ],
+        [
+          903,
+          517
+        ]
+      ],
+      "after_polygon": [
+        [
+          903,
+          474
+        ],
+        [
+          1006,
+          474
+        ],
+        [
+          1006,
+          517
+        ],
+        [
+          903,
+          517
+        ]
+      ],
+      "evidence": "overhead/ER09-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER10",
+      "bay_id": "OVER-ER10",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Some faint paint/vehicle shadows; exposed footprint inspectable.",
+      "issue": "Empty asphalt at setup/0/15/27s.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          899,
+          522
+        ],
+        [
+          1002,
+          522
+        ],
+        [
+          1002,
+          565
+        ],
+        [
+          899,
+          565
+        ]
+      ],
+      "after_polygon": [
+        [
+          899,
+          522
+        ],
+        [
+          1002,
+          522
+        ],
+        [
+          1002,
+          565
+        ],
+        [
+          899,
+          565
+        ]
+      ],
+      "evidence": "overhead/ER10-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER11",
+      "bay_id": "OVER-ER11",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          900,
+          576
+        ],
+        [
+          1003,
+          576
+        ],
+        [
+          1003,
+          619
+        ],
+        [
+          900,
+          619
+        ]
+      ],
+      "after_polygon": [
+        [
+          900,
+          576
+        ],
+        [
+          1003,
+          576
+        ],
+        [
+          1003,
+          619
+        ],
+        [
+          900,
+          619
+        ]
+      ],
+      "evidence": "overhead/ER11-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    },
+    {
+      "camera": "overhead",
+      "slot_id": "ER12",
+      "bay_id": "OVER-ER12",
+      "resolution": [
+        1100,
+        720
+      ],
+      "reviewed_frames": [
+        "setup",
+        "overhead-1-000.0s",
+        "overhead-1-015.0s",
+        "overhead-1-027.0s"
+      ],
+      "sidewalk": "not_observed",
+      "roadway": "not_observed",
+      "curb": "not_observed",
+      "shrub": "not_observed",
+      "hatched_zone": "not_observed",
+      "neighbour_painted_bay": "not_observed",
+      "other_non_bay": "not_observed",
+      "excluded_own_bay": "Rectangular analysis ROI approximates angled painted footprint; narrow edge strips may be excluded. Exact completeness unverified at this resolution.",
+      "marking_obscured": "Vehicle obscures interior and some paint throughout; complete physical perimeter remains unverified.",
+      "issue": "Parked vehicle at setup/0/15/27s; visible adjacent white lines support row/column identity.",
+      "decision": "retain_pending_precise_perimeter_review",
+      "before_polygon": [
+        [
+          900,
+          620
+        ],
+        [
+          1003,
+          620
+        ],
+        [
+          1003,
+          663
+        ],
+        [
+          900,
+          663
+        ]
+      ],
+      "after_polygon": [
+        [
+          900,
+          620
+        ],
+        [
+          1003,
+          620
+        ],
+        [
+          1003,
+          663
+        ],
+        [
+          900,
+          663
+        ]
+      ],
+      "evidence": "overhead/ER12-contact.png",
+      "before_image": "overhead/setup-before.png",
+      "after_image": "overhead/overhead-1-000.0s-after.png"
+    }
+  ]
+}

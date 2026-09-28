@@ -1,0 +1,17 @@
+{
+  "source": "https://drive.google.com/file/d/13am4hfhicErcozAYgkmQm02_K-cCmtkQ/view",
+  "member": {
+    "name": "4_074_0.mp4",
+    "size": 15063322,
+    "compressed_size": 15058645,
+    "offset": 86470439509,
+    "crc32": 2420767603,
+    "method": 8
+  },
+  "added_to_normal_run": false,
+  "combined_streak": false,
+  "sha256": "29705d20211d9f81141b64c3cca9a1459dad509f7027e545a9788fe783574556",
+  "fps": 30.0,
+  "frames": 398,
+  "duration": 13.266666666666667
+}

@@ -1,5 +1,7 @@
 # Guarded vacancy in the recorded parking prototype
 
+**Historical primary policy:** normal Run now uses [OpenCV-first decisions](OPENCV_FIRST.md). The guarded reviewed-empty route remains as a fallback; this document records the earlier YOLO-first replay.
+
 Implemented and replayed on 23 September 2026. This is the current **normal Run / F5** policy for the recorded CHAD and overhead views. The restored `Capstone Implementation_19Sep (1)` folder was left unchanged. The earlier strict decision result and its documentation remain historical baselines.
 
 ## What Final now means

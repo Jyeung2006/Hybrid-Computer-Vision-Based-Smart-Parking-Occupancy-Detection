@@ -1,4 +1,8 @@
+> **Connected Flutter website (27 September 2026):** Run `./apps/parking_web/run-web.ps1` from this folder, then open `http://127.0.0.1:8765/`. The home page now displays actual recorded Python Final results, supports CHAD recording selection and a background analysis action, and labels provisional/unknown states. These are **recorded estimates, not live availability**. See [BACKEND_INTEGRATION.md](BACKEND_INTEGRATION.md) and [FLUTTER_UI.md](FLUTTER_UI.md).
+
 # Parking occupancy prototype
+
+**26 September UI design history:** the responsive occupancy ring and CHAD/Overhead cards were originally delivered with labelled demo data. The 27 September connection above supersedes that default; the design history remains in [FLUTTER_UI.md](FLUTTER_UI.md). The current Python decision policy is documented in [OPENCV_FIRST.md](OPENCV_FIRST.md); the dated results below preserve earlier experiment history.
 
 **23 September guarded vacancy:** normal Run now allows an unresolved bay to become vacant after three consecutive clean three-second observations, successful YOLOv8s no-detection without even a weak nearby vehicle box, and a matching reviewed empty reference when one exists. Without a reference, any such vacancy is explicitly provisional. See [GUARDED_VACANCY.md](GUARDED_VACANCY.md) for the exact rule, risks, all-view replay and usage. The old strict result below is historical.
 
@@ -18,7 +22,7 @@ The overhead camera's small drift is corrected with guarded registration, keepin
 
 **Application validation:** 278 automated tests passed; a fresh headless replay processed all eight recordings and 1,088 bay observations. Compared with the strict baseline, 151 uncertain observations became guarded vacant with reviewed empty matches; underlying Reference/MOG2/YOLO states were unchanged. Independent CHAD/overhead accuracy and false-vacant/false-occupied rates remain unmeasured. See [GUARDED_VACANCY.md](GUARDED_VACANCY.md) and [VALIDATION.md](VALIDATION.md).
 
-The guarded rule records the evidence behind each definite Final decision, including temporal streaks. Logistic probability fusion, persistence/database, Flutter, API server and deployment remain deferred. The earlier MobileNet-SSD supplement and terminal modes are preserved for historical comparison. The rest of this README describes those earlier commands and the original calibrated baseline where stated.
+The guarded rule records the evidence behind each definite Final decision, including temporal streaks. Logistic probability fusion, persistence/database, live camera occupancy integration and public deployment remain deferred. The local recorded-results API and connected Flutter home page are described above. The earlier MobileNet-SSD supplement and terminal modes are preserved for historical comparison. The rest of this README describes those earlier commands and the original calibrated baseline where stated.
 
 ## Run and read the terminal output
 
@@ -253,4 +257,4 @@ The user's requirements are live indoor footage from an authorized existing came
 
 [Pexels](https://www.pexels.com/api/) offers recorded stock media and [personal API keys](https://help.pexels.com/hc/en-us/articles/900004904026-How-do-I-get-an-API-key); [PKLot](https://web.inf.ufpr.br/vri/databases/parking-lot-database/) provides labelled outdoor research images. They do not satisfy the selected live indoor requirement and are not used here. An API key from a media catalogue would not by itself grant access to a suitable camera.
 
-Python keeps image acquisition, numerical work and [OpenCV operations](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) in one small program. It remains a suitable language for a later FastAPI backend, but no app/backend service implementation is included in this stage. The proposal supplied context; its broader architecture and document instructions did not expand this implementation's scope.
+Python keeps image acquisition, numerical work and [OpenCV operations](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) in one small program. It remains a suitable language for a later FastAPI backend, and the later Flutter stage adds a local standard-library HTTP service; see BACKEND_INTEGRATION.md. The proposal supplied context; its broader architecture and document instructions did not expand this implementation's scope.

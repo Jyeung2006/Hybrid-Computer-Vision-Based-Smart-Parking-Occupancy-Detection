@@ -18,6 +18,8 @@ from .sources import Frame, SourceError, utcnow, write_image
 from .vision import Analyzer, occupancy_summary
 from .yolo import DECISION_POLICY
 from .vacancy_guard import GuardedVacancy, GUARDED_DECISION_POLICY
+from .opencv_first import (DECISION_POLICY as OPENCV_FIRST_POLICY, before_yolo,
+                           after_yolo, provisional_occupied_allowed)
 
 BAY_MAP = {"B01": "CHAD-P001", "B02": "CHAD-P002", "B03": "CHAD-P003"}
 
@@ -36,10 +38,15 @@ def final_summary(recordings, status):
     summaries = {}
     for recording in recordings:
         selected = [{"state": r["final_state"]} for r in rows if r["recording_id"] == recording["recording_id"]]
-        summaries[recording["recording_id"]] = occupancy_summary(selected, available=any(s["state"] != "unknown" for s in selected))
+        summary = occupancy_summary(selected, available=any(s["state"] != "unknown" for s in selected))
+        for state in ('occupied', 'vacant'):
+            summary[f'provisional_{state}'] = sum(r['recording_id'] == recording['recording_id']
+                and r['final_state'] == state and bool(r.get('final_provisional')) for r in rows)
+        summaries[recording["recording_id"]] = summary
     return {"run_status": status, "generated_at": utcnow().isoformat(), "historical": True,
             "current_occupancy_available": False, "basis": "last_sampled_frame_per_recording",
-            "decision_rule": (GUARDED_DECISION_POLICY if any(r.get('decision_policy') == GUARDED_DECISION_POLICY for r in rows) else
+            "decision_rule": (OPENCV_FIRST_POLICY if any(r.get('decision_policy') == OPENCV_FIRST_POLICY for r in rows) else
+                              GUARDED_DECISION_POLICY if any(r.get('decision_policy') == GUARDED_DECISION_POLICY for r in rows) else
                               DECISION_POLICY if any('yolo_state' in r for r in rows) else
                               "vehicle_evidence_fallback; conflicting_definite_methods_stay_uncertain" if any('vehicle_state' in r for r in rows)
                               else "both_methods_agree_else_uncertain; both_unknown_stays_unknown"),
@@ -52,7 +59,7 @@ def format_final(result):
     for row in result["rows"]:
         lines.append(f"{row['recording_id']:<8} {video_clock(row['video_position_seconds']):<7} {row['bay_id']:<11} "
                      f"{row['reference_state'].upper():<11} {row['mog2_state'].upper():<11} "
-                     f"{row['final_state'].upper()}{' [PROVISIONAL: 3 NO DETECTIONS]' if row.get('final_provisional') else ''}")
+                     f"{row['final_state'].upper()}{' (P)' if row.get('final_provisional') else ''}")
     for clip, s in result["summaries_by_recording"].items():
         lines.append(f"{clip}: {s['occupied']} occupied | {s['vacant']} vacant | {s['uncertain']} uncertain | "
                      f"{s['unknown']} unknown | occupancy {occupancy_text(s)}")
@@ -61,7 +68,11 @@ def format_final(result):
 
 
 def window_snapshot(result, when, mapping):
-    return {"timeline_seconds": when, "summary": result["summary"],
+    summary = dict(result['summary'])
+    for state in ('occupied', 'vacant'):
+        summary[f'provisional_{state}'] = sum(s['state'] == state and bool(s.get('provisional'))
+                                               for s in result['slots'])
+    return {"timeline_seconds": when, "summary": summary,
             "bays": [{"bay_id": mapping[s["slot_id"]], "state": s["state"], "reason": s["reason"],
                       "provisional": s.get('provisional', False),
                       "vacancy_evidence": s.get('vacancy_evidence'),
@@ -140,7 +151,9 @@ def format_comparison_windows(windows):
 
 def run_comparison(clips, interval, stop, emit, fast=False, frame_limit=0, out=None, prepared=None, bay_map=None,
                    supplemental=False, detector=None, verification=False, service=None, verification_profile='coco',
-                   alternate_policy=False):
+                   alternate_policy=False, opencv_first=False):
+    if opencv_first and not verification:
+        raise ConfigError('OpenCV-first selection requires YOLO fallback support.')
     if alternate_policy and not verification:
         raise ConfigError('The alternate comparison requires the existing YOLO verification pipeline.')
     if supplemental and verification:
@@ -156,12 +169,14 @@ def run_comparison(clips, interval, stop, emit, fast=False, frame_limit=0, out=N
             paths[clip.id] = fetch_clip(clip, lambda msg: emit("status", msg), stop.is_set)
     calibration = prepare_mog2(config, recipe, paths, interval, emit, stop)
     analyzer = Analyzer(config)
-    vacancy_guard = GuardedVacancy(analyzer, interval, recipe.get('slots')) if verification else None
-    methods = ('reference','mog2','yolo','final') if verification else (("reference", "mog2", "vehicle", "final") if supplemental else ("reference", "mog2"))
+    vacancy_guard = GuardedVacancy(analyzer, interval, recipe.get('slots'), reviewed_only=opencv_first) if verification else None
+    methods = (('reference','mog2','vehicle','yolo','final') if opencv_first else
+               ('reference','mog2','yolo','final') if verification else
+               ("reference", "mog2", "vehicle", "final") if supplemental else ("reference", "mog2"))
     if verification:
         from .yolo import YOLOBranch, final_decision as selective_decision
         yolo_branch = YOLOBranch(analyzer,service,verification_profile)
-    if supplemental:
+    if supplemental or opencv_first:
         from .vehicle import VehicleBranch, final_decision
         vehicle_branch = VehicleBranch(analyzer, detector)
     out = Path(out) if out else PROJECT_ROOT / "runs/comparison" / datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S_%fZ")
@@ -196,6 +211,7 @@ def run_comparison(clips, interval, stop, emit, fast=False, frame_limit=0, out=N
             for method, summary in summaries.items():
                 store.csv("summary.csv", [{**common, "method": method, **summary["summary"]}])
                 store.csv("bay-windows.csv", [{**common, "method": method, "bay_id": b["bay_id"], "latest_state": b["state"],
+                    "provisional": bool(b.get('provisional')),
                     "occupied_time_min_pct": b["occupied_time_min_pct"], "occupied_time_max_pct": b["occupied_time_max_pct"],
                     "classified_time_pct": b["classified_time_pct"], **{f"{s}_seconds": v for s,v in b["state_seconds"].items()}}
                     for b in summary["bays"]])
@@ -295,22 +311,63 @@ def run_comparison(clips, interval, stop, emit, fast=False, frame_limit=0, out=N
                 for row in joined['rows']:
                     # Provenance for later opt-in derivation; this never changes a decision.
                     row['reference_calibrated'] = analyzer._calibration_valid(config.slot(row['slot_id']))
+                if opencv_first:
+                    vehicle = vehicle_branch.analyze(image, reference)
+                    vehicle_slots = {s['slot_id']: s for s in vehicle['slots']}
+                    targets = set()
+                    for row in joined['rows']:
+                        evidence = vehicle_slots[row['slot_id']]
+                        evidence['bay_id'] = row['bay_id']
+                        row.update(vehicle_state=evidence['state'], vehicle_reason=evidence['reason'],
+                                   vehicle_detector_score=evidence['detector_score'],
+                                   vehicle_empty_difference=evidence['empty_difference'],
+                                   vehicle_empty_limit=evidence['empty_match_limit'],
+                                   vehicle_ms=vehicle['processing_duration_ms'])
+                        if before_yolo(row['reference_state'], row['mog2_state'], evidence['state'])[3]:
+                            targets.add(row['slot_id'])
+                    runtime['reporters']['vehicle'].write(vehicle, image)
+                    runtime['windows']['vehicle'].update(when, window_snapshot(vehicle, when, mapping))
+                    joined['vehicle'] = vehicle
                 if verification:
-                    yolo = yolo_branch.analyze(image,reference,mog)
+                    yolo = (yolo_branch.analyze(image,reference,mog,targets) if opencv_first else
+                            yolo_branch.analyze(image,reference,mog))
                     completed_at = utcnow().isoformat()
                     by_slot = {s['slot_id']:s for s in yolo['slots']}
                     for row in joined['rows']:
                         evidence=by_slot[row['slot_id']]
                         evidence['bay_id']=row['bay_id']
-                        state,reason=selective_decision(row['reference_state'],row['mog2_state'],evidence['state'])
-                        confirmed_by = {'opencv_branches_agree':'reference_and_mog2',
-                            'yolov8_verified_vehicle':'yolov8'}.get(reason)
+                        if opencv_first:
+                            state,reason,confirmed_by = after_yolo(row['reference_state'],row['mog2_state'],
+                                                                   row['vehicle_state'],evidence['state'])
+                        else:
+                            state,reason=selective_decision(row['reference_state'],row['mog2_state'],evidence['state'])
+                            confirmed_by = {'opencv_branches_agree':'reference_and_mog2',
+                                'yolov8_verified_vehicle':'yolov8'}.get(reason)
                         row.update(yolo_state=evidence['state'],yolo_reason=evidence['reason'],yolo_requested=evidence['requested'],
                             yolo_detector_score=evidence['detector_score'],yolo_ms=yolo['processing_duration_ms'],
                             yolo_profile=verification_profile,final_state=state,final_reason=reason,processed_at=completed_at,
                             final_confirmed_by=confirmed_by,decision_policy=DECISION_POLICY)
                     guard_started = time.perf_counter()
                     vacancy_guard.apply(clip_id, when, reference, mog, yolo, image, joined['rows'])
+                    if opencv_first:
+                        by_config = {s['id']: s for s in analyzer.slot_config}
+                        for row in joined['rows']:
+                            row['decision_policy'] = OPENCV_FIRST_POLICY
+                            row['pre_guard_fallback_state'] = None
+                            row['pre_guard_fallback_reason'] = None
+                            if row['base_final_reason'] != 'opencv_and_yolov8_unresolved':
+                                continue
+                            can_guess = provisional_occupied_allowed(reference, mog, yolo, image,
+                                by_config[row['slot_id']], by_slot[row['slot_id']])
+                            if can_guess:
+                                row['pre_guard_fallback_state'] = 'occupied'
+                                row['pre_guard_fallback_reason'] = 'provisional_occupied_no_definite_evidence'
+                                if row['final_state'] not in ('occupied', 'vacant'):
+                                    row.update(final_state='occupied', final_reason='provisional_occupied_no_definite_evidence',
+                                               final_confirmed_by=None, final_provisional=True)
+                            elif row['final_state'] not in ('occupied', 'vacant'):
+                                row.update(final_state='unknown', final_reason='analysis_or_verification_unavailable',
+                                           final_confirmed_by=None, final_provisional=False)
                     guard_ms = (time.perf_counter()-guard_started)*1000
                     completed_at = utcnow().isoformat()
                     final_slots=[{'slot_id':row['slot_id'],'bay_id':row['bay_id'],'state':row['final_state'],
@@ -321,17 +378,21 @@ def run_comparison(clips, interval, stop, emit, fast=False, frame_limit=0, out=N
                     for row in joined['rows']:
                         row['processed_at'] = completed_at
                         row['guard_processing_ms'] = guard_ms
-                    final_result={**reference,'method':'selective_yolov8_final_estimate','slots':final_slots,
+                    final_result={**reference,'method':'opencv_first_final_estimate' if opencv_first else 'selective_yolov8_final_estimate','slots':final_slots,
                         'summary':occupancy_summary(final_slots,available=any(s['state']!='unknown' for s in final_slots)),
-                        'processed_at':completed_at,'decision_policy':GUARDED_DECISION_POLICY,
-                        'provisional_vacant_count':sum(s['provisional'] for s in final_slots),
+                        'processed_at':completed_at,'decision_policy':OPENCV_FIRST_POLICY if opencv_first else GUARDED_DECISION_POLICY,
+                        'provisional_vacant_count':sum(s['provisional'] and s['state']=='vacant' for s in final_slots),
+                        'provisional_occupied_count':sum(s['provisional'] and s['state']=='occupied' for s in final_slots),
                         'guard_processing_duration_ms':guard_ms,
-                        'processing_duration_ms':sum((r.get('processing_duration_ms') or 0) for r in (reference,mog,yolo))+guard_ms}
+                        'processing_duration_ms':sum((r.get('processing_duration_ms') or 0) for r in
+                            ((reference,mog,vehicle,yolo) if opencv_first else (reference,mog,yolo)))+guard_ms}
+                    final_result['summary']['provisional_occupied'] = final_result['provisional_occupied_count']
+                    final_result['summary']['provisional_vacant'] = final_result['provisional_vacant_count']
                     for method,result in (('yolo',yolo),('final',final_result)):
                         runtime['reporters'][method].write(result,image)
                         runtime['windows'][method].update(when,window_snapshot(result,when,mapping))
                     joined.update(yolo=yolo,final=final_result)
-                if supplemental:
+                if supplemental and not opencv_first:
                     vehicle = vehicle_branch.analyze(image, reference)
                     by_slot = {s['slot_id']: s for s in vehicle['slots']}
                     final_slots = []
@@ -389,6 +450,7 @@ def run_comparison(clips, interval, stop, emit, fast=False, frame_limit=0, out=N
         atomic_json(out / "latest.json", {"run_active": False, "status": status,
             "current_occupancy_available": False, "historical_results": "history.jsonl and per-recording latest-window.json"})
         atomic_json(out / "run.json", {"status": status, "recording_ids": [c.id for c in clips], "sample_interval_seconds": interval,
+            "decision_policy": OPENCV_FIRST_POLICY if opencv_first else GUARDED_DECISION_POLICY if verification else None,
             "summary_interval_seconds": 10, "sample_ticks": ticks, "skipped_ticks": skipped, "errors": errors,
             "samples_by_recording": {k:r["samples"] for k,r in runtimes.items()}, "window_count": window_count,
             "wall_clock_waits_enabled": not fast, "elapsed_seconds": time.monotonic()-begun,

@@ -125,5 +125,6 @@ def area_reports(review, selections, display_overrides=None):
                 "capacity_scope": "mapped_visible_subset" if site == "chad" else "all_69_visible_marked_bays",
                 "available": summary["occupancy_min_pct"] is not None,
                 "provisional_vacant": sum(r['state'] == 'vacant' and bool(r.get('final_provisional')) for r in rows),
+                "provisional_occupied": sum(r['state'] == 'occupied' and bool(r.get('final_provisional')) for r in rows),
                 **summary})
     return reports

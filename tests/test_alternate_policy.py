@@ -70,7 +70,7 @@ def test_ui_opt_in_shows_two_provenances_and_read_only_report(tmp_path):
         app.table.selection_set(app.table.get_children()[0])
         app.show_alternate.set(True); app.toggle_alternate()
         assert app.rate.cget('text') == primary_rate
-        assert app.table.item(app.table.get_children()[0])['values'][4:6] == ['OCCUPIED', 'EXP: VACANT']
+        assert app.table.item(app.table.get_children()[0])['values'][5:7] == ['OCCUPIED', 'EXP: VACANT']
         assert 'YOLOv8' in app.row_details.cget('text')
         assert 'reference_only_experimental' in app.row_details.cget('text')
         assert app.review.samples['chad-1'][0] == original

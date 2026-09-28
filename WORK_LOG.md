@@ -866,3 +866,75 @@ Final documentation check: all 122 local Markdown links resolve; changed Python 
 
 No further model, source-search, calibration or performance experiment was added beyond this request. The alternate remains optional and off by default; MOG2 and primary Final remain active.
 
+## 24 September 2026 — bay boundaries and neighbour-overlap audit
+
+Visually reviewed all 90 bay/view entries with setup and sampled source frames. Corrected only Camera-1 B08/CHAD-P008's curved curb edge; preserved the old recipe and regenerated its reference/empty-match/MOG2 metadata after reviewing five reference frames and twenty vacant labels. No occupied examples were invented. A separate alignment exclusion preserves the old background feature mask; alignment limits are unchanged.
+
+Added actual polygon/box intersection (including concave footprints), anchor/adjacent-bay diagnostics, an explicitly opt-in experimental spill rule and 26 focused tests. Normal Run retains its existing veto. The five experimental cutoffs each fail a pedestrian-occlusion case, so none was promoted. The full replay preserves all raw boxes, model configuration, branch states and 1,088 production decisions. All 60 samples and 20 windows were checked; the real GUI passed table/chart/video/area/summary/seek checks across eight recordings. Full suite: 304 tests passed.
+
+Retrieved a separate 13.27-second Camera-4 clip from the pinned public archive. It is excluded from fitting and normal Run; its 29–31px alignment displacement makes all 15 observations unknown. It cannot extend the original two-sample streak. Independent separate-period accuracy and general false-vacant risk remain unestablished.
+
+Deliverables and limitations: [BAY_BOUNDARY_AUDIT.md](BAY_BOUNDARY_AUDIT.md), [all 90 audit rows](BAY_BOUNDARY_PER_BAY.md), [review/edit guide](BAY_BOUNDARY_REVIEW_GUIDE.md), and native before/after evidence plus full comparisons under `runs/verification/bay-boundary-audit/`. The restored sibling folder and pre-existing user edits were untouched.
+
+## 25 September 2026 — OpenCV-first rollback and replay
+
+At the user's request, restored the pre-audit B08 recipe and removed the last audit's active alignment and overlap diagnostics from normal Run. Saved audit evidence remains historical. Restored the local MobileNet-SSD plus reviewed-empty route and added it as a visible popup column. Reference/MOG2 definite results now settle first; conflicts request YOLO and fall back to Reference, while all-unresolved classic results use MobileNet before YOLO. Valid no-answer samples are labelled OCCUPIED (P), with separate provisional counts throughout the interface and saved reports. No-reference provisional vacancy is disabled under the new policy.
+
+The eight-recording replay has 1,088 paired observations, unchanged Reference/MOG2 states, and 0 uncertain Final results versus 285 in the saved guarded baseline. Of the 684 occupied observations, 96 are provisional. YOLO requests fell from 987 to 573 bay observations. The MobileNet route marks B08 at `chad-4` 15 seconds vacant despite a partly obscuring pedestrian; this is a known false-vacant obstruction case, not validated accuracy. Full results: [OPENCV_FIRST.md](OPENCV_FIRST.md) and [the replay report](runs/verification/opencv-first/report.json).
+
+Final validation: 295 tests passed with the bundled Tcl library paths set explicitly; the five GUI tests also passed separately without that setting. A saved-run GUI check loaded all eight recordings without inference and verified the method columns, selected-bay source, areas, windows and video with no callback errors. The previous boundary-audit-only overlap test was removed when its experimental code was retired. `git diff --check` found no whitespace errors.
+
+## 25 September 2026 — decision-flow explanation and provisional label
+
+Expanded [OPENCV_FIRST.md](OPENCV_FIRST.md) with the per-bay Reference → MOG2 → MobileNet + reviewed-empty → selective YOLO decision flow, the three-sample vacancy guard, and the valid-frame `OCCUPIED (P)` fallback. Documented why an individual method's uncertain result can coexist with an occupied Final result, why an amber `O(P)` video outline can look uncertain, and why these outcomes do not establish accuracy. Corrected the Areas & availability legend: `(P)` may indicate a provisional occupied **or** vacant estimate in the general display; normal OpenCV-first runs disable the no-reference provisional vacancy route. No classification rule, threshold, polygon, or saved replay decision was changed by this documentation/label update.
+
+## 25 September 2026 — PKLot archive storage clarification
+
+Checked the local 4,898,276,304-byte `data/pklot/PKLot.tar.gz` and the PKLot acquisition path. The archive is the pinned original dataset download for independent external validation; only UFPR04's 3,791 JPEG/XML pairs were extracted for the experiment. The extracted files and metadata remain present. Added a storage and rebuild note to [EXTERNAL_VALIDATION.md](EXTERNAL_VALIDATION.md#local-archive-and-disk-space). Normal CHAD/overhead operation and saved results do not require the tarball; removing it would recover about 4.56 GiB, while a future clean rebuild would require reacquisition. The archive was **not** removed.
+
+## 25 September 2026 — popup video startup explanation
+
+Traced the default `main.py` GUI startup: `root.after(150, self.prepare)` starts a worker, and the `ready` event calls `select_clip()` only after MobileNet/YOLO loading, view preparation, MOG2 calibration lookup, all-recording OpenCV-first replay and report writing. The app then opens the local video decoder and paints the first frame. Added the user-facing explanation to [QUICK_START.md](QUICK_START.md). No startup behavior or analysis result was changed.
+
+## 25 September 2026 — per-frame timing and live-use clarification
+
+Read the saved per-branch timing fields from the latest OpenCV-first GUI run (`runs/areas/20260924T195956_624775Z`), covering 50 CHAD and 10 overhead sampled frames. Added median/p95 Reference, MOG2, MobileNet, requested YOLO, decode and approximate combined frame costs to [OPENCV_FIRST.md](OPENCV_FIRST.md#processing-time-and-live-use-scope). Clarified that the current popup batches recorded analysis before playback and that its Live camera tab is a viewer, not a running occupancy pipeline. No new benchmark inference or implementation change was made.
+
+## 26 September 2026 — Flutter parking home page
+
+Implemented the approved driver-facing Flutter web home page in `apps/parking_web/`, using a new light/navy/blue/mint design independent of the Python popup. Added a circular occupancy chart, available-space headline, CHAD and Overhead cards, schematic parking illustrations, a working in-page scroll action, and a keyboard-accessible demo explanation. Bundled Manrope with its SIL Open Font License. Added a PowerShell launch script and web title/favicon/manifest.
+
+Demo data is explicitly labelled and deterministic: CHAD 7/9 occupied (2 available), Overhead 45/69 occupied (24 available), combined 52/78 occupied (26 available). A shared typed snapshot supplies every displayed count. No camera feed, model execution, Python dependency, or saved detection result was changed. Live occupancy integration remains future work and must preserve unknown/provisional/freshness semantics.
+
+Added 650 ms coordinated ring/count entrance motion, restrained card entrance/hover effects, reduced-motion handling, responsive stacked phone cards, screen-reader summaries, enlarged-text support, and 48-pixel interactive targets. Browser inspection led to putting the chart first on phones and keeping the overview horizontal on tablets, so the primary information is visible sooner.
+
+Verification: **14 Flutter model/widget tests passed**, covering calculations, empty/full/zero capacity, chart/card consistency, 1440/768/390/320-pixel layouts, scrolling/focus, keyboard dialog use, reduced motion, 200% phone text, contrast, and labelled touch targets. Testing caught and fixed an invalid progress-bar semantics value. `flutter analyze --no-pub` reported no issues; the production web build succeeded. Its optional Cupertino font warning did not affect the Material icons used by the app.
+
+Opened the production build in the local browser at `http://127.0.0.1:8765`, inspected desktop/tablet/phone layouts, checked keyboard dialog use and phone scrolling, and confirmed the browser accessibility counts. Browser warning/error logs were empty. Saved [desktop](runs/verification/flutter-ui/desktop.png) and [phone cards](runs/verification/flutter-ui/phone-areas.png) evidence. The local server serves only the built web directory and binds to localhost. Complete design, launch, implementation, and future-integration notes: [FLUTTER_UI.md](FLUTTER_UI.md).
+
+
+## 27 September 2026 — Connect Flutter to recorded Python results
+
+Replaced the default Flutter demo snapshot with a same-origin HTTP data client and local Python website/API host (`src/parking_probe/web_server.py`). It reads validated per-bay Final records from compatible OpenCV-first `runs/areas` history, computes state and provisional counts, and supplies provenance. The page polls every three seconds without loading models or waiting for replay on initial opening. Explicit demo fixtures remain for UI testing only.
+
+Added a CHAD Camera 1 recording selector and a background **Run new analysis** action. The action reuses the existing Reference/MOG2/MobileNet/selective-YOLO pipeline for the four Camera 1 recordings and Overhead. Only one worker runs per host. Overlapping CHAD views are excluded from capacity. The connected UI reports 9 CHAD plus 69 Overhead bays and clearly labels recorded estimates from separate periods, not live availability.
+
+Updated the ring, legend, area indicators and summaries to count explicit vacant states, show unknown/uncertain as unresolved, and identify provisional occupied/vacant subsets. Added recording positions, local analysis times, connection errors, retry and source explanations. On API failure the app hides availability counts instead of showing demo or stale current values. Recording switches reject old in-flight responses. Large-text testing exposed a header overflow; constrained/aligning its data button corrected it. Extended the status panel to match the page width after browser review.
+
+Updated the launch script to build Flutter and serve it with the Python API; added the Dart `http` package and no Python package. Updated web metadata, README and FLUTTER_UI.md, and created [BACKEND_INTEGRATION.md](BACKEND_INTEGRATION.md) with architecture, API/schema, commands, per-bay semantics, data provenance, limitations and future live requirements. Preserved unrelated earlier workspace changes and historical audit evidence; no inference rule, threshold or polygon was changed for this task.
+
+Verification: **29 Python tests passed** (13 new API/store/job tests and 16 existing OpenCV-first tests). **27 Flutter model/widget tests passed**, and Flutter analysis reported no issues. Tests cover authentic Python fixture counts, inconsistent payloads/provenance, unavailable states, response ordering, failure/recovery, POST/concurrent-job behavior, responsive widths 1440/768/390/320, reduced motion, 200% phone text, existing keyboard/focus/semantics checks. Production build succeeded with the existing optional Cupertino font warning; the Material icons used by this page rendered correctly.
+
+A real HTTP-triggered analysis completed in `runs/areas/20260926T174542_362312Z`: 39 Camera 1 sampled frames across four recordings and 10 Overhead samples. API totals were independently checked against each returned bay state and mapped capacity. Latest CHAD counts: recordings 1/2/4 have 2 occupied and 7 vacant; recording 3 has 3 occupied (1 provisional) and 6 vacant. Overhead has 54 occupied (6 provisional) and 15 vacant. Default total is **56/78 occupied, 22 vacant, 6 occupied provisional**, matching the prior saved run. Recorded evidence is in `runs/verification/flutter-backend/verification.json` and the four `chad-*-response.json` files.
+
+The existing pedestrian-obstructed B08/chad-4 at 15 seconds still returns **vacant** through `mobilenet_reviewed_empty`; this is a known false-vacant outcome, not repaired by frontend integration. No new accuracy or live-camera claim is made.
+
+Inspected the connected page in the browser at desktop, tablet and phone widths. Keyboard selection of Recording 3 changed the chart to 57/78 and 21 vacant, with 7 provisional occupied in total, and the area cards agreed. Verified phone scroll-to-areas and destination focus. Browser warning/error logs were empty. Reduced motion and enlarged text were verified in widget tests. The local preview runs at `http://127.0.0.1:8765/`; its earlier static server was replaced with the connected host. See the saved desktop and phone screenshots under `runs/verification/flutter-backend/`.
+
+## 28 September 2026 — Proposal progress review and IDE preview guide
+
+Read `NgJiYeung_23026479_proposal.docx`, including the objective/scope, all five methodology phases, evaluation requirements and milestone/risk tables. Compared them with the active outer workspace's source, tests and existing saved validation documents. Created [PROPOSAL_PROGRESS.md](PROPOSAL_PROGRESS.md) with a source hash, requirement/status/evidence/acceptance matrix, deliberate methodology differences and suggested completion order. This was a documentation review; no inference, benchmark, remote server inspection or application change was performed.
+
+The current recorded hybrid detector, bounded YOLO worker and connected Flutter home page are substantial foundations. Remaining requirements include the generic three-snapshot confirmed-state machine, PostgreSQL transactions, specified FastAPI/WebSocket service, complete periodic acquisition-to-Flutter path, slot-level driver presentation, deployed security/freshness/recovery, frozen current-policy ground truth, a complete OpenCV-only/YOLO-only/hybrid comparison and target-VPS operational evidence. The current rule-based OpenCV-first/MobileNet/provisional behavior intentionally differs from the proposal's logistic fusion and retain-prior policy; recommended an explicit supervisor-reviewed methodology decision rather than silently reversing the user's preferred behavior. Credited existing acquisition tests, legacy online Reference CLI, queue controls, external PKLot experiment and recorded UI validation without treating them as full live acceptance or accuracy proof.
+
+Also documented the requested IDE launch steps in BACKEND_INTEGRATION.md and PROPOSAL_PROGRESS.md: use the integrated PowerShell terminal and `./apps/parking_web/run-web.ps1 -SkipBuild`; remove the switch to rebuild, use another port if needed, keep the terminal open, and stop with Ctrl+C. Clarified that existing F5 runs the Python popup and the connected script serves compiled Flutter plus its API rather than hot reload. Verified guidance against the actual launch script and VS Code configuration. The proposal DOCX was left unchanged.

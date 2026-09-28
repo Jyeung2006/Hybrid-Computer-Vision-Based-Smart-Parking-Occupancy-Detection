@@ -42,7 +42,7 @@ def annotate(image, result, slots):
             cv2.polylines(canvas, [points], True, color, 2)
             x, y = points.mean(axis=0).astype(int)
             if len(slots)>20:
-                text=slot['id']+' '+('P?' if state.get('provisional') else
+                text=slot['id']+' '+(state['state'][0].upper()+'(P)' if state.get('provisional') else
                                    {'occupied':'O','vacant':'V','uncertain':'?','unknown':'-'}[state['state']])
                 left,top=map(int,points[0]+[2,2])
                 (width,height),_=cv2.getTextSize(text,cv2.FONT_HERSHEY_SIMPLEX,.32,1)
@@ -52,7 +52,7 @@ def annotate(image, result, slots):
             if "bay_id" in state:
                 # Two centered lines below the bay keep long shared IDs from
                 # colliding with neighbouring labels or covering the vehicle.
-                lines = [state["bay_id"], 'VACANT (P)' if state.get('provisional') else state["state"].upper()]
+                lines = [state["bay_id"], state["state"].upper() + (' (P)' if state.get('provisional') else '')]
                 scale = min(.43, max(40, int(np.ptp(points[:, 0])) - 12) /
                             max(cv2.getTextSize(line, cv2.FONT_HERSHEY_SIMPLEX, 1, 1)[0][0] for line in lines))
                 y = min(int(points[:, 1].max()) + 17, canvas.shape[0] - 24)
@@ -63,7 +63,7 @@ def annotate(image, result, slots):
                     cv2.rectangle(canvas, (left - 3, baseline - height - 3), (left + width + 3, baseline + 3), (20, 20, 20), -1)
                     cv2.putText(canvas, line, (left, baseline), cv2.FONT_HERSHEY_SIMPLEX, scale, color, 1, cv2.LINE_AA)
             else:
-                label = f'{slot["id"]}: {"vacant (P)" if state.get("provisional") else state["state"]}'
+                label = f'{slot["id"]}: {state["state"]}{" (P)" if state.get("provisional") else ""}'
                 cv2.putText(canvas, label, (max(0, x - 40), y), cv2.FONT_HERSHEY_SIMPLEX, .45, (0, 0, 0), 3, cv2.LINE_AA)
                 cv2.putText(canvas, label, (max(0, x - 40), y), cv2.FONT_HERSHEY_SIMPLEX, .45, color, 1, cv2.LINE_AA)
     # Add a separate footer so status text never hides the parking spaces.
@@ -87,9 +87,11 @@ def annotate(image, result, slots):
     elif result.get('method') == 'selective_yolov8s_verification':
         title += ' | YOLOv8s VERIFICATION'
         evidence_note = 'Only unresolved/conflicting bays verified; absent or weak detection is not vacancy'
-    elif result.get('method') == 'selective_yolov8_final_estimate':
-        title += ' | FINAL HYBRID ESTIMATE'
-        evidence_note = 'Reference + MOG2 agreement, YOLOv8 vehicle, or guarded vacancy; P = provisional no-detection'
+    elif result.get('method') in ('selective_yolov8_final_estimate', 'opencv_first_final_estimate'):
+        title += ' | FINAL OPENCV-FIRST ESTIMATE' if result.get('method') == 'opencv_first_final_estimate' else ' | FINAL HYBRID ESTIMATE'
+        evidence_note = ('OpenCV-first decision with selective YOLO; (P) = provisional occupied or vacant'
+                         if result.get('method') == 'opencv_first_final_estimate' else
+                         'Reference + MOG2 agreement, YOLOv8 vehicle, or guarded vacancy; (P) = provisional vacancy')
     lines = [title,
              summary_text(result), f'Source captured: {capture}',
              f'{"Decoded locally" if recorded else "Received"}: {result.get("received_at") or "unavailable"}',

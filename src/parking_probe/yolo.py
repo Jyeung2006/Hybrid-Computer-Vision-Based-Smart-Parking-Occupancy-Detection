@@ -188,12 +188,14 @@ class YOLOBranch:
     def __init__(self, analyzer, service, profile='coco'):
         self.analyzer,self.service,self.profile=analyzer,service,profile
 
-    def analyze(self,image,reference,mog2):
+    def analyze(self,image,reference,mog2,requested_slots=None):
         start=time.perf_counter();started=utcnow().isoformat()
         if any(reference.get(k)!=mog2.get(k) for k in ('source_id','frame_id')):
             raise SourceError('yolov8_branch_frame_mismatch')
         other={s['slot_id']:s for s in mog2['slots']}
-        targets=[s['slot_id'] for s in reference['slots'] if needs_verification(s['state'],other[s['slot_id']]['state'])]
+        targets=([s['slot_id'] for s in reference['slots'] if needs_verification(s['state'],other[s['slot_id']]['state'])]
+                 if requested_slots is None else
+                 [s['slot_id'] for s in reference['slots'] if s['slot_id'] in requested_slots])
         result=deepcopy(reference);detections=[];job={};error=None
         invalid=reference.get('stale') or reference.get('analysis_status')!='estimated' or image is None
         if invalid:error=reference.get('error') or 'yolov8_frame_unusable'

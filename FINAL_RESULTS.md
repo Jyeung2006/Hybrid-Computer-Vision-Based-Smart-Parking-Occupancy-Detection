@@ -1,5 +1,7 @@
 # Final recorded parking estimates
 
+**Current normal Run:** see [OpenCV-first decisions](OPENCV_FIRST.md). The dated sections below preserve earlier policy results and are not current accuracy measurements.
+
 ## Current guarded-vacancy replay — 23 September 2026
 
 The latest all-view replay changed **151 of 1,088** per-frame bay observations from uncertain to vacant after three consecutive clean observations with reviewed empty matches. Occupied observations stayed at 582; totals changed from **582 occupied / 70 vacant / 436 uncertain / 0 unknown** to **582 / 221 / 285 / 0**. No no-reference provisional vacancy occurred in these recordings. Reference, MOG2 and YOLO evidence remained unchanged. The final overhead sample is **48 occupied / 9 vacant / 12 uncertain / 0 unknown** out of 69, an occupancy range of **69.6–87.0%**. These recorded estimates have no independent accuracy or false-vacant measurement. The full per-view/per-bay comparison, rule, risks and reproducible checks are in [GUARDED_VACANCY.md](GUARDED_VACANCY.md) and [the saved report](runs/verification/guarded-vacancy-report.json).

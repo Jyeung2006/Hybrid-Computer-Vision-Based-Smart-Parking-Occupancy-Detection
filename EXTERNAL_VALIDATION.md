@@ -289,6 +289,12 @@ Verification: **254 tests passed in 64.16 seconds**; [test report](runs/verifica
 
 Model manifest: [`assets/models/yolov8s-manifest.json`](assets/models/yolov8s-manifest.json). No fine-tuning occurred. The existing COCO/VisDrone pretrained weights are used as supplied; this experiment does not audit their complete upstream training provenance.
 
+### Local archive and disk space
+
+`data/pklot/PKLot.tar.gz` is the pinned original PKLot dataset download used to prepare this independent validation experiment. It is **4,898,276,304 bytes (about 4.56 GiB)**. The project extracted only UFPR04's **3,791 full-resolution JPEG images and 3,791 XML annotations** into `data/pklot/UFPR04/`; the archive also contains data outside the subset used in the experiment. The extracted files and other local PKLot metadata currently occupy about **1.25 GB** separately from the archive.
+
+Normal CHAD/overhead camera operation, opening saved validation reports, and checks that read the already-extracted UFPR04 files do not read the tarball. The acquisition code first checks `data/pklot/extraction.json` and verifies the extracted member hashes; with that receipt and files intact, it does not reopen or download the archive. Therefore, after confirming the extracted files are retained, the tarball can be removed to recover about 4.56 GiB **without affecting normal parking operation or the saved results**. Keep it if an offline, byte-for-byte copy of the original source is needed. If the extraction receipt or source files are lost, rebuilding from scratch will require the same pinned archive again (or a new download). Do not remove `UFPR04/`, `extraction.json`, `partitions.json`, or `experiment/` when only reclaiming archive space.
+
 ## Interpretation and next work
 
 Use the measured classified accuracy **together with coverage and error counts**. Low coverage or poor metrics are an experimental finding, not grounds to retune against these test dates. Large per-bay calibration counts do not prove that simple single-reference difference and MOG2 features separate occupancy under changing illumination or camera geometry.

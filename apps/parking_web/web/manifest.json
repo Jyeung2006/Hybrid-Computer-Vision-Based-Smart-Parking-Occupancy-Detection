@@ -1,0 +1,19 @@
+{
+    "name": "Parking — Find your next space",
+    "short_name": "Parking",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#F7F9FC",
+    "theme_color": "#315FEA",
+    "description": "Recorded CHAD and Overhead parking analysis.",
+    "orientation": "any",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any"
+        }
+    ]
+}

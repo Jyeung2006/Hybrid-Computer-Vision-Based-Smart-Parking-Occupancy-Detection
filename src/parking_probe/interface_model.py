@@ -72,10 +72,16 @@ class PlaybackGuard:
                 'reviewed_empty_and_three_clean_no_detections')
             self.streaks[bay] = min(3, self.streaks.get(bay, 0) + 1) if candidate else 0
             if candidate and self.streaks[bay] < 3:
-                row['final_state'] = row['base_final_state']
-                row['final_reason'] = 'playback_guard_streak_incomplete'
-                row['final_confirmed_by'] = row.get('base_final_confirmed_by')
-                row['final_provisional'] = False
+                if row.get('pre_guard_fallback_state'):
+                    row['final_state'] = row['pre_guard_fallback_state']
+                    row['final_reason'] = row['pre_guard_fallback_reason']
+                    row['final_confirmed_by'] = None
+                    row['final_provisional'] = True
+                else:
+                    row['final_state'] = row['base_final_state']
+                    row['final_reason'] = 'playback_guard_streak_incomplete'
+                    row['final_confirmed_by'] = row.get('base_final_confirmed_by')
+                    row['final_provisional'] = False
             row['vacancy_guard_streak'] = self.streaks[bay]
         if 'final' in display:
             by_slot = {r['slot_id']: r for r in display['rows']}
@@ -86,6 +92,10 @@ class PlaybackGuard:
                             provisional=row.get('final_provisional', False),
                             vacancy_guard_streak=row.get('vacancy_guard_streak', 0))
             display['final']['summary'] = occupancy_summary(display['final']['slots'])
+            display['final']['summary']['provisional_occupied'] = sum(
+                s['state'] == 'occupied' and s.get('provisional', False) for s in display['final']['slots'])
+            display['final']['summary']['provisional_vacant'] = sum(
+                s['state'] == 'vacant' and s.get('provisional', False) for s in display['final']['slots'])
         self.cached = display
         return display
 
@@ -127,18 +137,26 @@ def window_text(window):
         s = window[method]["summary"]
         lines.append(f"{title}: {s['occupied']} occupied / {s['vacant']} vacant / "
                      f"{s['uncertain']} uncertain / {s['unknown']} unknown")
+        if method == 'final':
+            lines.append(f"Provisional Final: {s.get('provisional_occupied', 0)} occupied / "
+                         f"{s.get('provisional_vacant', 0)} vacant")
     if 'yolo' in window:
-        lines.append('YOLO unknown includes slots skipped because OpenCV already agreed.')
-    extra='yolo' if 'yolo' in window else 'vehicle' if 'vehicle' in window else None
-    lines.append("Estimated occupied time per bay (Reference / MOG2" + ((" / YOLOv8 / Final):" if extra=='yolo' else " / Vehicle / Final):") if extra else "):"))
+        lines.append('YOLO unknown includes bays skipped because OpenCV supplied a result.')
+    extras = [method for method in ('vehicle', 'yolo') if method in window]
+    labels = {'vehicle': 'MobileNet', 'yolo': 'YOLOv8'}
+    lines.append('Estimated occupied time per bay (Reference / MOG2' +
+                 ''.join(' / ' + labels[method] for method in extras) +
+                 (' / Final):' if 'final' in window else '):'))
     for r, m in zip(ref["bays"], window["mog2"]["bays"], strict=True):
         def rate(b):
             low, high = b["occupied_time_min_pct"], b["occupied_time_max_pct"]
             return f"{low:.0f}%" if abs(high-low) < 1e-8 else f"{low:.0f}-{high:.0f}%"
         suffix = ''
-        if extra:
-            v = next(b for b in window[extra]['bays'] if b['bay_id'] == r['bay_id'])
+        for method in extras:
+            bay = next(b for b in window[method]['bays'] if b['bay_id'] == r['bay_id'])
+            suffix += f' / {rate(bay)}'
+        if 'final' in window:
             f = next(b for b in window['final']['bays'] if b['bay_id'] == r['bay_id'])
-            suffix = f" / {rate(v)} / {rate(f)}  ({f['state']}{' PROVISIONAL' if f.get('provisional') else ''})"
+            suffix += f" / {rate(f)}  ({f['state']}{' (P)' if f.get('provisional') else ''})"
         lines.append(f"{r['bay_id']}: {rate(r)} / {rate(m)}" + suffix)
     return "\n".join(lines)

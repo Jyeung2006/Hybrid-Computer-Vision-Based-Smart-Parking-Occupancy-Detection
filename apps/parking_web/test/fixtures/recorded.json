@@ -1,0 +1,623 @@
+{
+  "schema_version": 1,
+  "mode": "recorded",
+  "live_availability": false,
+  "basis": "latest_sample_per_selected_recording",
+  "served_at": "2026-09-26T17:48:23.120029+00:00",
+  "chad_recording": "chad-1",
+  "chad_recordings": [
+    "chad-1",
+    "chad-2",
+    "chad-3",
+    "chad-4"
+  ],
+  "areas": [
+    {
+      "id": "chad",
+      "name": "CHAD",
+      "capacity": 9,
+      "occupied": 2,
+      "vacant": 7,
+      "uncertain": 0,
+      "unknown": 0,
+      "provisional_occupied": 0,
+      "provisional_vacant": 0,
+      "has_sample": true,
+      "source": {
+        "run_id": "20260924T195956_624775Z",
+        "recording_id": "chad-1",
+        "frame_id": "chad-1-000809",
+        "sample_seconds": 27.0,
+        "processed_at": "2026-09-24T20:00:24.774963+00:00",
+        "decision_policy": "opencv_first_mobilenet_then_selective_yolov8_v1"
+      },
+      "issue": null,
+      "scope": "Camera 1 mapped bays",
+      "bays": [
+        {
+          "bay_id": "CHAD-P001",
+          "state": "occupied",
+          "provisional": false,
+          "source": "reference_and_mog2",
+          "reason": "opencv_branches_agree"
+        },
+        {
+          "bay_id": "CHAD-P002",
+          "state": "vacant",
+          "provisional": false,
+          "source": "reference_and_mog2",
+          "reason": "opencv_branches_agree"
+        },
+        {
+          "bay_id": "CHAD-P003",
+          "state": "vacant",
+          "provisional": false,
+          "source": "reference_and_mog2",
+          "reason": "opencv_branches_agree"
+        },
+        {
+          "bay_id": "CHAD-P004",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "CHAD-P005",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "CHAD-P006",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "CHAD-P007",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "CHAD-P008",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "CHAD-P009",
+          "state": "occupied",
+          "provisional": false,
+          "source": "mobilenet_ssd",
+          "reason": "mobilenet_occupied"
+        }
+      ]
+    },
+    {
+      "id": "overhead",
+      "name": "Overhead",
+      "capacity": 69,
+      "occupied": 54,
+      "vacant": 15,
+      "uncertain": 0,
+      "unknown": 0,
+      "provisional_occupied": 6,
+      "provisional_vacant": 0,
+      "has_sample": true,
+      "source": {
+        "run_id": "20260924T195956_624775Z",
+        "recording_id": "overhead-1",
+        "frame_id": "overhead-1-000648",
+        "sample_seconds": 27.0,
+        "processed_at": "2026-09-24T20:00:45.490873+00:00",
+        "decision_policy": "opencv_first_mobilenet_then_selective_yolov8_v1"
+      },
+      "issue": null,
+      "scope": "All 69 mapped bays",
+      "bays": [
+        {
+          "bay_id": "OVER-WL01",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL02",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL03",
+          "state": "occupied",
+          "provisional": true,
+          "source": null,
+          "reason": "provisional_occupied_no_definite_evidence"
+        },
+        {
+          "bay_id": "OVER-WL04",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL05",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL06",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL07",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-WL08",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL09",
+          "state": "occupied",
+          "provisional": true,
+          "source": null,
+          "reason": "provisional_occupied_no_definite_evidence"
+        },
+        {
+          "bay_id": "OVER-WL10",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WL11",
+          "state": "occupied",
+          "provisional": true,
+          "source": null,
+          "reason": "provisional_occupied_no_definite_evidence"
+        },
+        {
+          "bay_id": "OVER-WL12",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR01",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR02",
+          "state": "occupied",
+          "provisional": true,
+          "source": null,
+          "reason": "provisional_occupied_no_definite_evidence"
+        },
+        {
+          "bay_id": "OVER-WR03",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR04",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR05",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR06",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR07",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-W02",
+          "state": "vacant",
+          "provisional": false,
+          "source": "reference_and_mog2",
+          "reason": "opencv_branches_agree"
+        },
+        {
+          "bay_id": "OVER-WR09",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-WR10",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-W01",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-WR12",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML01",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML02",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML03",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-ML04",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML05",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML06",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML07",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML08",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML10",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ML11",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-ML12",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR01",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR02",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR03",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR04",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR05",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-MR06",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR07",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR08",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-MR10",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-MR11",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-MR12",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL01",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL02",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL03",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL04",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL05",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-E01",
+          "state": "vacant",
+          "provisional": false,
+          "source": "reference_and_mog2",
+          "reason": "opencv_branches_agree"
+        },
+        {
+          "bay_id": "OVER-EL07",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-EL08",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL09",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-EL10",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-EL11",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-EL12",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ER02",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-ER03",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ER04",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ER05",
+          "state": "occupied",
+          "provisional": true,
+          "source": null,
+          "reason": "provisional_occupied_no_definite_evidence"
+        },
+        {
+          "bay_id": "OVER-ER06",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ER07",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ER08",
+          "state": "occupied",
+          "provisional": true,
+          "source": null,
+          "reason": "provisional_occupied_no_definite_evidence"
+        },
+        {
+          "bay_id": "OVER-ER09",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-ER10",
+          "state": "vacant",
+          "provisional": false,
+          "source": "mobilenet_reviewed_empty",
+          "reason": "mobilenet_vacant"
+        },
+        {
+          "bay_id": "OVER-ER11",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        },
+        {
+          "bay_id": "OVER-ER12",
+          "state": "occupied",
+          "provisional": false,
+          "source": "yolov8",
+          "reason": "yolov8_verified_vehicle"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "capacity": 78,
+    "occupied": 56,
+    "vacant": 22,
+    "uncertain": 0,
+    "unknown": 0,
+    "provisional_occupied": 6,
+    "provisional_vacant": 0
+  },
+  "analysis": {
+    "status": "idle",
+    "message": "Showing saved recorded results."
+  }
+}

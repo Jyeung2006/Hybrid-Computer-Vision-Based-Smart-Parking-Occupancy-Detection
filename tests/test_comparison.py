@@ -11,6 +11,7 @@ from parking_probe.config import ConfigError, polygon_signature
 from parking_probe.mog2 import MOG2Branch
 from parking_probe.sources import SourceError
 from parking_probe.vision import Analyzer, PREPROCESSING
+from parking_probe.opencv_first import before_yolo, DECISION_POLICY as OPENCV_FIRST_POLICY
 
 
 def prepare(config, scene, tmp_path, monkeypatch):
@@ -100,6 +101,38 @@ def test_supplemental_branch_and_final_windows_preserve_separate_method_results(
     assert (out / 'chad-1/final/latest.png').exists()
     final = json.loads((out / 'final-summary.json').read_text())
     assert final['summaries_by_recording']['chad-1']['occupied'] == 1
+
+
+def test_opencv_first_replay_exposes_mobilenet_and_requests_only_unresolved_bays(config, scene, tmp_path, monkeypatch):
+    prepare(config, scene, tmp_path, monkeypatch)
+    class Detector:
+        def detect(self, image):
+            return []
+    class Service:
+        def verify(self, image, camera, frame, slots, profile):
+            return {'camera_id': camera, 'frame_id': frame, 'slot_ids': slots,
+                    'detections': [], 'error': None}
+    events = []
+    out = tmp_path / 'opencv-first'
+    assert comparison.run_comparison(CLIPS[:1], 3, threading.Event(), lambda *e: events.append(e),
+        fast=True, out=out, verification=True, service=Service(), detector=Detector(),
+        opencv_first=True) == 0
+    pairs = [p for kind, batch in events if kind == 'comparison_samples' for p in batch['recordings']]
+    assert pairs
+    for pair in pairs:
+        assert {'reference', 'mog2', 'vehicle', 'yolo', 'final'} <= pair.keys()
+        assert pair['final']['method'] == 'opencv_first_final_estimate'
+        for row in pair['rows']:
+            expected = before_yolo(row['reference_state'], row['mog2_state'], row['vehicle_state'])
+            assert row['yolo_requested'] == expected[3]
+            assert row['decision_policy'] == OPENCV_FIRST_POLICY
+            if not row['yolo_requested']:
+                assert row['final_state'] == expected[0]
+                assert row['final_confirmed_by'] == expected[2]
+    window = next(v for kind, v in events if kind == 'comparison_windows')[0]
+    assert {'vehicle', 'yolo', 'final'} <= window.keys()
+    assert (out / 'chad-1/vehicle/latest.json').exists()
+    assert (out / 'chad-1/final/latest.png').exists()
 
 
 def test_one_decode_failure_clears_both_branches_and_others_continue(config, scene, tmp_path, monkeypatch):

@@ -43,7 +43,7 @@ def near_vehicle_box(polygon, detections):
 class GuardedVacancy:
     """Camera/recording/bay scoped history, independent of UI playback speed."""
 
-    def __init__(self, analyzer, interval=3.0, review_slots=None):
+    def __init__(self, analyzer, interval=3.0, review_slots=None, *, reviewed_only=False):
         self.analyzer = analyzer
         self.interval = interval
         self.empty = EmptyEvidence(analyzer)
@@ -52,6 +52,7 @@ class GuardedVacancy:
                                        if k in ('mapping_status', 'visibility')}} for s in analyzer.slot_config}
         self.streaks = {}
         self.last = {}
+        self.reviewed_only = reviewed_only
 
     def reset(self, camera_id=None, recording_id=None):
         if camera_id is None and recording_id is None:
@@ -142,6 +143,8 @@ class GuardedVacancy:
                         reason = 'reviewed_empty_mismatch'
                     else:
                         row['vacancy_evidence'] = 'reviewed_empty_and_three_clean_no_detections'
+            elif self.reviewed_only:
+                reason = 'no_reviewed_empty_reference'
             else:
                 row['vacancy_evidence'] = 'provisional_repeated_no_detection'
             if reason:
