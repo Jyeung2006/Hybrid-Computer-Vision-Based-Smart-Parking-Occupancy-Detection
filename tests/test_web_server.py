@@ -139,3 +139,38 @@ def test_http_contract_and_local_analysis_action(root, monkeypatch):
         server.shutdown()
         server.server_close()
         worker.join(2)
+
+
+def test_replay_http_keeps_simulation_separate_from_recorded_totals(root, monkeypatch):
+    web = root / 'web'
+    web.mkdir()
+    (web / 'index.html').write_text('parking')
+    server = make_server(0, root, web)
+    def start(source_id):
+        server.replay_job.store.begin(source_id)
+        return True
+    monkeypatch.setattr(server.replay_job, 'start', start)
+    worker = threading.Thread(target=server.serve_forever, daemon=True)
+    worker.start()
+    base = f'http://127.0.0.1:{server.server_port}'
+    try:
+        with urlopen(base + '/api/replay') as response:
+            initial = json.load(response)
+        assert initial['simulation'] is True and initial['live_availability'] is False
+        assert initial['available'] == 0
+        request = Request(base + '/api/replay/start', data=b'{"source_id":"chad-1"}', method='POST',
+            headers={'X-Parking-Client': 'web', 'Content-Type': 'application/json'})
+        with urlopen(request) as response:
+            started = json.load(response)
+        assert started['mode'] == 'replay' and started['capacity'] == 3
+        assert started['source_id'] == 'chad-1' and started['available'] == 0
+        with pytest.raises(HTTPError) as exc:
+            urlopen(Request(base + '/api/replay/start', data=b'{"source_id":"bad"}', method='POST',
+                headers={'X-Parking-Client': 'web'}))
+        assert exc.value.code == 400
+        with urlopen(base + '/api/occupancy') as response:
+            assert json.load(response)['mode'] == 'recorded'
+    finally:
+        server.shutdown()
+        server.server_close()
+        worker.join(2)

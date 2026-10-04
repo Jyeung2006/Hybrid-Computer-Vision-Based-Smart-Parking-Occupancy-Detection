@@ -33,6 +33,7 @@ from .view_presets import prepare_view
 from .yolo import YOLODetector, VerificationService
 from .vehicle import VehicleDetector, prepare_model as prepare_mobilenet
 from .display_model import occupancy_text, video_clock, local_time
+from .documentation import MANUAL_NAME, read_document
 from .interface_model import Review, PlaybackGuard, STATES, chart_data, ring_segments, window_text
 from .sources import CameraSource, SourceError, utcnow
 
@@ -428,7 +429,7 @@ class ParkingInterface:
         self.connect_button.pack(side="left")
         ttk.Button(bar, text="Disconnect", command=self.disconnect_live).pack(side="left", padx=7)
         self.label(panel, "Set PARKING_CAMERA_URL in the launching terminal; source.type is snapshot or stream in config.local.json.\n"
-                   "Snapshot refresh uses the configured interval (3s by default). See INTERFACE.md for the short live setup.",
+                   "Snapshot refresh uses the configured interval (3s by default). See PROJECT_DOCUMENTATION.md#doc-interface for the short live setup.",
                    10, MUTED, justify="left").pack(anchor="w", pady=(10, 0))
         self.live_status = self.label(self.live, "Live occupancy unavailable until this camera has its own bay setup and calibration.",
                                       10, MUTED, justify="left", anchor="w", wraplength=1050)
@@ -472,7 +473,7 @@ class ParkingInterface:
                 self.events.put(("status", "Loading the local YOLOv8s models…"))
                 detector = YOLODetector()
             except Exception:
-                issues.append("YOLOv8s model unavailable; unresolved bays cannot be verified. See YOLOV8.md.")
+                issues.append("YOLOv8s model unavailable; unresolved bays cannot be verified. See PROJECT_DOCUMENTATION.md#doc-yolov8.")
             service = VerificationService(detector)
             self.verification_service = service
             for view in [VIEWS['chad-1'], *(VIEWS[c.id] for c in EXTRA_VIEWS)]:
@@ -803,10 +804,10 @@ class ParkingInterface:
 
     def open_validation_report(self):
         """A read-only document viewer, with no dataset playback or inference."""
-        path = PROJECT_ROOT / 'EXTERNAL_VALIDATION.md'
+        path = PROJECT_ROOT / MANUAL_NAME
         try:
-            contents = path.read_text(encoding='utf-8')
-        except OSError:
+            contents = read_document(PROJECT_ROOT, 'EXTERNAL_VALIDATION.md')
+        except (OSError, ValueError):
             self.status.configure(text='External validation report is unavailable: ' + str(path))
             return
         window = tk.Toplevel(self.root)

@@ -7,4 +7,5 @@ config.local.json
 site.local.json
 data/
 runs/
+spotlens/
 *.log

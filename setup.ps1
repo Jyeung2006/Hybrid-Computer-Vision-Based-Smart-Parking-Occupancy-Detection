@@ -20,4 +20,4 @@ if ($LASTEXITCODE -ne 0) { throw 'Project installation failed.' }
 if (-not (Test-Path -LiteralPath 'config.local.json')) {
     Copy-Item -LiteralPath 'config.example.json' -Destination 'config.local.json'
 }
-Write-Output 'Dependencies installed. Open main.py in VS Code and press Run Python File. See QUICK_START.md for the guide and TROUBLESHOOTING.md if Windows blocks OpenCV.'
+Write-Output 'Dependencies installed. Open main.py in VS Code and press Run Python File. See README.md for launch instructions and PROJECT_DOCUMENTATION.md#doc-troubleshooting if Windows blocks OpenCV.'

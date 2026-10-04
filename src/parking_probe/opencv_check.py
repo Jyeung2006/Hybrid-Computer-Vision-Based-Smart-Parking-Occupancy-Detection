@@ -120,7 +120,7 @@ def run():
             elif "application control" in str(exc).lower():
                 print("Windows blocked OpenCV's installed cv2.pyd library. The videos are already downloaded.\n"
                       "Downloading them again will not fix this. No video decoding or image processing ran.\n"
-                      "See TROUBLESHOOTING.md for the Windows compatibility issue.", flush=True)
+                      "See PROJECT_DOCUMENTATION.md#doc-troubleshooting for the Windows compatibility issue.", flush=True)
     finally:
         if capture is not None:
             capture.release()

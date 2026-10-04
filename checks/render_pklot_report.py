@@ -6,6 +6,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'src'))
 from parking_probe.config import atomic_json
+from parking_probe.documentation import read_document, replace_document
 
 
 def number(value):
@@ -42,7 +43,7 @@ def render():
         '- Existing evaluation supported multiple labelled slots but computed single-branch metrics inline. `ClassificationMetrics` is now shared by both evaluators; `reference_boundaries` shares the existing percentile fitting and metadata. No duplicate Reference or MOG2 classifier was introduced.',
         '- The proposal also describes probability fusion, fine-tuning, a full-frame YOLO-only comparator, temporal confirmation, Brier score, deployment and operational experiments. This scoped addition measures the currently implemented selective pipeline. Its YOLO rows are **selective verification**, not a YOLO-only whole-dataset classifier; appearance scores are not occupancy probabilities. Those broader proposal stages remain separate.', '',
         '## Dataset, license and integrity', '',
-        'Dataset: [PKLot](https://web.inf.ufpr.br/vri/databases/parking-lot-database/), Almeida et al., *Expert Systems with Applications* 42(11):4937–4949 (2015), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See [local attribution](third_party/PKLOT-LICENSE.md). UFPR04 and UFPR05 are two views of one UFPR car park; PUCPR is another car park. Only UFPR04 is used here.', '',
+        'Dataset: [PKLot](https://web.inf.ufpr.br/vri/databases/parking-lot-database/), Almeida et al., *Expert Systems with Applications* 42(11):4937–4949 (2015), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). See [local attribution](#doc-third-party-pklot-license). UFPR04 and UFPR05 are two views of one UFPR car park; PUCPR is another car park. Only UFPR04 is used here.', '',
         'The university domain did not resolve locally. The [pinned original-archive mirror](https://huggingface.co/datasets/teenygrad/pklot/tree/9604b05ad6dfd5ab5817b5fa6600d375754562fb) supplied the original JPEG/XML archive. This is not a resized/reshuffled Roboflow export.', '',
         f'- Archive size: **4,898,276,304 bytes**; SHA-256 `{r["archive_sha256"]}`.',
         '- The downloaded bytes matched the mirror’s published Git LFS hash. No independent university-side checksum was available. Source revision is pinned in code; extracted member hashes are recorded and checked.',
@@ -78,7 +79,7 @@ def render():
         lines.append(f'| {key} | {ref["vacant_count"]} / {ref["occupied_count"]} | {status(ref)} | {mog["vacant_count"]} / {mog["occupied_count"]} | {status(mog)} |')
     lines.extend(['', 'Skipped fitting frames (scores excluded; invalid images never update MOG2): `' + json.dumps(r['calibration']['skipped_frames'], sort_keys=True) + '`.', '',
         'Exact percentile boundaries, reference frame identities, per-slot sample hashes and per-day MOG2 counts are in the JSON report and `data/pklot/experiment/fit.json`. All fitting scores are retained in `fit-scores.json`.', '',
-        'For scale comparison only, the original CHAD B01/B02/B03 MOG2 calibration used vacant/occupied counts **10/25, 21/11 and 26/6** (see [FINAL_RESULTS.md](FINAL_RESULTS.md) and its stored calibration). Those are different cameras/data and are not combined here. Example quantity alone cannot be compared as accuracy.', '',
+        'For scale comparison only, the original CHAD B01/B02/B03 MOG2 calibration used vacant/occupied counts **10/25, 21/11 and 26/6** (see [FINAL_RESULTS.md](#doc-final-results) and its stored calibration). Those are different cameras/data and are not combined here. Example quantity alone cannot be compared as accuracy.', '',
         '## Calibration and frozen profile selection', '',
         'Both fixed **YOLOv8s (small)** profiles use OpenCV DNN, 640×640 full-frame input, a 0.80 qualifying vehicle score and the existing unique-bay overlap/anchor association. COCO uses the existing 0.82 vertical anchor; aerial uses 0.50. Weights, cutoffs, classic thresholds and final-decision policy are unchanged during calibration and testing.', '',
         'Calibration chooses the profile with the largest fraction of all labelled observations decided correctly; ties prefer fewer false-vacant errors, then COCO. This penalizes abstention rather than rewarding 100% accuracy on very few decisions. No thresholds or neural weights are fitted using calibration/test labels.', '',
@@ -181,19 +182,25 @@ def render():
         'Use the measured classified accuracy **together with coverage and error counts**. Low coverage or poor metrics are an experimental finding, not grounds to retune against these test dates. Large per-bay calibration counts do not prove that simple single-reference difference and MOG2 features separate occupancy under changing illumination or camera geometry.', '',
         'A later, separately designed experiment could fit camera-position-specific configurations or guarded registration using development data, and compare a parking-specific occupied/vacant classifier. That would need new untouched test data or an explicitly new validation protocol; it must not be reported as an improvement on this already-used holdout. This deliverable preserves the current algorithm and records its limits.', '',
         'No live camera, indoor accuracy, current parking availability, deployment, or CHAD/overhead accuracy improvement is claimed. No hardware installation, web service, database or Flutter work was performed.'])
-    output = ROOT/'EXTERNAL_VALIDATION.md'
     # Preserve the separately labelled, post-hoc section when regenerating the
     # original frozen report. It is not part of that experiment's freeze.
     marker = '<!-- REFERENCE_PRIORITY_POSTHOC -->'
-    previous = output.read_text(encoding='utf-8') if output.exists() else ''
+    previous = read_document(ROOT, 'EXTERNAL_VALIDATION.md')
     appendix = '\n\n' + marker + previous.split(marker, 1)[1] if marker in previous else ''
+    # Retain the later storage explanation without changing this historical
+    # experiment's measured report. Today's cleanup is in the handbook log.
+    storage_heading = '### Local archive and disk space\n'
+    if storage_heading in previous:
+        storage = storage_heading + previous.split(storage_heading, 1)[1].split('\n## ', 1)[0]
+        insertion = lines.index('## Interpretation and next work')
+        lines[insertion:insertion] = [storage.rstrip(), '']
     if appendix:
         lines[2:2] = ['**22 September comparison update:** the original frozen results below are retained. '
             'The current source tree adds an opt-in alternate policy, so the old strict frozen-run commands reject its changed whole-file hash. '
             'For the saved-data comparison, run `checks/compare_reference_priority.py`; see the '
-            '[post-hoc section](#post-hoc-experimental-reference-priority-comparison) and '
-            '[consultation verification notes](AI_CONSULTATION_LOG.md#verification-notes-added-22-september-2026).', '']
-    output.write_text('\n'.join(lines)+'\n'+appendix, encoding='utf-8')
+            '[post-hoc section](#doc-external-validation--post-hoc-experimental-reference-priority-comparison) and '
+            '[consultation verification notes](#doc-ai-consultation-log--verification-notes-added-22-september-2026).', '']
+    output = replace_document(ROOT, 'EXTERNAL_VALIDATION.md', '\n'.join(lines)+'\n'+appendix)
     print(output)
 
 

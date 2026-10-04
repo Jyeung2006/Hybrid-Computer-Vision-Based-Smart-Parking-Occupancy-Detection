@@ -16,6 +16,7 @@ from urllib.parse import parse_qs, urlsplit, unquote
 
 from .catalog import PROJECT_ROOT, CLIPS
 from .opencv_first import DECISION_POLICY
+from .replay_service import ReplayJob, SOURCES
 
 STATES = ('occupied', 'vacant', 'uncertain', 'unknown')
 CHAD_RECORDINGS = tuple(c.id for c in CLIPS)
@@ -223,13 +224,16 @@ class AnalysisJob:
 
 
 class ParkingHandler(SimpleHTTPRequestHandler):
-    def __init__(self, *args, store, job, web_root, **kwargs):
-        self.store, self.job = store, job
+    def __init__(self, *args, store, job, replay, web_root, **kwargs):
+        self.store, self.job, self.replay = store, job, replay
         self.web_root = Path(web_root).resolve()
         super().__init__(*args, directory=str(self.web_root), **kwargs)
 
     def _local_request(self):
         return self.headers.get('Host') in (f'127.0.0.1:{self.server.server_port}', f'localhost:{self.server.server_port}')
+
+    def _same_origin_request(self):
+        return self.headers.get('Origin') in (None, f'http://{self.headers.get("Host")}')
 
     def send_json(self, value, code=200):
         body = json.dumps(value, allow_nan=False).encode('utf-8')
@@ -255,6 +259,8 @@ class ParkingHandler(SimpleHTTPRequestHandler):
                 return self.send_json({'error': str(exc)}, 400)
             except Exception:
                 return self.send_json({'error': 'Recorded results are temporarily unavailable'}, 503)
+        if url.path == '/api/replay':
+            return self.send_json(self.replay.store.snapshot())
         if url.path.startswith('/api/'):
             return self.send_json({'error': 'Not found'}, 404)
         # Only built web assets can be served, including when a symlink exists.
@@ -266,23 +272,42 @@ class ParkingHandler(SimpleHTTPRequestHandler):
         super().do_GET()
 
     def do_POST(self):
-        origin = self.headers.get('Origin')
         if (not self._local_request() or self.headers.get('X-Parking-Client') != 'web'
-                or origin not in (None, f'http://{self.headers.get("Host")}')):
+                or not self._same_origin_request()):
             return self.send_json({'error': 'Same-origin client required'}, 403)
-        if self.path != '/api/analysis':
-            return self.send_json({'error': 'Not found'}, 404)
-        started = self.job.start()
-        self.send_json(self.job.status(), 202 if started else 409)
+        if self.path == '/api/analysis':
+            started = self.job.start()
+            return self.send_json(self.job.status(), 202 if started else 409)
+        if self.path == '/api/replay/start':
+            try:
+                size = int(self.headers.get('Content-Length', '0'))
+            except ValueError:
+                return self.send_json({'error': 'Invalid request size'}, 400)
+            if size < 1 or size > 1024:
+                return self.send_json({'error': 'Invalid request size'}, 400)
+            try:
+                body = json.loads(self.rfile.read(size))
+                source_id = body['source_id']
+                if source_id not in SOURCES:
+                    raise ValueError('Unsupported replay recording')
+                started = self.replay.start(source_id)
+                return self.send_json(self.replay.store.snapshot(), 202 if started else 409)
+            except (ValueError, KeyError, TypeError, json.JSONDecodeError):
+                return self.send_json({'error': 'Unsupported replay recording'}, 400)
+        if self.path == '/api/replay/stop':
+            self.replay.halt()
+            return self.send_json(self.replay.store.snapshot(), 202)
+        return self.send_json({'error': 'Not found'}, 404)
 
 
 def make_server(port=8765, root=PROJECT_ROOT, web_root=None):
     root = Path(root)
     web_root = web_root or root / 'apps/parking_web/build/web'
-    store, job = ResultStore(root), AnalysisJob(root)
+    store, job, replay = ResultStore(root), AnalysisJob(root), ReplayJob(root)
     server = ThreadingHTTPServer(('127.0.0.1', port), partial(ParkingHandler,
-        store=store, job=job, web_root=web_root))
+        store=store, job=job, replay=replay, web_root=web_root))
     server.analysis_job = job
+    server.replay_job = replay
     return server
 
 
@@ -298,6 +323,7 @@ def main():
         pass
     finally:
         server.analysis_job.stop.set()
+        server.replay_job.stop.set()
         server.server_close()
 
 

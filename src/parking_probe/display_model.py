@@ -72,8 +72,8 @@ def runtime_error(exc):
         return "A Python dependency is missing. Run setup.ps1, then run main.py again."
     if isinstance(exc, ImportError) and "application control" in str(exc).lower():
         return ("OpenCV could not load. Windows reported an Application Control/DLL error. "
-                "No occupancy was calculated. See TROUBLESHOOTING.md; the blocked library "
+                "No occupancy was calculated. See PROJECT_DOCUMENTATION.md#doc-troubleshooting; the blocked library "
                 "must be reviewed by your device administrator. Video previews and source links remain available.")
     if isinstance(exc, ImportError) and "dll load failed" in str(exc).lower():
-        return "OpenCV could not load a required DLL. No occupancy was calculated. See TROUBLESHOOTING.md."
+        return "OpenCV could not load a required DLL. No occupancy was calculated. See PROJECT_DOCUMENTATION.md#doc-troubleshooting."
     return "Processing stopped. " + str(exc)[:300]

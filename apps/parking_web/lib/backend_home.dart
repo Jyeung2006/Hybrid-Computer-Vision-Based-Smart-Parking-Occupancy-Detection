@@ -135,6 +135,14 @@ class _BackendHomeState extends State<BackendHome> {
                       ],
                     ),
                   ),
+                  OutlinedButton.icon(
+                    onPressed: () => Navigator.of(context).pushNamed('/replay'),
+                    icon: const Icon(Icons.play_circle_outline_rounded),
+                    label: const Text('Open replay demo'),
+                    style: OutlinedButton.styleFrom(
+                      minimumSize: const Size(48, 50),
+                    ),
+                  ),
                   if (controller.error != null)
                     TextButton(
                       onPressed: controller.refresh,

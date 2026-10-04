@@ -2,7 +2,7 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Parking occupancy chart + video viewer",
+      "name": "Spotlens visualization — video and accuracy review",
       "type": "debugpy",
       "request": "launch",
       "program": "${workspaceFolder}/main.py",

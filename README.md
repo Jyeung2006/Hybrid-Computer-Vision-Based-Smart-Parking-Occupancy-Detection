@@ -1,260 +1,163 @@
-> **Connected Flutter website (27 September 2026):** Run `./apps/parking_web/run-web.ps1` from this folder, then open `http://127.0.0.1:8765/`. The home page now displays actual recorded Python Final results, supports CHAD recording selection and a background analysis action, and labels provisional/unknown states. These are **recorded estimates, not live availability**. See [BACKEND_INTEGRATION.md](BACKEND_INTEGRATION.md) and [FLUTTER_UI.md](FLUTTER_UI.md).
+# Spotlens — smart parking occupancy
 
-# Parking occupancy prototype
+Spotlens is a capstone project that estimates parking-bay occupancy from recorded camera footage using **Reference/MOG2 first, MobileNet + reviewed-empty evidence when both are unresolved, and selective YOLOv8 for unresolved bays or classic-method disagreements**. It includes a research visualization application and a Flutter website connected to a Python API.
 
-**26 September UI design history:** the responsive occupancy ring and CHAD/Overhead cards were originally delivered with labelled demo data. The 27 September connection above supersedes that default; the design history remains in [FLUTTER_UI.md](FLUTTER_UI.md). The current Python decision policy is documented in [OPENCV_FIRST.md](OPENCV_FIRST.md); the dated results below preserve earlier experiment history.
+**Project version:** Python `0.1.0`; Flutter `0.1.0+1`. Current inputs are recorded CHAD and Overhead footage. The website and replay are **recorded estimates/simulation, not live parking availability**.
 
-**23 September guarded vacancy:** normal Run now allows an unresolved bay to become vacant after three consecutive clean three-second observations, successful YOLOv8s no-detection without even a weak nearby vehicle box, and a matching reviewed empty reference when one exists. Without a reference, any such vacancy is explicitly provisional. See [GUARDED_VACANCY.md](GUARDED_VACANCY.md) for the exact rule, risks, all-view replay and usage. The old strict result below is historical.
+## Choose which version to run
 
-**Separate external validation:** run `.\.venv\Scripts\python.exe checks/evaluate_pklot.py` for the saved, day-separated PKLot UFPR04 experiment. See [EXTERNAL_VALIDATION.md](EXTERNAL_VALIDATION.md) for measured branch/profile/weather metrics and calibration counts. This checks-only track leaves the application and CHAD/overhead calibration unchanged; outdoor PKLot results are not their accuracy results.
+| Version | Launch from the full project folder | What opens |
+| --- | --- | --- |
+| **Visualization version — video and accuracy review** | Open **`main.py`** in VS Code and select **Run Python File**, or press **F5** | A separate desktop window with video, bay outlines, model-by-model results, charts and saved evidence |
+| **Connected Flutter website** | Run **`./apps/parking_web/run-web.ps1`** in the IDE terminal | A local Python server; open **http://127.0.0.1:8765/** for the parking homepage and **/#/replay** for replay |
+| **Uploaded Spotlens website package** | Inside the `spotlens` folder, run **`./start.ps1`** locally or **`python serve.py`** with its installed runtime | The same website/API from the package's `public` folder |
 
-**22 September audit:** the original three calibrated CHAD bays retain all 117 Reference/MOG2 observations unchanged. Additional mapped bays have incomplete reference/calibration coverage. Both active profiles are YOLOv8s (small). See [MAPPING_CALIBRATION_AUDIT.md](MAPPING_CALIBRATION_AUDIT.md) for the per-view table, exact models and score/mapping checks.
+The website package contains the website/backend inputs. **`main.py` is an entry point of the full project checkout**, rather than the upload package. `apps/parking_web/lib/main.dart` is the Flutter source entry point; use the connected launch command above when you need actual backend data.
 
-**Open `main.py` in VS Code and press Run** for the parking areas, circle chart and video interface. Choose **Site → Overhead demo car park** to monitor **all 69 visible bays**, split into west (24), middle (22) and east (23). CHAD Cameras 1/2/3/4 still monitor 9/5/4/3 bays respectively. See [QUICK_START.md](QUICK_START.md) for the brief guide.
+## Software to install
 
-Every three video seconds, the table shows **Reference / MOG2 / YOLOv8 / Final estimate**. Matching definite Reference/MOG2 states are kept. Either uncertain/unknown or disagreement sends the bay to one shared full-frame YOLOv8s pass. A strong uniquely assigned vehicle detection can establish occupied. Guarded vacancy needs three consecutive clean samples and an empty-reference match where available; missing detections in a single frame remain uncertain. Ten-second summaries cover every mapped bay. See [GUARDED_VACANCY.md](GUARDED_VACANCY.md) for the rule.
+These are the versions verified on the development computer, not claims that every newer release is compatible.
 
-The latest replay's last overhead sample has **48 occupied, 9 vacant and 12 uncertain out of 69**, giving a 69.6–87.0% occupancy range. These are experimental recorded estimates, not ground truth or live availability. All bays are mapped, but 66 still lack full two-state classic calibration. Fifteen overhead bays have reviewed empty images. See [GUARDED_VACANCY.md](GUARDED_VACANCY.md) and [FINAL_RESULTS.md](FINAL_RESULTS.md).
+| Software | Required/tested version | Needed for | Download |
+| --- | --- | --- | --- |
+| **Python, 64-bit** | **3.12.x**; tested **3.12.14**. Project requires `>=3.12,<3.13` | Visualization and Python API | [Python for Windows](https://www.python.org/downloads/windows/) |
+| **Flutter SDK** | Tested **3.44.6 stable**, with **Dart 3.12.2** bundled | Editing or rebuilding the website | [Flutter SDK archive](https://docs.flutter.dev/install/archive) |
+| **Visual Studio Code** | Tested **1.138.0**; this exact editor version is not required | The IDE instructions below | [VS Code](https://code.visualstudio.com/download) |
+| **VS Code Python extension** | `ms-python.python`; no extension version is pinned | Python interpreter selection and Run Python File | Install **Python**, published by Microsoft, in VS Code Extensions |
+| **VS Code Flutter extension** | `Dart-Code.flutter`; no extension version is pinned | Flutter/Dart editing | Install **Flutter**, published by Dart Code; it uses the Dart extension |
+| **Web browser** | Chrome or Edge; no browser version is pinned | Website preview | Use your installed browser |
 
-Video URLs are built in, cached media and two ONNX model profiles are already available here, and no API key or extra installation is needed on this computer. Normal inference uses **Python 3.12 / OpenCV DNN CPU**. Standard YOLOv8s COCO weights serve CHAD; aerial-trained YOLOv8s weights serve the overhead clip. Model sizes/hashes, source credits and the optional conversion recipe are documented in [third_party/YOLOV8-SOURCES.md](third_party/YOLOV8-SOURCES.md). Initial preparation took about **2–3 minutes** in recent reference-preparation/replay checks; then playback reveals saved chronological analysis.
+Install Python with the **Python launcher** and **Tcl/Tk** support for the desktop window. A GPU, PyTorch and the `ultralytics` Python package are not needed for normal inference: the runtime uses OpenCV DNN on CPU with cached Caffe/ONNX models. Model export has separate optional dependencies.
 
-The overhead camera's small drift is corrected with guarded registration, keeping all ten sampled frames usable. The chart and video show all 69 polygons. Large changes and unusable images still fail validation. CHAD cross-view IDs are manually mapped; overlapping inventories and unsynchronized periods are never summed as one live total. The optional Live camera tab remains a viewer requiring an authorized endpoint.
+The tested Python dependency list is [requirements-tested.txt](requirements-tested.txt): **NumPy 2.5.3**, **OpenCV 4.14.0.94**, **Requests 2.34.2**, and **pytest 9.1.1**, plus pinned supporting packages. `setup.ps1` installs these versions. The upload package uses `requirements-runtime.txt` without test/export dependencies.
 
-**Application validation:** 278 automated tests passed; a fresh headless replay processed all eight recordings and 1,088 bay observations. Compared with the strict baseline, 151 uncertain observations became guarded vacant with reviewed empty matches; underlying Reference/MOG2/YOLO states were unchanged. Independent CHAD/overhead accuracy and false-vacant/false-occupied rates remain unmeasured. See [GUARDED_VACANCY.md](GUARDED_VACANCY.md) and [VALIDATION.md](VALIDATION.md).
+Flutter is unnecessary if you only run `main.py`, or serve a website build that already exists. Docker Engine with **Compose v2** is an alternative for server deployment; it is not required for the IDE workflow. The private server's Docker version was not recorded.
 
-The guarded rule records the evidence behind each definite Final decision, including temporal streaks. Logistic probability fusion, persistence/database, live camera occupancy integration and public deployment remain deferred. The local recorded-results API and connected Flutter home page are described above. The earlier MobileNet-SSD supplement and terminal modes are preserved for historical comparison. The rest of this README describes those earlier commands and the original calibrated baseline where stated.
+## First-time setup in VS Code
 
-## Run and read the terminal output
-
-This earlier mode retains its **three calibrated CHAD bays** and four Camera 1 recording periods. Its results exclude the six additional mapped bays and the additional source; use the interface for the full mapped inventory and area display.
-
-```powershell
-.\.venv\Scripts\python.exe main.py --terminal  # All four recordings, both methods
-.\.venv\Scripts\python.exe main.py --terminal --video chad-4
-# Stop after five sample ticks across active recordings (0, 3, 6, 9, 12 seconds):
-.\.venv\Scripts\python.exe main.py --frames 5
-# Verification only: retain the sampled video times but skip wall-clock waits.
-.\.venv\Scripts\python.exe main.py --fast
-# Original library/decoding/playback diagnostic, without occupancy:
-.\.venv\Scripts\python.exe main.py --check
-```
-
-Each three-second table shows recording ID, physical bay ID, REFERENCE state and normalized difference, MOG2 state and foreground percentage, and method agreement. Ten-second tables show each method's latest state and estimated occupied-time percentage/range. Counts below the table are separate for each recording and method. Time rates summarize the preceding window; they are not probabilities. Ctrl+C stops playback. A shorter recording finishes while others continue. Exact frame positions and processing timings remain in JSON/CSV.
-
-At the end, a final historical table reports occupied/vacant only when both methods agree, uncertain for mixed/incomplete evidence, and unknown if both are unavailable. It uses each recording's last sampled frame and saves final-summary.json/csv. This is an experimental consensus estimate, not a calibrated probability or temporally confirmed state.
-
-Only **CHAD-P001–CHAD-P003**, mapped from local polygons B01–B03, contribute to each recording's three-bay total. Other visible bays and the foreground SUV are excluded. OCCUPIED and VACANT are feature-threshold decisions. UNCERTAIN includes between-threshold evidence or an uncalibrated/restabilizing MOG2 model. UNKNOWN indicates unusable frame/reference evidence. Unresolved time produces ranges. All four clips show different periods from one camera, so counts are never added into an apparent twelve-space car park. The same bay can correctly have different states in different recordings.
-
-The earlier custom multicamera mode remains available through `python main.py --site site.local.json`, using the reference method. It maps multiple polygons to one physical bay and leaves conflicting views uncertain. Configure [site.example.json](site.example.json) as explained in [MULTICAMERA.md](MULTICAMERA.md). That mode requires synchronized footage; the built-in comparison uses independent recording periods. Automatic cross-view identity recognition and real multicamera accuracy remain unvalidated.
-
-The supplied four public recordings are from the same elevated outdoor parking camera. Their addresses, archive members and checksums are in `src/parking_probe/catalog.py`; no URL or API key input is needed. Already verified local videos are reused offline. `test_video.cmd` opens the new interface; `test_video.cmd --terminal` selects text output.
-
-## Calibration and outputs
-
-The following describes the original CHAD analysis. Interface runs save all views under **`runs/areas/<UTC-time>/`**, with `chad/`, `chad-camera-2/`, `chad-camera-3/`, `chad-camera-4/` and `overhead/` subfolders, alongside inventory, source-status and displayed area-summary JSON. All interface sources now save YOLO and Final branches; the expanded setup is documented in [YOLOV8.md](YOLOV8.md) and [OVERHEAD_MAPPING.md](OVERHEAD_MAPPING.md). Terminal runs retain `runs/comparison/`. See [PARKING_AREAS.md](PARKING_AREAS.md) for the overhead recipe and inventory history.
-
-The first three selected recordings provide the supplied reference and calibration frames. Recipe version 2 contains **99 labelled bay examples across 39 distinct full frames**, selected after visual inspection to cover more of each recording. There are 10/25 vacant/occupied examples for B01, 21/11 for B02 and 26/6 for B03. Video 4 is excluded from calibration. The minimum remains five examples per state, with the 95th percentile of vacant scores and 5th percentile of occupied scores as boundaries.
-
-The existing grayscale/Gaussian masked absolute-difference method, empty references, polygons and alignment guards are unchanged. Missing references and invalid or overlapping calibrations remain unknown. The generated preset is versioned by recipe, source checksums and OpenCV version; old presets remain available. See `presets/chad-camera-1.json` and [VIDEO_SOURCES.md](VIDEO_SOURCES.md) for the exact sample times and visual review.
-
-MOG2 uses one full-frame stateful model per recording, initialized with a mosaic of the same verified empty bay references. It updates once per valid chronological sample, excludes shadow labels, applies 3×3 opening/closing and scores the cleaned foreground fraction in each bay. Its own percentile calibration uses the same reviewed labels with chronological runtime updates and read-only probes at extra labelled times. Settings, provenance, measured thresholds and stationary-object/background-adaptation limitations are documented in [MOG2.md](MOG2.md). A MOG2-only failure preserves usable reference evidence.
-
-Terminal replay targets 0, 3, 6, 9... seconds on a monotonic clock and samples the nearest source frames. Summaries close independently at 10, 20, 30... seconds. Overdue samples produce unknown; the final short window is explicitly partial. Processing/writing can introduce timing jitter, recorded as late_by_seconds. The interface precomputes chronological samples before recorded playback and reveals each result/window only when its video time is reached. This is not a hard real-time service.
-
-Default outputs go to `runs/comparison/<UTC-run-time>/`: paired `observations.csv`/`history.jsonl`, `windows.jsonl`, `summary.csv`, `bay-windows.csv`, calibration and run metadata. Each `chad-N/reference/` and `chad-N/mog2/` folder contains annotated `latest.png` and per-frame JSON/CSV; MOG2 also saves the cleaned `foreground.png`. Each clip has `latest-window.json`. Capture time remains unknown; received_at is local decode time. Top-level latest.json marks current occupancy unavailable after the run ends; timestamped history is retained. Custom --site mode still writes `runs/sites/...`, and the older dashboard writes `runs/chad/...`.
-
-The generated configuration, reference/sample PNGs, label manifest and both calibration reports are under `data/chad/preset-<signature>/`. Demonstration replay is not independent accuracy evaluation. Reference decision coverage across the four clips is 91.45%; MOG2 coverage is 82.05% in the measured run. Neither is accuracy. Independent labels/periods are still required to measure accuracy and false-vacant/false-occupied rates.
-
-## Interface and earlier dashboard
-
-Normal Run and `--dashboard` open the new chart/video interface; see [INTERFACE.md](INTERFACE.md). The earlier reference-only window remains available separately:
+1. Clone/download the repository and open its **top-level folder** in VS Code. You should see `main.py`, `pyproject.toml`, `src`, `apps`, and this README.
+2. Open **Terminal → New Terminal**, using PowerShell on Windows.
+3. Run:
 
 ```powershell
-.\.venv\Scripts\python.exe main.py --legacy-dashboard
-.\.venv\Scripts\python.exe main.py --legacy-dashboard --video chad-4
+./setup.ps1
 ```
 
-It includes a camera preview, count cards and reference-method states/scores. It remains a single-recording, reference-only display and is not launched by normal Run.
+4. Open the command palette (**Ctrl+Shift+P**), choose **Python: Select Interpreter**, and select **`.venv/Scripts/python.exe`** from this project.
 
-## Legacy single-area indoor demo (optional)
-
-The earlier 23-second Pexels example is retained through the CLI below. Its low-angle view measures one test region, not clearly marked parking bays. Its recorded results in the validation document are historical, from 10 September. It uses a different interval and output directory from the new `main.py` display.
+The setup script creates `.venv` with Python 3.12 and installs the tested dependencies. It does not change Windows execution policy. If PowerShell blocks `.ps1` scripts, the equivalent setup is:
 
 ```powershell
-.\.venv\Scripts\python.exe -m parking_probe demo
-.\.venv\Scripts\python.exe -m parking_probe demo --headless
+py -3.12 -m venv .venv
+./.venv/Scripts/python.exe -m pip install -r requirements-tested.txt
+./.venv/Scripts/python.exe -m pip install --no-deps -e .
 ```
 
-`demo` ignores `--config` and camera environment variables. Its reviewed public URL, SHA-256, polygon and label times are in `src/parking_probe/video_demo.py`. Each run recreates its generated preset under `data/video-demo/indoor-v1`, leaving `config.local.json` and camera references alone. Do not edit the generated preset expecting changes to survive another demo run.
+Recorded source/model downloads are pinned in the application. Verified cached files are reused. An ordinary Git checkout does **not** include ignored `data`, `runs`, `.venv` or the generated upload package, so first preparation may need network access. The delivered working folder/package already contains the relevant inputs. If a source is unavailable, inspect the reported error and the [source/provenance records](PROJECT_DOCUMENTATION.md#doc-video-sources).
 
-The default sample interval is about 0.5 video seconds, rounded to whole frames (0.5005 seconds for this clip). Live sampling remains three seconds by default. Use `--step 1` for fewer recorded samples, `--frames 10` to stop early, or `--out runs/my-new-demo` for an empty output directory. Omitting `--out` creates a separate timestamped run in `runs/demo-indoor`.
+## Run `main.py`: visualization version
 
-Each run saves `annotated.mp4`, `latest.png`, `latest.json`, `history.jsonl`, `summary.csv`, `slots.csv` and `run.json`. The video is sampled, silent, and may play less smoothly than the original. `run.json` records completion versus early stopping and aggregate latency/state counts. Normal end-of-file is completion, not a stale-camera error. Download/decode failures never assert current occupancy.
+1. Open **`main.py`** in the full project folder.
+2. Click **Run Python File** or press **F5**. The supplied `.vscode/launch.json` selects the project interpreter and root directory.
+3. Wait for the status to finish loading models, preparing calibration, and analyzing the recordings. Playback is enabled after preparation; startup can take minutes.
+4. Select a site/recording and inspect **Occupancy overview**, **Watch video**, **Areas & availability**, and **10-second summaries**.
 
-Recorded results include `input_mode=recorded_video`, `monitoring_scope=test_regions`, `video_frame_index`, `video_position_seconds` and `video_duration_seconds`. `received_at` means local frame decode time. `source_captured_at` and `frame_age_seconds` remain null because the original recording time is unknown. Download time is stored separately in `data/video-demo/indoor-v1/download.json`. In this demo, `total_monitored_regions=1` and `total_monitored_bays=0`; counts and rate bounds refer to that one region.
+**What you see in the IDE:** the terminal shows startup/progress/errors. A separate desktop window shows the actual visualization. It displays **Reference, MOG2, MobileNet + empty, YOLOv8, and Final** as separate method columns. Click a bay for its decision source and reason; inspect the video polygons and open saved JSON/CSV results for comparison.
 
-The reference is frame 0. Five empty examples at 0.5, 1, 1.5, 2 and 2.5 seconds and five occupied examples at 14, 15, 16, 17 and 18 seconds supply the agreed percentile calibration. See the generated `review-labels.png`. All examples come from the same clip, so playback is a demonstration, not held-out evaluation. The existing evaluation command continues to reject reuse of reference/calibration images or sessions.
+This version supports **video/data inspection and accuracy management**. It does not automatically prove accuracy: independent labels, false-vacant/false-occupied evaluation and coverage still matter. `OCCUPIED (P)` counts as occupied but remains a provisional estimate.
 
-Source: [Ricky Esquivel / Pexels](https://www.pexels.com/video/a-car-stopping-in-a-parking-lot-4707190/), under the [Pexels license](https://www.pexels.com/license/). This legacy indoor demo uses only the recorded media. The separate CHAD interface now also uses the approved MobileNet-SSD model.
-
-## Getting started on Windows
-
-Use PowerShell from this project folder. A Python 3.12 environment is already installed here. To recreate it on another computer, install Python 3.12 from [python.org](https://www.python.org/downloads/windows/), then run:
+Equivalent launch:
 
 ```powershell
-.\setup.ps1
-.\run.ps1 --help
+./.venv/Scripts/python.exe main.py
 ```
 
-The setup script creates `.venv`, installs the tested dependency versions, and copies `config.example.json` to `config.local.json` only if the local configuration does not already exist. It does not change your PowerShell execution policy. If your machine blocks scripts, use `.\.venv\Scripts\python.exe -m parking_probe` instead of `.\run.ps1`.
+## Run the connected Flutter website
 
-The dependency versions used for verification are recorded in `requirements-tested.txt`. Reproduce them with:
+For first setup, install the Flutter SDK above, add its `bin` directory to PATH, and confirm:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install -r requirements-tested.txt
-.\.venv\Scripts\python.exe -m pip install --no-deps -e .
+flutter --version
+flutter doctor
 ```
 
-## 1. Connect an authorized existing camera
-
-Obtain an operator-authorized direct image or live-stream URL for a fixed indoor parking view. A normal webpage containing a video player is not a camera endpoint. No hardware installation or ONVIF discovery is performed.
-
-In `config.local.json`, set `source.type` to `snapshot` for an HTTP JPEG/PNG endpoint, or `stream` for an operator-confirmed HTTP MJPEG/HLS or RTSP stream. OpenCV's installed FFmpeg backend handles streams; actual codec/provider compatibility needs testing with the selected camera. Snapshot endpoints support custom headers and HTTP Basic authentication. Streams support URL credentials or the username/password environment variables, but not custom HTTP headers.
-
-Set the address in your current PowerShell session. In PowerShell 7, masked input avoids printing a signed URL or token:
+From the project root in the IDE terminal:
 
 ```powershell
-$env:PARKING_CAMERA_URL = Read-Host 'Authorized camera URL' -MaskInput
+cd apps/parking_web
+flutter pub get
+cd ../..
+./apps/parking_web/run-web.ps1
 ```
 
-If required, set credentials or an HTTP header JSON object using the same approach:
+Open **http://127.0.0.1:8765/**. Keep the terminal running. The script builds Flutter and starts the Python website/API host on the same address.
+
+**What you see:** the browser shows a circular occupancy chart and CHAD/Overhead availability cards from recorded Python Final results. A recording selector, **Run new analysis**, and **Open replay demo** are available. The replay page shows individual bays, source time, decision source, and confirmed/provisional/stale states.
+
+To reuse an existing web build:
 
 ```powershell
-$env:PARKING_CAMERA_USERNAME = Read-Host 'Camera username' -MaskInput
-$env:PARKING_CAMERA_PASSWORD = Read-Host 'Camera password' -MaskInput
-$env:PARKING_CAMERA_HEADERS = Read-Host 'Header JSON, for example an Authorization or X-API-Key header' -MaskInput
+./apps/parking_web/run-web.ps1 -SkipBuild
 ```
 
-Leave unnecessary environment variables unset. They are read from the current process environment; `.env` files are **not** loaded automatically. Do not put secrets in the configuration or command arguments. Error logs omit URLs, credentials, response bodies, and raw network exceptions. HTTP redirects are rejected; configure the provider's final endpoint. TLS verification stays enabled.
-
-If the provider explicitly supplies a frame-capture timestamp header, set `source.capture_time_header` to its name. Supported formats are timezone-aware ISO 8601 and HTTP date format. Do **not** use the ordinary HTTP `Date` header as a camera capture timestamp unless the provider documents that meaning.
+If port 8765 is occupied, use `-Port 8766` and open `http://127.0.0.1:8766/`. If script execution is blocked, build Flutter inside `apps/parking_web`, return to the project root, and launch Python directly:
 
 ```powershell
-.\run.ps1 check --count 3
+./.venv/Scripts/python.exe -m parking_probe.web_server --port 8765
 ```
 
-Read `runs/connection-check.json`. Successful decoding does not prove that the image is current, that the camera is indoors, or that its bay visibility is adequate. Inspect the source and capture images before continuing. An unchanged image might be a quiet scene or a frozen feed; without source timestamps the prototype cannot distinguish those reliably.
+Open **`apps/parking_web/lib/main.dart`** to edit the Flutter application. A standalone `flutter run`/static server does not supply the Python `/api/` routes; use the connected launch command to show real recorded data.
 
-## 2. Capture and mark the view
+## Results and project structure
 
-```powershell
-.\run.ps1 capture --session setup --count 1
-```
-
-The command prints a saved PNG path under `data/captures/setup`. Its adjacent JSON contains source and retrieval metadata. Use that actual PNG path below:
-
-```powershell
-.\run.ps1 configure --frame 'data/captures/setup/YOUR_FRAME.png' --slot P01
-.\run.ps1 configure --frame 'data/captures/setup/YOUR_FRAME.png' --slot P02
-```
-
-Click each bay's corners in order. Right-click removes the last point, Enter saves, and Escape cancels. Mark only clearly visible bays; the occupancy denominator is the number you configure, not the whole garage's capacity. Leave stable background detail outside the bay polygons so alignment can be checked.
-
-For a headless setup, import a JSON list using `configure --frame ... --polygons-file polygons.json`:
-
-```json
-[{"id": "P01", "polygon": [[100,150], [240,150], [240,300], [100,300]]}]
-```
-
-These example coordinates are illustrative and must be replaced with coordinates from your camera. Editing a polygon clears that bay's reference and calibration. A different setup view requires a new configuration file.
-
-## 3. Save each bay's empty reference
-
-Capture a frame when a particular bay is visibly empty. Different bays can use references captured at different times. After inspecting the relevant bay:
-
-```powershell
-.\run.ps1 capture --session references --count 1
-.\run.ps1 reference --slot P01 --frame 'data/captures/references/YOUR_FRAME.png' --confirm-empty
-```
-
-Repeat for each bay. The assertion is manual; the software does not decide that its own reference is empty. References are never updated automatically. A changed reference invalidates its calibration.
-
-## 4. Label samples and calibrate
-
-Collect a recording period containing both vacant and occupied examples:
-
-```powershell
-.\run.ps1 capture --session calibration-morning --count 30
-```
-
-Inspect and label the captured PNGs. One command can label multiple bays in a frame:
-
-```powershell
-.\run.ps1 label --frame 'data/captures/calibration-morning/YOUR_FRAME.png' --session calibration-morning --labels P01=vacant P02=occupied --manifest data/calibration.csv
-.\run.ps1 calibrate --manifest data/calibration.csv
-```
-
-Continue until each bay has at least five unique vacant and five unique occupied samples. More varied examples are preferable to adjacent near-identical images. Use `ambiguous` for ground truth you cannot determine; those observations are excluded from fitting and binary accuracy metrics. CSV columns are `frame_path,slot_id,label,session_id`; image paths are relative to the CSV. You can edit this CSV directly to correct labels.
-
-The pipeline converts the image to grayscale, applies a 5×5 Gaussian filter, and computes the mean absolute difference inside the bay divided by 255. The vacant boundary is the 95th percentile of vacant sample scores; the occupied boundary is the 5th percentile of occupied scores. Scores at the lower boundary are vacant; scores at the upper boundary are occupied; scores between them are uncertain. If boundaries overlap or samples are insufficient, the bay remains uncalibrated/unknown. No arbitrary default occupancy threshold is used.
-
-Camera resolution, stable background features, polygon definition, reference image, and preprocessing version must match. ORB feature matching and a RANSAC transform check alignment outside the bays; by default at least 12 inliers, 50% inlier ratio, background coverage in both dimensions, and no more than 8 pixels of corner displacement are required. Alignment failure pauses interpretation; the program does not move polygons or replace references to hide a change. Feature-poor or obstructed backgrounds may remain unavailable.
-
-## 5. Run the experiment
-
-```powershell
-.\run.ps1 run --frames 20 --preview
-```
-
-`--frames 0` runs until Ctrl+C or Q in the preview. Omit `--preview` for a terminal-only run. The default interval is three seconds; increase it to match the provider's permitted frequency. No requests overlap. Slow retrieval stretches the effective interval.
-
-Saved under `runs/live`:
-
-| File | Contents |
+| Path | Purpose |
 | --- | --- |
-| `latest.png` | Annotated frame, bay IDs/states, timestamps and occupancy summary |
-| `latest.json` | Latest structured per-frame result, including failure states |
-| `history.jsonl` | Timestamped history of full results |
-| `summary.csv` | Counts, occupancy bounds, timing and source health per attempt |
-| `slots.csv` | Per-bay state, appearance difference score and reason |
+| `main.py` | Visualization-version launcher |
+| `src/parking_probe/` | Detection, bay mapping, recorded/replay processing, SQLite status and local API |
+| `apps/parking_web/lib/` | Flutter homepage, replay page, API client and components |
+| `presets/` | Bay geometry, reference examples and calibration recipes |
+| `data/`, `assets/models/` | Cached videos/models and prepared inputs; most are not committed |
+| `runs/areas/` | Recorded analysis history and JSON/CSV evidence |
+| `runs/replay/` | Replay status/events and historical session evidence |
+| `checks/`, `tests/` | Evaluation utilities and software checks |
+| `scripts/package_spotlens.py` | Creates a portable website/backend upload folder; preserves an existing package |
+| `scripts/spotlens/` | Server/runtime templates, Dockerfile and launch helpers |
+| `README.md` | Installation and launch instructions |
+| `PROJECT_DOCUMENTATION.md` | All implementation notes, experiments, work history, deployment steps and attribution |
 
-Only the latest annotated image is retained during a run. Each history file rotates at approximately 10 MiB with three backups. Explicitly captured setup/evaluation frames remain in `data` until you remove them. Treat these as local research files.
+Default website inventory is **9 CHAD Camera 1 bays plus 69 Overhead bays**. The recordings come from different periods; combined recorded counts do not represent simultaneous live occupancy. Invalid or stale replay frames are unavailable, and provisional states remain labelled.
 
-Occupancy is `occupied / total monitored bays × 100` only when all bays are classified. Otherwise the lower bound is `occupied / total` and the upper bound is `(occupied + unresolved) / total`; uncertain and unknown bays count as unresolved. The software never silently counts unknown bays as vacant.
+The last public-host check on **2 October 2026** confirmed a working `/api/` connection at `spotlens.cc`, while a new-analysis job had failed. That is historical deployment evidence, not a claim that the server was rechecked today. See the [1Panel guide](PROJECT_DOCUMENTATION.md#doc-1panel-backend-connect-guide).
 
-`source_captured_at` and `frame_age_seconds` are null when unavailable. `received_at`, processing start/end time, retrieval age, and processing duration are recorded separately. Timestamps use UTC with an explicit offset. `freshness_basis: retrieval_only` means source freshness is unverified. Frames older than the default 15 seconds are stale when their age can be established; timestamps over five seconds in the future are rejected.
+## Verification
 
-Retrieval errors make current occupancy unavailable and write a fresh error panel instead of retaining a misleading current percentage. Historical successful results remain timestamped in the logs. Three attempts are allowed by default, with 1- and 2-second backoffs. Snapshot workers enforce a total attempt deadline of connect timeout + read timeout + 3 seconds of startup allowance; stream workers have a connect + read deadline. Stalled workers are terminated and stream buffers are bounded to one pending frame. These are experimental estimates, without temporal confirmation or persistence services.
-
-## 6. Evaluate real performance when access is available
-
-Collect and manually label at least 30 distinct frames from at least two new recording periods, with both occupied and vacant ground truth. Use new session IDs and place their labels in `data/evaluation.csv`:
-
-```powershell
-.\run.ps1 evaluate --manifest data/evaluation.csv --out runs/real-evaluation.json
-```
-
-Reference and calibration image content cannot be reused for evaluation. Calibration/evaluation session IDs must not overlap; keeping adjacent frames from the same real event in one partition is your responsibility. Evaluation reports accuracy **on classified observations**, decision coverage, false-vacant/false-occupied counts and rates, ambiguous exclusions, and median/p95/max processing latency. Error-rate denominators are explicitly named in the JSON. A structurally sufficient CSV does not independently prove its labels or recording-period provenance.
-
-For a single saved image diagnostic, use `analyze-image --frame ...`. Its output is explicitly marked offline. That command and the synthetic verification below are not substitutes for the required live indoor test.
-
-## Tests and limitations
+From the project root:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pytest -q
-.\.venv\Scripts\python.exe scripts/verify_prototype.py
+./.venv/Scripts/python.exe -m pytest -q
 ```
 
-The second command generates controlled test patterns under `runs/self-test`; it never contacts a real camera. Its report is explicitly synthetic.
+For Flutter, from `apps/parking_web`:
 
-Appearance differences can be caused by cars, people, objects, shadows, glare, wet surfaces, or lighting changes. This baseline cannot reliably distinguish those causes. The empty reference and calibrated boundaries are view-specific. Small controlled samples establish software behavior, not real-world parking accuracy. No real camera performance or public API availability is claimed.
+```powershell
+flutter analyze
+flutter test
+flutter build web --no-web-resources-cdn
+```
 
-Exit codes: `0` completed; `2` invalid input, source/analysis failure, incomplete calibration, or insufficient evaluation dataset; `130` stopped with Ctrl+C. An uncertain/unknown bay alone does not fail a run when acquisition and view validation work.
+Recorded test outcomes and measured limitations are preserved in the [consolidated documentation](PROJECT_DOCUMENTATION.md). Software tests and replay counts are not an independent accuracy percentage.
 
-## Source research and backend choice
+## Troubleshooting and documentation
 
-The user's requirements are live indoor footage from an authorized existing camera, without installing camera hardware. The [Toronto underground webcam listing](https://camguide.net/canada/ontario/toronto/parking/) was inspected during planning; its embedded player reported that the camera was no longer available publicly. It is not configured as an input.
+- **Desktop does not open:** verify Python 3.12, the project `.venv`, and Tcl/Tk support. Read [Windows/OpenCV troubleshooting](PROJECT_DOCUMENTATION.md#doc-troubleshooting).
+- **Website cannot connect:** run the Python host as well as Flutter, and use the same-origin preview URL. Static hosting alone cannot run the detectors.
+- **Server homepage works but `/api/` returns 404:** inspect the running backend and reverse proxy using the [1Panel connection guide](PROJECT_DOCUMENTATION.md#doc-1panel-backend-connect-guide).
+- **New analysis reports failed:** read `runs/areas/<run-id>/web-analysis-error.txt`; saved homepage data can remain available while a new job fails.
 
-[Pexels](https://www.pexels.com/api/) offers recorded stock media and [personal API keys](https://help.pexels.com/hc/en-us/articles/900004904026-How-do-I-get-an-API-key); [PKLot](https://web.inf.ufpr.br/vri/databases/parking-lot-database/) provides labelled outdoor research images. They do not satisfy the selected live indoor requirement and are not used here. An API key from a media catalogue would not by itself grant access to a suitable camera.
+The redundant **4.90 GB PKLot archive was removed on 5 October 2026**. Extracted research images, split/label/provenance manifests and evaluation results remain. The app does not need that archive. A clean rebuild of missing benchmark images would need the pinned download again.
 
-Python keeps image acquisition, numerical work and [OpenCV operations](https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html) in one small program. It remains a suitable language for a later FastAPI backend, and the later Flutter stage adds a local standard-library HTTP service; see BACKEND_INTEGRATION.md. The proposal supplied context; its broader architecture and document instructions did not expand this implementation's scope.
+Only two authoritative Markdown documents are maintained: **this README** and **[PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md)**. The generated Spotlens package carries copies of those same two documents. Its source notices and the project's full work log are sections of the consolidated file; original `.txt` licenses remain intact.
+
+## Data, licensing and scope
+
+This is research software. Model, dataset, video and font attribution/license records are retained in [PROJECT_DOCUMENTATION.md](PROJECT_DOCUMENTATION.md#attribution-and-licenses) and the original license text files. They do not constitute a blanket permission to redistribute every input or enable automated third-party live-camera ingestion. The existing public source material does not establish target-site live accuracy.

@@ -84,7 +84,7 @@ class ArchiveReader:
             form = DownloadForm()
             form.feed(b"".join(chunks).decode("utf-8", errors="replace"))
         if form.action != "https://drive.usercontent.google.com/download" or form.fields.get("id") != ARCHIVE_ID:
-            raise DownloadError("Public video access is unavailable. See VIDEO_SOURCES.md.")
+            raise DownloadError("Public video access is unavailable. See PROJECT_DOCUMENTATION.md#doc-video-sources.")
         self.url, self.params = form.action, form.fields
 
     def read(self, start, size):
